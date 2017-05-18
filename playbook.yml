@@ -1,0 +1,7 @@
+---
+- name: Provisionamento deste computador, powered by Ansible
+  hosts: localhost
+  connection: local
+
+  roles:
+    - workstation

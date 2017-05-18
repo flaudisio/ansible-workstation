@@ -1,0 +1,20 @@
+---
+- name: Instala .deb com keyring do i3
+  apt:
+    deb: "{{ i3_keyring_deb }}"
+    state: present
+
+- name: Configura repositório do i3
+  copy:
+    content: "{{ i3_repo_line }}\n"
+    dest: /etc/apt/sources.list.d/{{ i3_repo_file }}
+    owner: root
+    group: root
+    mode: 0644
+
+- name: Instala i3
+  apt:
+    name: i3
+    state: present
+    install_recommends: yes
+    update_cache: yes

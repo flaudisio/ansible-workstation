@@ -1,0 +1,93 @@
+---
+- name: Atualiza cache do APT
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  tags: pacotes:update
+
+- name: Instala pacotes básicos
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ base_packages }}"
+  tags: pacotes:base
+
+- name: Instala ferramentas de desenvolvimento
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ dev_packages }}"
+  tags: pacotes:dev
+
+- name: Instala ferramentas de administração de sistema
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ sysadmin_packages }}"
+  tags: pacotes:sysadmin
+
+- name: Instala ferramentas de gráficos e multimídia
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ media_packages }}"
+  tags: pacotes:media
+
+- name: Instala pacotes utilitários
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ misc_packages }}"
+  tags:
+    - pacotes:misc
+    - pacotes:utils
+
+- name: Remove pacotes selecionados
+  apt:
+    name: "{{ item }}"
+    state: absent
+    purge: yes
+  with_items: "{{ purge_packages }}"
+  tags: pacotes:purge
+
+- name: Instala pacotes extras
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+  with_items: "{{ extra_packages.strip(',').split(',') }}"
+  tags: pacotes:extra
+  when: extra_packages != ""
+
+# Git (instalado à parte por usar PPA)
+
+- name: Habilita PPA do Git
+  apt_repository:
+    repo: "ppa:git-core/ppa"
+    state: present
+  tags:
+    - git
+    - git:ppa
+    - pacotes:dev
+
+- name: Instala pacotes relacionados ao Git
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+    update_cache: yes
+    cache_valid_time: 3600
+  with_items:
+    - git
+    - git-doc
+    - git-gui
+    - qgit
+    - tig
+  tags:
+    - pacotes:dev
+    - git

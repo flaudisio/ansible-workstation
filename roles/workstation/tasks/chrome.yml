@@ -1,0 +1,49 @@
+---
+- name: Verifica se Chrome está instalado
+  shell: dpkg-query --show google-chrome-stable || true
+  register: check_chrome
+  changed_when: false
+
+- name: Define variável de status de instalação do Chrome
+  set_fact:
+    chrome_not_installed: 1
+  when: "'no packages found matching' in check_chrome.stderr"
+
+# Bloco com tarefas de instalação do Chrome
+- block:
+    - name: Baixa .deb do Google Chrome
+      get_url:
+        url: "{{ chrome_deb_url }}"
+        dest: /tmp/chrome.deb
+
+    - name: Obtém lista de dependências do Chrome
+      shell: >
+        dpkg -I /tmp/chrome.deb | grep '^ Depends:' | sed -e 's/ Depends: //' -e 's/, /\n/g' | awk '{ print $1 }' | tr '\n' '@'
+      register: chrome_deps_check
+      changed_when: false
+
+    - name: Define variável com lista de dependências do Chrome
+      set_fact:
+        chrome_deps: "{{ chrome_deps_check.stdout.rstrip('@').split('@') }}"
+
+    - name: Instala dependências do Chrome
+      apt:
+        name: "{{ item }}"
+        state: present
+      with_items: "{{ chrome_deps }}"
+
+    - name: Instala .deb do Google Chrome
+      apt:
+        deb: /tmp/chrome.deb
+        state: present
+  when: chrome_not_installed is defined
+
+# O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
+# (aparentemente ele se considera o último biscoito do pacote).
+- name: Configura alternatives de '*-www-browser' para o Firefox
+  alternatives:
+    name: "{{ item }}"
+    path: /usr/bin/firefox
+  with_items:
+    - gnome-www-browser
+    - x-www-browser

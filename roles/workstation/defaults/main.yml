@@ -1,0 +1,134 @@
+---
+# Variáveis "*_packages": listas de pacotes independentes e/ou que são dependências
+# de várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
+# mas não custa documentá-los.
+
+# Nota: esses pacotes são instalados com *no-install-recommends*!
+
+base_packages:
+  - bash-completion
+  - curl
+  - exo-utils
+  - less
+  - software-properties-common
+  - tree
+  - wget
+  - xfce4-terminal
+
+dev_packages:
+  - gedit
+  - gedit-developer-plugins
+  - vim
+
+sysadmin_packages:
+  - gdebi-core
+  - gparted
+  - htop
+  - iotop
+  - iptraf-ng
+  - lsof
+  - mtr-tiny
+  - netcat-openbsd
+  - openssh-client
+  - openssh-server
+  - rsync
+
+media_packages:
+  - gimp
+  - shotwell
+  - vlc
+  - vlc-plugin-notify
+
+misc_packages:
+  - atool
+  - evince
+  - firefox
+  - multitail
+  - p7zip
+  - p7zip-full
+  - p7zip-rar
+  - pbzip2
+  - pigz
+  - remmina
+  - remmina-plugin-rdp
+  - remmina-plugin-vnc
+  - libfreerdp-plugins-standard
+  - unrar
+  - unzip
+
+# Pacotes que serão removidos via 'purge'.
+# TODO: verificar eventual uso do 'autoremove'.
+purge_packages:
+  # Xubuntu-desktop
+  - gmusicbrowser
+  - gnumeric
+  - mousepad
+  - pidgin
+  # "Command not found"
+  - command-not-found
+  - command-not-found-data
+  - python3-commandnotfound
+  - sessioninstaller
+  # Outros
+  - xul-ext-ubufox
+
+# Pacotes extras, para flexibilidade.
+# extra_packages: "pacote1,pacote2,pacote3"
+extra_packages: ""
+
+# i3 - https://i3wm.org/docs/repositories.html
+i3_keyring_deb: http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb
+i3_repo_line: deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe
+i3_repo_file: sur5r-i3.list
+
+# Google Chrome
+#
+# Instalado via URL porque existe um cron ("/opt/google/chrome/cron/google-chrome")
+# que manipula o arquivo 'google-chrome.list', portanto não é prudente manipular a
+# configuração do repositório diretamente pelo Ansible.
+chrome_deb_url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+
+# Docker (role externa?, adicionar ansible_user_id ao grupo 'docker')
+# ...
+
+# nginx e nginx config (role externa?)
+# ...
+
+# Spotify - https://www.spotify.com/download/linux/
+spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
+spotify_repo_line: deb http://repository.spotify.com stable non-free
+spotify_repo_file: spotify.list
+
+# doctl - https://github.com/digitalocean/doctl/releases
+doctl_version: "1.5.0"
+doctl_path: /usr/local/bin/doctl
+doctl_arch: amd64
+
+# Vagrant
+#  - https://www.vagrantup.com/downloads.html
+#  - https://github.com/cogitatio/vagrant-hostsupdater#installation
+vagrant_version: "1.9.4"
+
+vagrant_plugins:
+  - vagrant-hostsupdater
+
+# Terraform - https://www.terraform.io/downloads.html
+terraform_version: "0.9.5"
+
+# pip / virtualenv{,wrapper}
+# ...
+
+# rbenv - https://github.com/rbenv/rbenv#installation
+rbenv_version: "0.0.0"
+
+# jq - https://github.com/stedolan/jq/releases
+jq_version: "1.5"
+
+# ctop - https://github.com/bcicen/ctop/releases
+ctop_version: "0.5.1"
+
+# Mattermost - https://docs.mattermost.com/install/desktop.html#linux-beta
+mattermost_version: "3.6.0"
+
+# Franz - http://meetfranz.com/#download_all
+franz_version: "4.0.4"

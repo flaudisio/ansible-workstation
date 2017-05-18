@@ -1,0 +1,10 @@
+---
+- include: packages.yml
+  tags: [pacotes, packages]
+
+- include: i3.yml
+  tags: i3
+
+- include: chrome.yml
+  when: ansible_architecture == "x86_64"
+  tags: chrome
