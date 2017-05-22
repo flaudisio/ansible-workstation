@@ -1,0 +1,45 @@
+---
+- name: Instala chave do repositório do VirtualBox
+  apt_key:
+    url: "{{ vbox_repo_key_url }}"
+    state: present
+  tags: vbox:install
+
+- name: Configura repositório do VirtualBox
+  apt_repository:
+    repo: "{{ vbox_repo_line }}"
+    filename: "{{ vbox_repo_file }}"
+    state: present
+  tags: vbox:install
+
+- name: Instala VirtualBox
+  apt:
+    name: "{{ item }}"
+    state: present
+    install_recommends: no
+    update_cache: yes
+  with_items:
+    - virtualbox-{{ vbox_version_major }}
+    - libsdl-ttf2.0-0
+  tags: vbox:install
+
+- name: Verifica se Extension Pack do VirtualBox está instalado
+  shell: vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
+  register: check_extpack
+  failed_when: check_extpack.rc > 1
+  changed_when: false
+  tags: vbox:extpack
+
+- name: Baixa Entension Pack
+  get_url:
+    url: "{{ vbox_extpack_url }}"
+    dest: "{{ vbox_extpack_dl_file }}"
+  when: check_extpack.rc == 1
+  tags: vbox:extpack
+
+- name: Instala Extension Pack
+  shell: echo yes | vboxmanage extpack install --replace {{ vbox_extpack_dl_file }}
+  when: check_extpack.rc == 1
+  tags: vbox:extpack
+
+# TODO: adicionar usuário ao grupo 'vboxusers'
