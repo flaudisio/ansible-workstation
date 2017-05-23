@@ -5,12 +5,10 @@
     state: present
 
 - name: Configura repositório do i3
-  copy:
-    content: "{{ i3_repo_line }}\n"
-    dest: /etc/apt/sources.list.d/{{ i3_repo_file }}
-    owner: root
-    group: root
-    mode: 0644
+  apt_repository:
+    repo: "{{ i3_repo_line }}"
+    filename: "{{ i3_repo_file }}"
+    state: present
 
 - name: Instala i3
   apt:
