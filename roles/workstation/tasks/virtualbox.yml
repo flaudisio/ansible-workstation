@@ -23,6 +23,13 @@
     - libsdl-ttf2.0-0
   tags: vbox:install
 
+- name: Adiciona usuário ao grupo 'vboxusers'
+  user:
+    name: "{{ _my_user }}"
+    groups: vboxusers
+    append: yes
+  tags: vbox:install
+
 - name: Verifica se Extension Pack do VirtualBox está instalado
   shell: vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
   register: check_extpack
@@ -41,5 +48,3 @@
   shell: echo yes | vboxmanage extpack install --replace {{ vbox_extpack_dl_file }}
   when: check_extpack.rc == 1
   tags: vbox:extpack
-
-# TODO: adicionar usuário ao grupo 'vboxusers'
