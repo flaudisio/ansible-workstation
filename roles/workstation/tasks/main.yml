@@ -8,6 +8,9 @@
 - include: packages.yml
   tags: [pacotes, packages]
 
+- include: alternatives.yml
+  tags: alternatives
+
 - include: i3.yml
   tags: i3
 
