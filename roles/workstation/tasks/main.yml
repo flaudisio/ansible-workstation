@@ -1,4 +1,10 @@
 ---
+- name: Define variáveis de usuário e $HOME
+  set_fact:
+    _my_user: "{{ my_user | default(lookup('env', 'USER')) }}"
+    _my_home: "{{ my_home | default(lookup('env', 'HOME')) }}"
+  tags: always
+
 - include: packages.yml
   tags: [pacotes, packages]
 
@@ -11,3 +17,6 @@
 
 - include: virtualbox.yml
   tags: [vbox, virtualbox]
+
+- include: dotfiles.yml
+  tags: [dotfiles, rc]
