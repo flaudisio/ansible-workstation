@@ -9,10 +9,10 @@
     repo: "{{ i3_repo_line }}"
     filename: "{{ i3_repo_file }}"
     state: present
+    update_cache: yes
 
 - name: Instala i3
   apt:
     name: i3
     state: present
     install_recommends: yes
-    update_cache: yes
