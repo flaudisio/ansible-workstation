@@ -25,8 +25,10 @@ base_packages:
   - exo-utils
   - less
   - software-properties-common
+  - tmux
   - tree
   - wget
+  - xbacklight
   - xfce4-terminal
 
 dev_packages:
@@ -45,12 +47,15 @@ sysadmin_packages:
   - lsof
   - mtr-tiny
   - netcat-openbsd
+  - network-manager-openvpn
+  - network-manager-openvpn-gnome
   - openssh-client
   - openssh-server
   - rsync
 
 media_packages:
   - gimp
+  - pavucontrol
   - shotwell
   - vlc
   - vlc-plugin-notify
@@ -74,6 +79,7 @@ misc_packages:
   - unrar
   - unzip
   - xclip
+  - zenity
 
 # Pacotes que serão removidos via 'purge'.
 # TODO: verificar eventual uso do 'autoremove'.
