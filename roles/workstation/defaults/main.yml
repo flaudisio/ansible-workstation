@@ -7,6 +7,8 @@
 
 base_packages:
   - bash-completion
+  - ca-certificates
+  - cryptsetup
   - curl
   - exo-utils
   - less
@@ -22,6 +24,8 @@ dev_packages:
 
 sysadmin_packages:
   - gdebi-core
+  - gnome-disk-utility
+  - cracklib-runtime
   - gparted
   - htop
   - iotop
@@ -42,6 +46,7 @@ media_packages:
 misc_packages:
   - atool
   - evince
+  - file-roller
   - firefox
   - multitail
   - p7zip
@@ -53,8 +58,10 @@ misc_packages:
   - remmina-plugin-rdp
   - remmina-plugin-vnc
   - libfreerdp-plugins-standard
+  - unar
   - unrar
   - unzip
+  - xclip
 
 # Pacotes que serão removidos via 'purge'.
 # TODO: verificar eventual uso do 'autoremove'.
