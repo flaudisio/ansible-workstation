@@ -119,11 +119,6 @@ chrome_deb_url: https://dl.google.com/linux/direct/google-chrome-stable_current_
 # nginx e nginx config (role externa?)
 # ...
 
-# Spotify - https://www.spotify.com/download/linux/
-spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
-spotify_repo_line: deb http://repository.spotify.com stable non-free
-spotify_repo_file: spotify.list
-
 # doctl - https://github.com/digitalocean/doctl/releases
 doctl_version: "1.5.0"
 doctl_path: /usr/local/bin/doctl
@@ -139,6 +134,11 @@ vbox_version_major: "5.1"
 vbox_extpack_version: "5.1.22"
 vbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ vbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_extpack_version }}.vbox-extpack
 vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+
+# Spotify - https://www.spotify.com/download/linux/
+spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
+spotify_repo_line: deb http://repository.spotify.com stable non-free
+spotify_repo_file: spotify
 
 # Vagrant
 #  - https://www.vagrantup.com/downloads.html
