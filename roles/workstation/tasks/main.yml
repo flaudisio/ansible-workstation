@@ -6,7 +6,7 @@
   tags: always
 
 - include: packages.yml
-  tags: [pacotes, packages]
+  tags: [pkg, packages]
 
 - include: alternatives.yml
   tags: alternatives

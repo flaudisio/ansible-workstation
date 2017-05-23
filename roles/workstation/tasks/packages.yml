@@ -3,7 +3,7 @@
   apt:
     update_cache: yes
     cache_valid_time: 3600
-  tags: pacotes:update
+  tags: pkg:update
 
 - name: Instala pacotes básicos
   apt:
@@ -11,7 +11,7 @@
     state: present
     install_recommends: no
   with_items: "{{ base_packages }}"
-  tags: pacotes:base
+  tags: pkg:base
 
 - name: Instala ferramentas de desenvolvimento
   apt:
@@ -19,7 +19,7 @@
     state: present
     install_recommends: no
   with_items: "{{ dev_packages }}"
-  tags: pacotes:dev
+  tags: pkg:dev
 
 - name: Instala ferramentas de administração de sistema
   apt:
@@ -27,7 +27,7 @@
     state: present
     install_recommends: no
   with_items: "{{ sysadmin_packages }}"
-  tags: pacotes:sysadmin
+  tags: pkg:sysadmin
 
 - name: Instala ferramentas de gráficos e multimídia
   apt:
@@ -35,7 +35,7 @@
     state: present
     install_recommends: no
   with_items: "{{ media_packages }}"
-  tags: pacotes:media
+  tags: pkg:media
 
 - name: Instala pacotes utilitários
   apt:
@@ -44,8 +44,8 @@
     install_recommends: no
   with_items: "{{ misc_packages }}"
   tags:
-    - pacotes:misc
-    - pacotes:utils
+    - pkg:misc
+    - pkg:utils
 
 - name: Remove pacotes selecionados
   apt:
@@ -53,7 +53,7 @@
     state: absent
     purge: yes
   with_items: "{{ purge_packages }}"
-  tags: pacotes:purge
+  tags: pkg:purge
 
 - name: Instala pacotes extras
   apt:
@@ -61,7 +61,7 @@
     state: present
     install_recommends: no
   with_items: "{{ extra_packages.strip(',').split(',') }}"
-  tags: pacotes:extra
+  tags: pkg:extra
   when: extra_packages != ""
 
 # Git (instalado à parte por usar PPA)
@@ -74,7 +74,7 @@
   tags:
     - git
     - git:ppa
-    - pacotes:dev
+    - pkg:dev
 
 - name: Instala pacotes relacionados ao Git
   apt:
@@ -88,5 +88,5 @@
     - qgit
     - tig
   tags:
-    - pacotes:dev
     - git
+    - pkg:dev
