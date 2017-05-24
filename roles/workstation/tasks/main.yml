@@ -6,7 +6,7 @@
   tags: always
 
 - include: packages.yml
-  tags: [pkg, packages]
+  tags: pkg
 
 - include: alternatives.yml
   tags: alternatives
@@ -22,7 +22,7 @@
   tags: chrome
 
 - include: virtualbox.yml
-  tags: [vbox, virtualbox]
+  tags: vbox
 
 - include: spotify.yml
   tags: spotify
