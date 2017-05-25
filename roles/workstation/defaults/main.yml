@@ -138,7 +138,7 @@ vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
 # Vagrant
 #  - https://www.vagrantup.com/downloads.html
 #  - https://github.com/cogitatio/vagrant-hostsupdater#installation
-vagrant_version: "1.9.4"
+vagrant_version: "1.9.5"
 
 vagrant_plugins:
   - vagrant-hostsupdater
