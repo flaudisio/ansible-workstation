@@ -135,11 +135,6 @@ vbox_extpack_version: "5.1.22"
 vbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ vbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_extpack_version }}.vbox-extpack
 vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
 
-# Spotify - https://www.spotify.com/download/linux/
-spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
-spotify_repo_line: deb http://repository.spotify.com stable non-free
-spotify_repo_file: spotify
-
 # Vagrant
 #  - https://www.vagrantup.com/downloads.html
 #  - https://github.com/cogitatio/vagrant-hostsupdater#installation
@@ -147,6 +142,18 @@ vagrant_version: "1.9.4"
 
 vagrant_plugins:
   - vagrant-hostsupdater
+
+# Spotify - https://www.spotify.com/download/linux/
+spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
+spotify_repo_line: deb http://repository.spotify.com stable non-free
+spotify_repo_file: spotify
+
+# Mattermost - https://docs.mattermost.com/install/desktop.html#linux-beta
+mattermost_version: "3.6.0"
+
+# Franz - http://meetfranz.com/#download_all
+
+franz_version: "4.0.4"
 
 # Terraform - https://www.terraform.io/downloads.html
 terraform_version: "0.9.5"
@@ -162,9 +169,3 @@ jq_version: "1.5"
 
 # ctop - https://github.com/bcicen/ctop/releases
 ctop_version: "0.5.1"
-
-# Mattermost - https://docs.mattermost.com/install/desktop.html#linux-beta
-mattermost_version: "3.6.0"
-
-# Franz - http://meetfranz.com/#download_all
-franz_version: "4.0.4"
