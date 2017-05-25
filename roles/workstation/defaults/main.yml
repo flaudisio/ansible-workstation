@@ -44,6 +44,7 @@ sysadmin_packages:
   - htop
   - iotop
   - iptraf-ng
+  - lshw
   - lsof
   - mtr-tiny
   - netcat-openbsd
@@ -52,6 +53,7 @@ sysadmin_packages:
   - openssh-client
   - openssh-server
   - rsync
+  - whois
 
 media_packages:
   - gimp
