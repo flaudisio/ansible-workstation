@@ -1,0 +1,21 @@
+---
+- name: Verifica se Vagrant está instalado
+  shell: dpkg-query --showformat='${Version}' --show vagrant || true
+  register: check_vagrant
+  changed_when: false
+  tags: vagrant:install
+
+- name: Instala Vagrant
+  apt:
+    deb: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb
+    state: present
+  when: check_vagrant.stdout[2:] != vagrant_version
+  tags: vagrant:install
+
+- name: Instala plugins do Vagrant
+  command: vagrant plugin install {{ item }}
+  with_items: "{{ vagrant_plugins }}"
+  become: yes
+  become_user: "{{ _my_user }}"
+  changed_when: false
+  tags: vagrant:plugins

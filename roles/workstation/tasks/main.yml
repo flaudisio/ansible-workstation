@@ -24,5 +24,8 @@
 - include: virtualbox.yml
   tags: vbox
 
+- include: vagrant.yml
+  tags: vagrant
+
 - include: spotify.yml
   tags: spotify
