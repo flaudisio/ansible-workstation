@@ -4,8 +4,8 @@
   connection: local
 
   roles:
-    - role: workstation
-      tags: workstation
+    - role: packages
+      tags: pkg
     - role: alternatives
       tags: alternatives
     - role: dotfiles
