@@ -1,11 +1,11 @@
 ---
-- name: Instala chave do repositório do Spotify
+- name: Instala chave do repositório
   apt_key:
     keyserver: keyserver.ubuntu.com
     id: "{{ spotify_repo_key }}"
     state: present
 
-- name: Configura repositório do Spotify
+- name: Configura repositório
   apt_repository:
     repo: "{{ spotify_repo_line }}"
     filename: "{{ spotify_repo_file }}"
@@ -17,7 +17,6 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-    update_cache: no
   with_items:
     - spotify-client
     - libavcodec-extra

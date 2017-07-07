@@ -152,11 +152,6 @@ vagrant_version: "1.9.5"
 vagrant_plugins:
   - vagrant-hostsupdater
 
-# Spotify - https://www.spotify.com/download/linux/
-spotify_repo_key: BBEBDCB318AD50EC6865090613B00F1FD2C19886
-spotify_repo_line: deb http://repository.spotify.com stable non-free
-spotify_repo_file: spotify
-
 # Mattermost - https://docs.mattermost.com/install/desktop.html#linux-beta
 mattermost_version: "3.6.0"
 

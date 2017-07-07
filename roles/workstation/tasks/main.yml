@@ -26,6 +26,3 @@
 
 - include: vagrant.yml
   tags: vagrant
-
-- include: spotify.yml
-  tags: spotify
