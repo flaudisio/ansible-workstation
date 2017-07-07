@@ -1,16 +1,4 @@
 ---
-# Usuário e $HOME do sistema
-# Padrão: $USER e $HOME (do usuário que executa o Ansible)
-# my_user: flaudisio
-# my_home: /home/flaudisio
-
-# Diretório dos dotfiles
-# Padrão: $HOME/.rc (do usuário que executa o Ansible)
-# dotfiles_dir: /opt/dotfiles
-
-# Força atualização (via Git) do diretório de dotfiles
-update_dotfiles: no
-
 # Variáveis "*_packages": listas de pacotes independentes e/ou que são dependências
 # de várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
 # mas não custa documentá-los.

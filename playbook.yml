@@ -6,6 +6,8 @@
   roles:
     - role: workstation
       tags: workstation
+    - role: dotfiles
+      tags: [dotfiles, rc]
     - role: i3
       tags: i3
     - role: chrome

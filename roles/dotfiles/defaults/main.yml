@@ -1,0 +1,12 @@
+---
+# Usuário e $HOME do sistema
+# Padrão: $USER e $HOME (do usuário que executa o Ansible)
+# dotfiles_user: flaudisio
+# dotfiles_home: /home/flaudisio
+
+# Diretório dos dotfiles
+# Padrão: $HOME/.rc (do usuário que executa o Ansible)
+# dotfiles_dir: /home/flaudisio/.rc
+
+# Força atualização (via Git) do diretório de dotfiles
+dotfiles_update: no
