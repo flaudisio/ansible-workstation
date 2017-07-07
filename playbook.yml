@@ -6,6 +6,8 @@
   roles:
     - role: workstation
       tags: workstation
+    - role: alternatives
+      tags: alternatives
     - role: dotfiles
       tags: [dotfiles, rc]
     - role: i3

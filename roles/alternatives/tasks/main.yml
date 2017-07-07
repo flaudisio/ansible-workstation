@@ -1,5 +1,5 @@
 ---
-- name: Configura alternatives
+- name: Configura paths
   alternatives:
     name: "{{ item.name }}"
     path: "{{ item.path }}"

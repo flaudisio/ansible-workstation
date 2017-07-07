@@ -1,6 +1,3 @@
 ---
 - include: packages.yml
   tags: pkg
-
-- include: alternatives.yml
-  tags: alternatives
