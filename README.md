@@ -93,6 +93,7 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] Expandir tabela de programas usados
   - [ ] Configurar i3
   - [ ] Configurar `sources.list` (sem `deb-src`, etc.)
+  - [ ] Configurar sudoers (`Defaults insults`)
   - [ ] Configurar ícones e fontes padrões (`lxappearance`?)
   - [ ] Configurar programas padrões
 
