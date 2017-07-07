@@ -115,13 +115,6 @@ i3_keyring_deb: http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyri
 i3_repo_line: deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe
 i3_repo_file: sur5r-i3
 
-# Google Chrome
-#
-# Instalado via URL porque existe um cron ("/opt/google/chrome/cron/google-chrome")
-# que manipula o arquivo 'google-chrome.list', portanto não é prudente manipular a
-# configuração do repositório diretamente pelo Ansible.
-chrome_deb_url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-
 # Docker (role externa?, adicionar ansible_user_id ao grupo 'docker')
 # ...
 

@@ -1,4 +1,9 @@
 ---
+# O Chrome é instalado via download direto do .deb porque ele mantém um cron
+# ("/opt/google/chrome/cron/google-chrome") que manipula diretamente o arquivo
+# "/etc/apt/sources.list.d/google-chrome.list". Logo, prefiro não manipular
+# a configuração do repositório pelo Ansible.
+
 - name: Verifica se Chrome está instalado
   shell: dpkg-query --show google-chrome-stable || true
   register: check_chrome
@@ -13,7 +18,7 @@
 - block:
     - name: Baixa .deb do Google Chrome
       get_url:
-        url: "{{ chrome_deb_url }}"
+        url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         dest: /tmp/chrome.deb
 
     - name: Obtém lista de dependências do Chrome
