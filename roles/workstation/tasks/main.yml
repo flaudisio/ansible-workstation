@@ -11,8 +11,5 @@
 - include: alternatives.yml
   tags: alternatives
 
-- include: i3.yml
-  tags: i3
-
 - include: dotfiles.yml
   tags: [dotfiles, rc]

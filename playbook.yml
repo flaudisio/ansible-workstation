@@ -6,6 +6,8 @@
   roles:
     - role: workstation
       tags: workstation
+    - role: i3
+      tags: i3
     - role: chrome
       tags: chrome
     - role: virtualbox

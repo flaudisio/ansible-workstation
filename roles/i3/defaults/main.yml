@@ -1,0 +1,7 @@
+# Ref: https://i3wm.org/docs/repositories.html
+
+i3_keyring_deb: http://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2017.01.02_all.deb
+
+i3_repo_line: deb http://debian.sur5r.net/i3/ {{ ansible_distribution_release }} universe
+
+i3_repo_file: sur5r-i3
