@@ -12,7 +12,7 @@
   when: check_vagrant.stdout[2:] != vagrant_version
   tags: vagrant:install
 
-- name: Instala plugins do Vagrant
+- name: Instala plugins
   command: vagrant plugin install {{ item }}
   with_items: "{{ vagrant_plugins }}"
   become: yes

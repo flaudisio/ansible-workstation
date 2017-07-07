@@ -1,0 +1,9 @@
+---
+# Refs:
+#  - https://www.vagrantup.com/downloads.html
+#  - https://github.com/cogitatio/vagrant-hostsupdater#installation
+
+vagrant_version: "1.9.5"
+
+vagrant_plugins:
+  - vagrant-hostsupdater

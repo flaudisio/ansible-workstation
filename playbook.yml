@@ -8,6 +8,8 @@
       tags: workstation
     - role: virtualbox
       tags: vbox
+    - role: vagrant
+      tags: vagrant
     - role: spotify
       tags: spotify
     - role: postgres

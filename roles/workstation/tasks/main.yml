@@ -20,6 +20,3 @@
 - include: chrome.yml
   when: ansible_architecture == "x86_64"
   tags: chrome
-
-- include: vagrant.yml
-  tags: vagrant
