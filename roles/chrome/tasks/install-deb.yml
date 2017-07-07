@@ -1,0 +1,30 @@
+---
+- name: Baixa .deb
+  get_url:
+    url: https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+    dest: /tmp/chrome.deb
+
+- name: Obtém lista de dependências do .deb
+  shell: >
+    dpkg --info /tmp/chrome.deb
+    | grep '^ Depends:'
+    | sed -e 's/ Depends: //' -e 's/, /\n/g'
+    | awk '{ print $1 }'
+    | tr '\n' '@'
+  register: chrome_deps_check
+  changed_when: false
+
+- name: Define variável com lista de dependências
+  set_fact:
+    chrome_deps: "{{ chrome_deps_check.stdout.rstrip('@').split('@') }}"
+
+- name: Instala dependências
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items: "{{ chrome_deps }}"
+
+- name: Instala .deb
+  apt:
+    deb: /tmp/chrome.deb
+    state: present
