@@ -1,0 +1,18 @@
+---
+# VirtualBox - Ref: https://www.virtualbox.org/wiki/Linux_Downloads
+
+vbox_version_major: "5.1"
+
+vbox_repo_key_url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+
+vbox_repo_line: deb http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib
+
+vbox_repo_file: virtualbox
+
+# Extension Pack - Ref: https://www.virtualbox.org/wiki/Downloads
+
+vbox_extpack_version: "5.1.22"
+
+vbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ vbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_extpack_version }}.vbox-extpack
+
+vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack

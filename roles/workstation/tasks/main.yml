@@ -21,8 +21,5 @@
   when: ansible_architecture == "x86_64"
   tags: chrome
 
-- include: virtualbox.yml
-  tags: vbox
-
 - include: vagrant.yml
   tags: vagrant

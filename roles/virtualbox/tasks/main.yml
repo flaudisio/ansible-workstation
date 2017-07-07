@@ -1,11 +1,11 @@
 ---
-- name: Instala chave do repositório do VirtualBox
+- name: Instala chave do repositório
   apt_key:
     url: "{{ vbox_repo_key_url }}"
     state: present
   tags: vbox:install
 
-- name: Configura repositório do VirtualBox
+- name: Configura repositório
   apt_repository:
     repo: "{{ vbox_repo_line }}"
     filename: "{{ vbox_repo_file }}"
@@ -30,7 +30,7 @@
     append: yes
   tags: vbox:install
 
-- name: Verifica se Extension Pack do VirtualBox está instalado
+- name: Verifica se Extension Pack está instalado
   shell: vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
   register: check_extpack
   failed_when: check_extpack.rc > 1
