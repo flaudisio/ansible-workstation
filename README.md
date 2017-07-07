@@ -1,9 +1,9 @@
-# Ansible Workstation
+# Ansible: Workstation
 
 Playbook e roles do Ansible que utilizo para provisionar minhas workstations.
 
-Na prática esse projeto não provisiona 100% do meu ambiente, mas ao menos eu documento
-o que está pendente e/ou (ainda) é manual.
+O projeto ainda está no começo e não provisiona 100% do meu ambiente. Atualizações
+regulares deverão ocorrer nas próximas semanas.
 
 ## Compatibilidade
 
@@ -101,11 +101,20 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [x] Dotfiles
   - [ ] Scripts (GH: `flaudisio/scripts`)
 
-- Sistema e software
+- Software
+  - [ ] [Mattermost](https://docs.mattermost.com/install/desktop.html#ubuntu-and-debian-based-systems)
+  - [ ] [Rambox](http://rambox.pro/#download)
+  - [ ] [MEGAsync](https://mega.nz/sync)
   - [x] Docker
   - [x] Docker Compose
+  - [ ] [ctop](https://github.com/bcicen/ctop/releases)
   - [ ] nginx
-  - [ ] MEGAsync
+  - [ ] pip (sistema)
+  - [ ] virtualenv, virtualenvwrapper
+  - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
+  - [ ] [jq](https://github.com/stedolan/jq/releases)
+  - [ ] [doctl](https://github.com/digitalocean/doctl/releases)
+  - [ ] [Terraform](https://www.terraform.io/downloads.html)
 
 - Configurações sensíveis
   - [ ] `.ssh/config` (pessoal e do trabalho)

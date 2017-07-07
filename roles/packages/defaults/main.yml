@@ -97,36 +97,3 @@ pkg_purge:
 # Pacotes extras, para flexibilidade.
 # extra_packages: "pacote1,pacote2,pacote3"
 pkg_extra: ""
-
-# Docker (role externa?, adicionar ansible_user_id ao grupo 'docker')
-# ...
-
-# nginx e nginx config (role externa?)
-# ...
-
-# doctl - https://github.com/digitalocean/doctl/releases
-doctl_version: "1.5.0"
-doctl_path: /usr/local/bin/doctl
-doctl_arch: amd64
-
-# Mattermost - https://docs.mattermost.com/install/desktop.html#linux-beta
-mattermost_version: "3.6.0"
-
-# Franz - http://meetfranz.com/#download_all
-
-franz_version: "4.0.4"
-
-# Terraform - https://www.terraform.io/downloads.html
-terraform_version: "0.9.5"
-
-# pip / virtualenv{,wrapper}
-# ...
-
-# rbenv - https://github.com/rbenv/rbenv#installation
-rbenv_version: "0.0.0"
-
-# jq - https://github.com/stedolan/jq/releases
-jq_version: "1.5"
-
-# ctop - https://github.com/bcicen/ctop/releases
-ctop_version: "0.5.1"
