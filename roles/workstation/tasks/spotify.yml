@@ -9,8 +9,8 @@
   apt_repository:
     repo: "{{ spotify_repo_line }}"
     filename: "{{ spotify_repo_file }}"
-    update_cache: yes
     state: present
+    update_cache: yes
 
 - name: Instala Spotify
   apt:

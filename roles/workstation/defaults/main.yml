@@ -1,11 +1,11 @@
 ---
 # Usuário e $HOME do sistema
-# Padrão: $USER e $HOME (do usuário que executa o Ansible).
+# Padrão: $USER e $HOME (do usuário que executa o Ansible)
 # my_user: flaudisio
 # my_home: /home/flaudisio
 
 # Diretório dos dotfiles
-# Padrão: $HOME/.rc (do usuário que executa o Ansible).
+# Padrão: $HOME/.rc (do usuário que executa o Ansible)
 # dotfiles_dir: /opt/dotfiles
 
 # Força atualização (via Git) do diretório de dotfiles
@@ -22,6 +22,7 @@ base_packages:
   - ca-certificates
   - cryptsetup
   - curl
+  - dkms
   - exo-utils
   - less
   - software-properties-common
@@ -64,9 +65,14 @@ media_packages:
 
 misc_packages:
   - atool
+  - cups-pdf
+  - system-config-printer-gnome
+  - system-config-printer-udev
   - evince
   - file-roller
   - firefox
+  - ipcalc
+  - keepassx
   - multitail
   - p7zip
   - p7zip-full
@@ -77,6 +83,7 @@ misc_packages:
   - remmina-plugin-rdp
   - remmina-plugin-vnc
   - libfreerdp-plugins-standard
+  - transmission-gtk
   - unar
   - unrar
   - unzip
