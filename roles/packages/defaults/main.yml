@@ -1,11 +1,11 @@
 ---
-# Variáveis "*_packages": listas de pacotes independentes e/ou que são dependências
-# de várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
+# Variáveis "pkg_*": listas de pacotes independentes e/ou que são dependências de
+# várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
 # mas não custa documentá-los.
 
-# Nota: esses pacotes são instalados com *no-install-recommends*!
+# Nota: os pacotes são instalados com *no-install-recommends*!
 
-base_packages:
+pkg_base:
   - bash-completion
   - ca-certificates
   - cryptsetup
@@ -20,12 +20,12 @@ base_packages:
   - xbacklight
   - xfce4-terminal
 
-dev_packages:
+pkg_dev:
   - gedit
   - gedit-developer-plugins
   - vim
 
-sysadmin_packages:
+pkg_sysadmin:
   - gdebi-core
   - gnome-disk-utility
   - cracklib-runtime
@@ -44,14 +44,14 @@ sysadmin_packages:
   - rsync
   - whois
 
-media_packages:
+pkg_media:
   - gimp
   - pavucontrol
   - shotwell
   - vlc
   - vlc-plugin-notify
 
-misc_packages:
+pkg_misc:
   - atool
   - cups-pdf
   - system-config-printer-gnome
@@ -80,7 +80,7 @@ misc_packages:
 
 # Pacotes que serão removidos via 'purge'.
 # TODO: verificar eventual uso do 'autoremove'.
-purge_packages:
+pkg_purge:
   # Xubuntu-desktop
   - gmusicbrowser
   - gnumeric
@@ -96,7 +96,7 @@ purge_packages:
 
 # Pacotes extras, para flexibilidade.
 # extra_packages: "pacote1,pacote2,pacote3"
-extra_packages: ""
+pkg_extra: ""
 
 # Docker (role externa?, adicionar ansible_user_id ao grupo 'docker')
 # ...

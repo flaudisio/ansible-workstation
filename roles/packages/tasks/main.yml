@@ -10,7 +10,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ base_packages }}"
+  with_items: "{{ pkg_base }}"
   tags: pkg:base
 
 - name: Instala ferramentas de desenvolvimento
@@ -18,7 +18,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ dev_packages }}"
+  with_items: "{{ pkg_dev }}"
   tags: pkg:dev
 
 - name: Instala ferramentas de administração de sistema
@@ -26,7 +26,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ sysadmin_packages }}"
+  with_items: "{{ pkg_sysadmin }}"
   tags: pkg:sysadmin
 
 - name: Instala ferramentas de gráficos e multimídia
@@ -34,7 +34,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ media_packages }}"
+  with_items: "{{ pkg_media }}"
   tags: pkg:media
 
 - name: Instala pacotes utilitários
@@ -42,7 +42,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ misc_packages }}"
+  with_items: "{{ pkg_misc }}"
   tags:
     - pkg:misc
     - pkg:utils
@@ -52,7 +52,7 @@
     name: "{{ item }}"
     state: absent
     purge: yes
-  with_items: "{{ purge_packages }}"
+  with_items: "{{ pkg_purge }}"
   tags: pkg:purge
 
 - name: Instala pacotes extras
@@ -60,9 +60,9 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ extra_packages.strip(',').split(',') }}"
+  with_items: "{{ pkg_extra.strip(',').split(',') }}"
   tags: pkg:extra
-  when: extra_packages != ""
+  when: pkg_extra != ""
 
 # Git (instalado à parte por usar PPA)
 
