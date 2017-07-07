@@ -25,7 +25,7 @@
 
 - name: Adiciona usuário ao grupo 'vboxusers'
   user:
-    name: "{{ _my_user }}"
+    name: "{{ vbox_user | default(lookup('env', 'USER')) }}"
     groups: vboxusers
     append: yes
   tags: vbox:install

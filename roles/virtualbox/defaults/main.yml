@@ -1,4 +1,8 @@
 ---
+# Usuário do sistema
+# Padrão: $USER (do usuário que executa o Ansible)
+# vbox_user: flaudisio
+
 # VirtualBox - Ref: https://www.virtualbox.org/wiki/Linux_Downloads
 
 vbox_version_major: "5.1"

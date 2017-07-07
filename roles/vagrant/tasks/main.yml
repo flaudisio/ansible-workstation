@@ -16,6 +16,6 @@
   command: vagrant plugin install {{ item }}
   with_items: "{{ vagrant_plugins }}"
   become: yes
-  become_user: "{{ _my_user }}"
+  become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
   changed_when: false
   tags: vagrant:plugins
