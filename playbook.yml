@@ -10,6 +10,8 @@
       tags: vbox
     - role: spotify
       tags: spotify
+    - role: postgres
+      tags: postgres
     - role: docker
       tags: docker
       docker_install_compose: true
