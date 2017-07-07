@@ -20,7 +20,7 @@ No _primeiro uso_, certifique-se de que o Ansible e as roles externas estão ins
 
 ```console
 $ wget -nv https://github.com/flaudisio/ansible-workstation/archive/master.tar.gz -O - | tar -xzf -
-$ cd ansible-workstation/
+$ cd ansible-workstation-master/
 $ ./scripts/bootstrap.sh
 ```
 
@@ -61,7 +61,7 @@ $ ansible-playbook -bK playbook.yml -i inventory.ini -t vbox,vagrant
 
 ### i3
 
-O [i3][i3-wm] é o gerenciador de janelas [escolhido](roles/workstation/tasks/i3.yml)
+O [i3][i3-wm] é o gerenciador de janelas [escolhido](roles/i3/tasks/main.yml)
 para esse projeto. Use a tag `i3` para as tarefas relacionadas.
 
 [i3-wm]: https://i3wm.org/
