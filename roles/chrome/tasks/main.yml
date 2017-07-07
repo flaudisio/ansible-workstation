@@ -1,4 +1,12 @@
 ---
+- name: Cancela se arquitetura do sistema não for x64
+  fail:
+    msg: >
+      Fatal: o Chrome 32 bits foi descontinuado para o Linux em Março de 2016.
+      Desculpe, seu sistema não é compatível.
+      Dica: o Chromium ainda é uma opção para sistemas 32 bits.
+  when: ansible_architecture != "x86_64"
+
 # O Chrome é instalado via download direto do .deb porque ele mantém um cron
 # ("/opt/google/chrome/cron/google-chrome") que manipula diretamente o arquivo
 # "/etc/apt/sources.list.d/google-chrome.list". Logo, prefiro não manipular
