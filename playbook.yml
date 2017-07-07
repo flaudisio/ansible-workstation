@@ -20,8 +20,8 @@
       tags: vagrant
     - role: spotify
       tags: spotify
-    - role: postgres
-      tags: postgres
+    - role: postgres-repo
+      tags: postgres-repo
     - role: docker
       tags: docker
       docker_install_compose: true
