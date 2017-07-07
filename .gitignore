@@ -1,2 +1,5 @@
 # Ansible
 *.retry
+
+# Roles externas
+roles/docker

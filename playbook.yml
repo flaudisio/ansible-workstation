@@ -1,7 +1,12 @@
 ---
-- name: Provisionamento deste computador, powered by Ansible
+- name: Provisionamento de uma workstation
   hosts: localhost
   connection: local
 
   roles:
-    - workstation
+    - role: workstation
+      tags: workstation
+    - role: docker
+      tags: docker
+      docker_install_compose: true
+      docker_compose_version: "1.14.0"
