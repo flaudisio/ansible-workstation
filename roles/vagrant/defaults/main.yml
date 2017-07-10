@@ -10,4 +10,4 @@
 vagrant_version: "1.9.5"
 
 # Exemplo: plugin1,plugin2,plugin3
-vagrant_plugins: vagrant-hostsupdater
+vagrant_plugins: vagrant-digitalocean,vagrant-hostsupdater
