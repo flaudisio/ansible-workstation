@@ -19,3 +19,14 @@
   become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
   changed_when: false
   tags: vagrant:plugins
+
+- name: Configura sudoers para vagrant-hostsupdater
+  copy:
+    src: vagrant-hostsupdater.sudoers
+    dest: /etc/sudoers.d/vagrant-hostsupdater
+    owner: root
+    group: root
+    mode: 0440
+    validate: "visudo -cf %s"
+  when: "'vagrant-hostsupdater' in vagrant_plugins.split(',')"
+  tags: vagrant:plugins
