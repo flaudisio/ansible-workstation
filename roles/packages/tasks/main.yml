@@ -61,8 +61,8 @@
     state: present
     install_recommends: no
   with_items: "{{ pkg_extra.strip(',').split(',') }}"
-  tags: pkg:extra
   when: pkg_extra != ""
+  tags: pkg:extra
 
 # Git (instalado à parte por usar PPA)
 

@@ -6,7 +6,7 @@
 
 - name: Define variável do diretório de instalação
   set_fact:
-    _dotfiles_dir: "{{ dotfiles_dir | default(lookup('env', 'HOME') + '/.rc') }}"
+    _dotfiles_dir: "{{ dotfiles_dir | default(dotfiles_home + '/.rc') }}"
 
 - name: Cria diretório de instalação
   file:

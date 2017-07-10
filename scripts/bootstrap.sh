@@ -20,7 +20,6 @@ main()
     fi
 
     ansible --version
-
     ansible-galaxy install -r requirements.yml -p roles/
 }
 
