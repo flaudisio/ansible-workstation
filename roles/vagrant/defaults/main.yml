@@ -9,5 +9,5 @@
 
 vagrant_version: "1.9.5"
 
-vagrant_plugins:
-  - vagrant-hostsupdater
+# Exemplo: plugin1,plugin2,plugin3
+vagrant_plugins: vagrant-hostsupdater
