@@ -1,0 +1,20 @@
+---
+- name: Verifica se Terraform {{ terraform_version }} está instalado
+  shell: terraform version || true
+  register: check_terraform
+  changed_when: false
+
+- name: Instala Terraform
+  unarchive:
+    remote_src: true
+    src: "{{ terraform_dl_url }}"
+    dest: "{{ terraform_install_dir }}"
+  when: terraform_version not in check_terraform.stdout_lines[0]
+
+- name: Assegura permissões corretas do executável do Terraform
+  file:
+    path: "{{ terraform_path }}"
+    owner: root
+    group: root
+    mode: 0755
+    state: file

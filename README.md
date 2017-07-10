@@ -114,7 +114,7 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
   - [ ] [jq](https://github.com/stedolan/jq/releases)
   - [ ] [doctl](https://github.com/digitalocean/doctl/releases)
-  - [ ] [Terraform](https://www.terraform.io/downloads.html)
+  - [x] [Terraform](https://www.terraform.io/downloads.html)
 
 - Configurações sensíveis
   - [ ] `.ssh/config` (pessoal e do trabalho)

@@ -26,3 +26,5 @@
       tags: docker
       docker_install_compose: true
       docker_compose_version: "1.14.0"
+    - role: terraform
+      tags: terraform
