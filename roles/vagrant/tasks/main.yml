@@ -1,5 +1,5 @@
 ---
-- name: Verifica se Vagrant está instalado
+- name: Verifica se Vagrant {{ vagrant_version }} está instalado
   shell: dpkg-query --showformat='${Version}' --show vagrant || true
   register: check_vagrant
   changed_when: false
