@@ -9,7 +9,9 @@
     remote_src: true
     src: "{{ terraform_dl_url }}"
     dest: "{{ terraform_install_dir }}"
-  when: terraform_version not in check_terraform.stdout_lines[0]
+  when: >
+    check_terraform.stdout_lines | length == 0
+    or terraform_version not in check_terraform.stdout_lines[0]
 
 - name: Assegura permissões corretas do executável do Terraform
   file:
