@@ -20,7 +20,7 @@ main()
     fi
 
     ansible --version
-    ansible-galaxy install -r requirements.yml -p roles/
+    ansible-galaxy install --force -r requirements.yml -p roles/
 }
 
 echo "Starting in 3 seconds..."
