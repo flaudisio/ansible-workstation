@@ -37,7 +37,7 @@
   changed_when: false
   tags: vbox:extpack
 
-- name: Baixa Entension Pack
+- name: Baixa Extension Pack
   get_url:
     url: "{{ vbox_extpack_url }}"
     dest: "{{ vbox_extpack_dl_file }}"
