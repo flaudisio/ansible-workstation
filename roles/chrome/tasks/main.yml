@@ -17,14 +17,9 @@
   register: check_chrome
   changed_when: false
 
-- name: Define variável de status de instalação do Chrome
-  set_fact:
-    chrome_not_installed: 1
-  when: "'no packages found matching' in check_chrome.stderr"
-
 # Tarefas de instalação
 - include: install-deb.yml
-  when: chrome_not_installed is defined
+  when: "'no packages found matching' in check_chrome.stderr"
 
 # O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
 # (aparentemente ele se considera o último biscoito do pacote).
