@@ -1,12 +1,9 @@
 ---
-- name: Define variáveis de usuário e $HOME
+- name: Define variáveis de usuário, $HOME e diretório de instalação
   set_fact:
     _dotfiles_user: "{{ dotfiles_user | default(lookup('env', 'USER')) }}"
     _dotfiles_home: "{{ dotfiles_home | default(lookup('env', 'HOME')) }}"
-
-- name: Define variável do diretório de instalação
-  set_fact:
-    _dotfiles_dir: "{{ dotfiles_dir | default(dotfiles_home + '/.rc') }}"
+    _dotfiles_dir: "{{ dotfiles_dir | default(lookup('env', 'HOME') + '/.rc') }}"
 
 - name: Cria diretório de instalação
   file:
