@@ -7,10 +7,10 @@ regulares deverão ocorrer nas próximas semanas.
 
 ## Compatibilidade
 
-As roles foram criadas para o **Ubuntu 16.04 (amd64)** – mais precisamente uma
-instalação mínima via [Netboot][netboot] com _Standard system utilities_ e _xubuntu-core_.
+As roles foram criadas para o **Ubuntu 16.04 (amd64)** instalado via [Netboot][netboot],
+porém devem ser compatíveis com qualquer Ubuntu 16.04 (ou mesmo mais recentes).
 
-Ainda assim, leia as tasks antes de usar; algumas são específicas para meu uso.
+De qualquer forma, leia as tasks e execute com cautela para evitar problemas em seu sistema.
 
 [netboot]: http://cdimage.ubuntu.com/netboot/xenial/
 
@@ -34,7 +34,7 @@ Observe que:
 
 - As opções `-b` e `-K` são, respectivamente, `--become` e `--ask-become-pass`;
 - O playbook provisiona a própria máquina ([`connection: local`](playbook.yml)),
-  assumindo um usuário com permissão de `sudo`, como em uma típica instalação do
+  assumindo um usuário com permissão de `sudo`, como em uma instalação típica do
   Ubuntu;
 - Tarefas como a instalação de "dotfiles" são executadas pelo usuário que executou
   o Ansible. Por exemplo, o `.bashrc` será instalado em `/home/usuario` em vez de
