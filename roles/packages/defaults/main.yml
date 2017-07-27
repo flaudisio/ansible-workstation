@@ -33,6 +33,7 @@ pkg_sysadmin:
   - htop
   - iotop
   - iptraf-ng
+  - lm-sensors
   - lshw
   - lsof
   - mtr-tiny
