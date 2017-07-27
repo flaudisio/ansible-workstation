@@ -16,7 +16,7 @@
 - name: Baixa e extrai Franz
   unarchive:
     remote_src: true
-    src: https://github.com/meetfranz/franz-app/releases/download/{{ franz_version }}/Franz-linux-x64-4.0.4.tgz
+    src: https://github.com/meetfranz/franz-app/releases/download/{{ franz_version }}/Franz-linux-x64-{{ franz_version }}.tgz
     dest: "{{ franz_install_dir }}"
     owner: root
     group: root
