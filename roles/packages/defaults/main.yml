@@ -42,6 +42,7 @@ pkg_sysadmin:
   - openssh-client
   - openssh-server
   - rsync
+  - traceroute
   - whois
 
 pkg_media:
@@ -61,6 +62,7 @@ pkg_misc:
   - firefox
   - ipcalc
   - keepassx
+  - makepasswd
   - multitail
   - p7zip
   - p7zip-full
@@ -71,6 +73,8 @@ pkg_misc:
   - remmina-plugin-rdp
   - remmina-plugin-vnc
   - libfreerdp-plugins-standard
+  - thunar
+  - thunar-archive-plugin
   - transmission-gtk
   - unar
   - unrar
