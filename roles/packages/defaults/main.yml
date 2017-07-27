@@ -62,6 +62,8 @@ pkg_misc:
   - firefox
   - ipcalc
   - keepassx
+  - lxappearance
+  - gtk2-engines
   - makepasswd
   - multitail
   - p7zip
