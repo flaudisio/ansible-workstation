@@ -165,7 +165,7 @@ mode "resize" {
 bindsym $Win+r mode "resize"
 
 # Lock screen
-bindsym Control+$Alt+L exec --no-startup-id i3lock
+bindsym Control+$Alt+L exec --no-startup-id i3lock --color=01173a
 
 # Hotkeys
 # Ref: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
