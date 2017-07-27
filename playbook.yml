@@ -6,8 +6,8 @@
   roles:
     - role: packages
       tags: pkg
-    - role: alternatives
-      tags: alternatives
+    - role: base-system
+      tags: base
     - role: dotfiles
       tags: [dotfiles, rc]
     - role: i3
