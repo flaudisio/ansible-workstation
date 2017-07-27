@@ -1,3 +1,5 @@
+# Gerenciado via Ansible
+
 # Allow passwordless startup of Vagrant with vagrant-hostsupdater.
 Cmnd_Alias VAGRANT_HOSTS_ADD = /bin/sh -c echo "*" >> /etc/hosts
 Cmnd_Alias VAGRANT_HOSTS_REMOVE = /bin/sed -i -e /*/ d /etc/hosts
