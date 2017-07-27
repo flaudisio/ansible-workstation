@@ -17,6 +17,17 @@
   notify: Reinicia SSH
   tags: base:ssh
 
+- name: Desativa usuário Guest do LightDM
+  copy:
+    content: |
+      [Seat:*]
+      allow-guest=false
+    dest: /etc/lightdm/lightdm.conf.d/50-no-guest.conf
+    owner: root
+    group: root
+    mode: 0644
+  tags: base:lightdm
+
 - name: Configura alternatives
   alternatives:
     name: "{{ item.name }}"
