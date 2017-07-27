@@ -28,6 +28,16 @@
     mode: 0644
   tags: base:lightdm
 
+- name: Configura insultos do sudo
+  copy:
+    content: "Defaults  insults\n"
+    dest: /etc/sudoers.d/insults
+    owner: root
+    group: root
+    mode: 0440
+    validate: "visudo -cf %s"
+  tags: base:sudo
+
 - name: Configura alternatives
   alternatives:
     name: "{{ item.name }}"
