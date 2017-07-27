@@ -1,0 +1,18 @@
+---
+- name: Instala .deb com keyring
+  apt:
+    deb: "{{ i3_keyring_deb }}"
+    state: present
+
+- name: Configura repositório
+  apt_repository:
+    repo: "{{ i3_repo_line }}"
+    filename: "{{ i3_repo_file }}"
+    state: present
+    update_cache: yes
+
+- name: Instala i3
+  apt:
+    name: i3
+    state: present
+    install_recommends: yes

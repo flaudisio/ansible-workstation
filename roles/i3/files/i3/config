@@ -1,0 +1,191 @@
+#
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+#
+
+set $Alt Mod1
+set $Win Mod4
+
+# Font for window titles. Will also be used by the bar unless a different font
+# is used in the bar {} block below.
+# font pango:monospace 8
+
+# This font is widely installed, provides lots of unicode glyphs, right-to-left
+# text rendering and scalability on retina/hidpi displays (thanks to pango).
+# font pango:DejaVu Sans Mono 8
+font pango:Ubuntu Mono 10
+
+# Use Mouse+$Win to drag floating windows to their wanted position
+floating_modifier $Alt
+
+# start a terminal
+bindsym $Win+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $Win+Shift+q kill
+
+# dmenu
+bindsym $Alt+F1 exec dmenu_run
+
+# i3-dmenu-desktop - only displays applications shipping a .desktop file
+# bindsym $Alt+F1 exec --no-startup-id i3-dmenu-desktop
+
+# borders
+hide_edge_borders smart
+
+# change focus
+bindsym $Win+j focus left
+bindsym $Win+k focus down
+bindsym $Win+l focus up
+bindsym $Win+ccedilla focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $Win+Left focus left
+bindsym $Win+Down focus down
+bindsym $Win+Up focus up
+bindsym $Win+Right focus right
+
+# move focused window
+bindsym $Win+Shift+j move left
+bindsym $Win+Shift+k move down
+bindsym $Win+Shift+l move up
+bindsym $Win+Shift+ccedilla move right
+
+# alternatively, you can use the cursor keys:
+bindsym $Win+Shift+Left move left
+bindsym $Win+Shift+Down move down
+bindsym $Win+Shift+Up move up
+bindsym $Win+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $Win+h split h
+
+# split in vertical orientation
+bindsym $Win+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $Win+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $Win+s layout stacking
+bindsym $Win+w layout tabbed
+bindsym $Win+q layout toggle split
+
+# toggle tiling / floating
+bindsym $Win+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $Win+space focus mode_toggle
+
+# focus the parent container
+bindsym $Win+a focus parent
+
+# focus the child container
+# bindsym $Win+d focus child
+
+# automatic back-and-forth
+workspace_auto_back_and_forth yes
+
+# switch to next/previous workspace
+bindsym Control+$Win+Right workspace next
+bindsym Control+$Win+Left  workspace prev
+
+# switch to workspace (see next block)
+bindsym $Win+1 workspace 1: term
+bindsym $Win+2 workspace 2: www
+bindsym $Win+3 workspace 3: im
+bindsym $Win+4 workspace 4: media
+bindsym $Win+5 workspace 5
+bindsym $Win+6 workspace 6
+bindsym $Win+7 workspace 7
+bindsym $Win+8 workspace 8
+bindsym $Win+9 workspace 9
+bindsym $Win+0 workspace 10
+
+# move focused container to workspace (see previous block)
+bindsym $Win+Shift+1 move container to workspace 1: term
+bindsym $Win+Shift+2 move container to workspace 2: www
+bindsym $Win+Shift+3 move container to workspace 3: im
+bindsym $Win+Shift+4 move container to workspace 4: media
+bindsym $Win+Shift+5 move container to workspace 5
+bindsym $Win+Shift+6 move container to workspace 6
+bindsym $Win+Shift+7 move container to workspace 7
+bindsym $Win+Shift+8 move container to workspace 8
+bindsym $Win+Shift+9 move container to workspace 9
+bindsym $Win+Shift+0 move container to workspace 10
+
+# monitores
+# bindsym $Win+Shift+p exec xrandr --output VGA1 --off
+# bindsym $Win+p       exec xrandr --output VGA1 --auto --right-of LVDS1
+bindsym $Win+p exec --no-startup-id "test -x ~/bin/display-config.sh && ~/bin/display-config.sh"
+
+# move workspaces
+bindsym Control+$Alt+Left  move workspace to output left
+bindsym Control+$Alt+Right move workspace to output right
+
+# assign apps to workspaces
+assign [class="Firefox"]       2: www
+assign [class="Google-chrome"] 2: www
+assign [class="Spotify"]       4: media
+
+# reload the configuration file
+bindsym $Win+Shift+c reload
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $Win+Shift+r restart
+
+# exit i3 (logs you out of your X session)
+bindsym $Win+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+    # These bindings trigger as soon as you enter the resize mode
+
+    # Pressing left will shrink the window’s width.
+    # Pressing right will grow the window’s width.
+    # Pressing up will shrink the window’s height.
+    # Pressing down will grow the window’s height.
+    bindsym j resize shrink width 10 px or 10 ppt
+    bindsym k resize grow height 10 px or 10 ppt
+    bindsym l resize shrink height 10 px or 10 ppt
+    bindsym ccedilla resize grow width 10 px or 10 ppt
+
+    # same bindings, but for the arrow keys
+    bindsym Left resize shrink width 10 px or 10 ppt
+    bindsym Down resize grow height 10 px or 10 ppt
+    bindsym Up resize shrink height 10 px or 10 ppt
+    bindsym Right resize grow width 10 px or 10 ppt
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
+bindsym $Win+r mode "resize"
+
+# Lock screen
+bindsym Control+$Alt+L exec --no-startup-id i3lock
+
+# Hotkeys
+# Ref: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
+
+# Apps
+bindsym $Win+e exec thunar
+
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        position top
+        status_command i3status
+        # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+}
