@@ -102,8 +102,8 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] Scripts (GH: `flaudisio/scripts`)
 
 - Software
-  - [ ] [Mattermost](https://docs.mattermost.com/install/desktop.html#ubuntu-and-debian-based-systems)
-  - [ ] [Rambox](http://rambox.pro/#download)
+  - [x] [Mattermost](https://docs.mattermost.com/install/desktop.html#ubuntu-and-debian-based-systems)
+  - [x] [Franz](http://meetfranz.com/#download)
   - [ ] [MEGAsync](https://mega.nz/sync)
   - [x] Docker
   - [x] Docker Compose

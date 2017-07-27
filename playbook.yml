@@ -20,6 +20,8 @@
       tags: vagrant
     - role: mattermost
       tags: mattermost
+    - role: franz
+      tags: franz
     - role: spotify
       tags: spotify
     - role: postgres-repo
