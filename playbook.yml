@@ -18,6 +18,8 @@
       tags: vbox
     - role: vagrant
       tags: vagrant
+    - role: mattermost
+      tags: mattermost
     - role: spotify
       tags: spotify
     - role: postgres-repo

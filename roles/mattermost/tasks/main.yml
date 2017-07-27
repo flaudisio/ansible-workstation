@@ -1,0 +1,13 @@
+---
+# Formato de versão do pacote: "X.Y.Z-X.Y.Z"
+# Exemplo: "3.7.0-3.7.0"
+- name: Verifica se Mattermost {{ mattermost_version }} está instalado
+  shell: dpkg-query --showformat='${Version}' --show mattermost-desktop || true
+  register: check_mattermost
+  changed_when: false
+
+- name: Instala Mattermost
+  apt:
+    deb: https://releases.mattermost.com/desktop/{{ mattermost_version }}/mattermost-desktop-{{ mattermost_version }}-linux-amd64.deb
+    state: present
+  when: mattermost_version not in check_mattermost.stdout.split('-')
