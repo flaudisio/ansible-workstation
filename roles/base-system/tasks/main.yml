@@ -8,6 +8,15 @@
     reload: yes
   tags: base:sysctl
 
+- name: Configura porta do SSH
+  lineinfile:
+    path: /etc/ssh/sshd_config
+    regexp: "^Port "
+    line: "Port {{ base_ssh_port }}"
+    validate: "sshd -t -f %s"
+  notify: Reinicia SSH
+  tags: base:ssh
+
 - name: Configura alternatives
   alternatives:
     name: "{{ item.name }}"
