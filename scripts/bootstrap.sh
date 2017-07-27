@@ -16,7 +16,7 @@ main()
     if ! dpkg-query --show ansible ; then
         sudo add-apt-repository --yes ppa:ansible/ansible
         sudo apt update
-        sudo apt install --no-install-recommends ansible
+        sudo apt install --no-install-recommends --yes ansible
     fi
 
     ansible --version
