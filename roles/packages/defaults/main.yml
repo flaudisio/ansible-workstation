@@ -43,10 +43,13 @@ pkg_sysadmin:
   - openssh-client
   - openssh-server
   - rsync
+  - system-config-printer-gnome
+  - system-config-printer-udev
   - traceroute
   - whois
 
 pkg_media:
+  - fonts-roboto
   - gimp
   - pavucontrol
   - shotwell
@@ -55,9 +58,8 @@ pkg_media:
 
 pkg_misc:
   - atool
+  - colordiff
   - cups-pdf
-  - system-config-printer-gnome
-  - system-config-printer-udev
   - evince
   - file-roller
   - firefox
