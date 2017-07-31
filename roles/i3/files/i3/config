@@ -124,8 +124,11 @@ bindsym Control+$Alt+Left  move workspace to output left
 bindsym Control+$Alt+Right move workspace to output right
 
 # assign apps to workspaces
+# run "xprop", click in a window and search for e.g. 'WM_CLASS(STRING) = "Navigator", "Firefox"'
 assign [class="Firefox"]       2: www
 assign [class="Google-chrome"] 2: www
+assign [class="Franz"]         3: im
+assign [class="Mattermost"]    3: im
 assign [class="Spotify"]       4: media
 
 # reload the configuration file
