@@ -32,3 +32,5 @@
       docker_compose_version: "1.14.0"
     - role: terraform
       tags: terraform
+    - role: borg
+      tags: borg

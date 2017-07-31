@@ -1,0 +1,16 @@
+---
+- name: Verifica se Borg {{ borg_version }} está instalado
+  shell: borg --version || true
+  register: check_borg
+  changed_when: false
+
+- name: Instala Borg
+  get_url:
+    url: "{{ borg_dl_url }}"
+    dest: "{{ borg_path }}"
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    check_borg.stdout_lines | length == 0
+    or borg_version not in check_borg.stdout_lines[0]
