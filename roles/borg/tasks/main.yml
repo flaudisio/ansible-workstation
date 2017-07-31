@@ -8,6 +8,7 @@
   get_url:
     url: "{{ borg_dl_url }}"
     dest: "{{ borg_path }}"
+    checksum: sha256:{{ borg_sha256 }}
     owner: root
     group: root
     mode: 0755

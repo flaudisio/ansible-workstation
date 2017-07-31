@@ -4,4 +4,6 @@ borg_version: "1.0.10"
 borg_dl_url: >
   https://github.com/borgbackup/borg/releases/download/{{ borg_version }}/borg-linux{% if ansible_architecture == 'x86_64' %}64{% else %}32{% endif %}
 
+borg_sha256: 99f889e57630e64a67d0c1a54c056f8d82aac1ccc2cc56c9fb5f5f2710f29950
+
 borg_path: /usr/local/bin/borg
