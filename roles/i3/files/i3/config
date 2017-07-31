@@ -93,7 +93,7 @@ bindsym Control+$Win+Left  workspace prev
 # switch to workspace (see next block)
 bindsym $Win+1 workspace 1: term
 bindsym $Win+2 workspace 2: www
-bindsym $Win+3 workspace 3: im
+bindsym $Win+3 workspace 3: im/mail
 bindsym $Win+4 workspace 4: media
 bindsym $Win+5 workspace 5
 bindsym $Win+6 workspace 6
@@ -105,7 +105,7 @@ bindsym $Win+0 workspace 10
 # move focused container to workspace (see previous block)
 bindsym $Win+Shift+1 move container to workspace 1: term
 bindsym $Win+Shift+2 move container to workspace 2: www
-bindsym $Win+Shift+3 move container to workspace 3: im
+bindsym $Win+Shift+3 move container to workspace 3: im/mail
 bindsym $Win+Shift+4 move container to workspace 4: media
 bindsym $Win+Shift+5 move container to workspace 5
 bindsym $Win+Shift+6 move container to workspace 6
@@ -127,8 +127,9 @@ bindsym Control+$Alt+Right move workspace to output right
 # run "xprop", click in a window and search for e.g. 'WM_CLASS(STRING) = "Navigator", "Firefox"'
 assign [class="Firefox"]       2: www
 assign [class="Google-chrome"] 2: www
-assign [class="Franz"]         3: im
-assign [class="Mattermost"]    3: im
+assign [class="Franz"]         3: im/mail
+assign [class="Mattermost"]    3: im/mail
+assign [class="Thunderbird"]   3: im/mail
 assign [class="Spotify"]       4: media
 
 # reload the configuration file
