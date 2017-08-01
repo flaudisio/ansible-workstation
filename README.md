@@ -44,6 +44,7 @@ Observe que:
 ## Roles externas
 
 - [geerlingguy.docker](https://github.com/geerlingguy/ansible-role-docker)
+- [jdauphant.nginx](https://github.com/jdauphant/ansible-role-nginx)
 
 ## Execução de tarefas específicas
 

@@ -1,0 +1,11 @@
+---
+nginx_official_repo: true
+
+nginx_sites:
+  default:
+    - listen 80 default_server
+    - server_name _
+    - root /var/www
+    - autoindex on
+    # - error_log   /var/log/nginx/default.error.log   warn
+    # - access_log  /var/log/nginx/default.access.log  main
