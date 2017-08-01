@@ -16,3 +16,9 @@
     name: i3
     state: present
     install_recommends: yes
+
+- name: Instala i3blocks
+  apt:
+    name: i3blocks
+    state: present
+    install_recommends: no
