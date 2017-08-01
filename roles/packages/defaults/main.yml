@@ -26,6 +26,7 @@ pkg_dev:
   - vim
 
 pkg_sysadmin:
+  - cifs-utils
   - gdebi-core
   - gnome-disk-utility
   - cracklib-runtime
@@ -63,6 +64,7 @@ pkg_misc:
   - evince
   - file-roller
   - firefox
+  - gvfs-backends
   - ipcalc
   - keepassx
   - libreoffice-calc
