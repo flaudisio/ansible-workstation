@@ -130,7 +130,9 @@ assign [class="Google-chrome"] 2: www
 assign [class="Franz"]         3: im/mail
 assign [class="Mattermost"]    3: im/mail
 assign [class="Thunderbird"]   3: im/mail
-assign [class="Spotify"]       4: media
+
+# https://www.reddit.com/r/i3wm/comments/5oxosf/assigning_spotify_to_a_workspace/dcnwxcg/
+for_window [class="Spotify"] move to workspace "4: media"
 
 # reload the configuration file
 bindsym $Win+Shift+c reload
@@ -165,7 +167,7 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 
-bindsym $Win+r mode "resize"
+bindsym $Win+t mode "resize"
 
 # Lock screen
 bindsym Control+$Alt+L exec --no-startup-id i3lock --color=01173a
@@ -184,6 +186,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
 # Apps
 bindsym $Win+e exec thunar
+bindsym $Win+r exec spotify
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
