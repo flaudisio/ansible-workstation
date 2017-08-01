@@ -65,6 +65,11 @@ pkg_misc:
   - firefox
   - ipcalc
   - keepassx
+  - libreoffice-calc
+  - libreoffice-writer
+  - libreoffice-gtk3
+  - libreoffice-style-tango
+  - tango-icon-theme
   - lxappearance
   - gtk2-engines
   - makepasswd
