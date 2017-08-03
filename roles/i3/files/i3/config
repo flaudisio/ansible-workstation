@@ -66,6 +66,9 @@ bindsym $Win+v split v
 # enter fullscreen mode for the focused container
 bindsym $Win+f fullscreen toggle
 
+# default container layout (on workspace level)
+workspace_layout stacking
+
 # change container layout (stacked, tabbed, toggle split)
 bindsym $Win+s layout stacking
 bindsym $Win+w layout tabbed
