@@ -53,6 +53,7 @@ pkg_media:
   - fonts-roboto
   - gimp
   - pavucontrol
+  - ristretto
   - shotwell
   - vlc
   - vlc-plugin-notify
