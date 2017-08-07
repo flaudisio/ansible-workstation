@@ -90,8 +90,8 @@ bindsym $Win+a focus parent
 workspace_auto_back_and_forth yes
 
 # switch to next/previous workspace
-bindsym Control+$Win+Right workspace next
-bindsym Control+$Win+Left  workspace prev
+bindsym $Win+$Alt+Right workspace next
+bindsym $Win+$Alt+Left  workspace prev
 
 # Workspace names
 set $WS1 "1: term"
@@ -188,6 +188,17 @@ bindsym Control+$Alt+L exec --no-startup-id i3lock --color=01173a
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Spotify controls
+bindsym XF86AudioPlay  exec --no-startup-id spotify-ctl.sh PlayPause
+bindsym XF86AudioPause exec --no-startup-id spotify-ctl.sh PlayPause
+bindsym XF86AudioNext  exec --no-startup-id spotify-ctl.sh Next
+bindsym XF86AudioPrev  exec --no-startup-id spotify-ctl.sh Previous
+
+# Spotify controls (alternative, no multimedia keys)
+bindsym Control+$Win+Insert exec --no-startup-id spotify-ctl.sh PlayPause
+bindsym Control+$Win+Right  exec --no-startup-id spotify-ctl.sh Next
+bindsym Control+$Win+Left   exec --no-startup-id spotify-ctl.sh Previous
 
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20

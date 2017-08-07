@@ -92,6 +92,7 @@ pkg_misc:
   - unar
   - unrar
   - unzip
+  - wmctrl
   - xclip
   - zenity
 
