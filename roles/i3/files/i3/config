@@ -206,7 +206,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 
 # Apps
 bindsym $Win+e exec thunar
-bindsym $Win+r exec spotify
+bindsym $Win+r exec spotify-ctl.sh Start
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
