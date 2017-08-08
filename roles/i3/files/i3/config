@@ -184,10 +184,14 @@ bindsym Control+$Alt+L exec --no-startup-id i3lock --color=01173a
 # Hotkeys
 # Ref: https://faq.i3wm.org/question/3747/enabling-multimedia-keys.1.html
 
-# Pulse Audio controls
+# Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
+
+# Audio controls (alternative, no multimedia keys)
+bindsym Control+$Win+Up   exec --no-startup-id pactl set-sink-volume 0 +5%
+bindsym Control+$Win+Down exec --no-startup-id pactl set-sink-volume 0 -5%
 
 # Spotify controls
 bindsym XF86AudioPlay  exec --no-startup-id spotify-ctl.sh PlayPause
