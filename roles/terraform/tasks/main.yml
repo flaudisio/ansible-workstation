@@ -1,7 +1,7 @@
 ---
 - name: Verifica se Terraform {{ terraform_version }} está instalado
   shell: terraform version || true
-  register: check_terraform
+  register: terraform_check
   changed_when: false
 
 - name: Instala Terraform
@@ -10,8 +10,8 @@
     src: "{{ terraform_dl_url }}"
     dest: "{{ terraform_install_dir }}"
   when: >
-    check_terraform.stdout_lines | length == 0
-    or terraform_version not in check_terraform.stdout_lines[0]
+    terraform_check.stdout_lines | length == 0
+    or terraform_version not in terraform_check.stdout_lines[0]
 
 - name: Assegura permissões corretas do executável do Terraform
   file:

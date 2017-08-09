@@ -14,12 +14,12 @@
 
 - name: Verifica se Chrome está instalado
   shell: dpkg-query --show google-chrome-stable || true
-  register: check_chrome
+  register: chrome_check
   changed_when: false
 
 # Tarefas de instalação
 - include: install-deb.yml
-  when: "'no packages found matching' in check_chrome.stderr"
+  when: "'no packages found matching' in chrome_check.stderr"
 
 # O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
 # (aparentemente ele se considera o último biscoito do pacote).

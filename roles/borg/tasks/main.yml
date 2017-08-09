@@ -1,7 +1,7 @@
 ---
 - name: Verifica se Borg {{ borg_version }} está instalado
   shell: borg --version || true
-  register: check_borg
+  register: borg_check
   changed_when: false
 
 - name: Instala Borg
@@ -13,5 +13,5 @@
     group: root
     mode: 0755
   when: >
-    check_borg.stdout_lines | length == 0
-    or borg_version not in check_borg.stdout_lines[0]
+    borg_check.stdout_lines | length == 0
+    or borg_version not in borg_check.stdout_lines[0]

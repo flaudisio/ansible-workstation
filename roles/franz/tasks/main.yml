@@ -2,7 +2,7 @@
 - name: Verifica se Franz {{ franz_version }} está instalado
   stat:
     path: "{{ franz_install_dir }}"
-  register: check_franz
+  register: franz_check
 
 - name: Cria diretório de instalação
   file:
@@ -11,7 +11,7 @@
     owner: root
     group: root
     mode: 0755
-  when: not check_franz.stat.exists
+  when: not franz_check.stat.exists
 
 - name: Baixa e extrai Franz
   unarchive:
@@ -20,7 +20,7 @@
     dest: "{{ franz_install_dir }}"
     owner: root
     group: root
-  when: not check_franz.stat.exists
+  when: not franz_check.stat.exists
 
 - name: Configura link simbólico do executável
   alternatives:
