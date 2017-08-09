@@ -48,6 +48,7 @@ pkg_sysadmin:
   - system-config-printer-udev
   - traceroute
   - whois
+  - xfce4-power-manager
 
 pkg_media:
   - fonts-roboto

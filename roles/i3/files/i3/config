@@ -212,6 +212,9 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 bindsym $Win+e exec thunar
 bindsym $Win+r exec spotify-ctl.sh Start
 
+# Apps on startup
+exec_always --no-startup-id xfce4-power-manager
+
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
