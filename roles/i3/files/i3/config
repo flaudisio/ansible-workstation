@@ -135,13 +135,14 @@ bindsym Control+$Alt+Right move workspace to output right
 
 # assign apps to workspaces
 # run "xprop", click in a window and search for e.g. 'WM_CLASS(STRING) = "Navigator", "Firefox"'
-assign [class="Firefox"]       $WS2
-assign [class="Google-chrome"] $WS2
-assign [class="Franz"]         $WS3
-assign [class="Mattermost"]    $WS3
-assign [class="Thunderbird"]   $WS3
-assign [class="Remmina"]       $WS5
-assign [class="VirtualBox"]    $WS5
+assign [class="Xfce4-terminal"] $WS1
+assign [class="Firefox"]        $WS2
+assign [class="Google-chrome"]  $WS2
+assign [class="Franz"]          $WS3
+assign [class="Mattermost"]     $WS3
+assign [class="Thunderbird"]    $WS3
+assign [class="Remmina"]        $WS5
+assign [class="VirtualBox"]     $WS5
 
 # https://www.reddit.com/r/i3wm/comments/5oxosf/assigning_spotify_to_a_workspace/dcnwxcg/
 for_window [class="Spotify"] move to workspace $WS4
