@@ -95,7 +95,7 @@ bindsym $Win+$Alt+Left  workspace prev
 
 # Workspace names
 set $WS1 "1: term"
-set $WS2 "2: www"
+set $WS2 "2: misc"
 set $WS3 "3: im/mail"
 set $WS4 "4: media"
 set $WS5 "5: machines"
