@@ -97,8 +97,8 @@ bindsym $Win+$Alt+Left  workspace prev
 set $WS1 "1: term"
 set $WS2 "2: misc"
 set $WS3 "3: im/mail"
-set $WS4 "4: media"
-set $WS5 "5: machines"
+set $WS4 "4: machines"
+set $WS5 "5: media"
 
 # switch to workspace (see next block)
 bindsym $Win+1 workspace $WS1
@@ -141,11 +141,11 @@ assign [class="Google-chrome"]  $WS2
 assign [class="Franz"]          $WS3
 assign [class="Mattermost"]     $WS3
 assign [class="Thunderbird"]    $WS3
-assign [class="Remmina"]        $WS5
-assign [class="VirtualBox"]     $WS5
+assign [class="Remmina"]        $WS4
+assign [class="VirtualBox"]     $WS4
 
 # https://www.reddit.com/r/i3wm/comments/5oxosf/assigning_spotify_to_a_workspace/dcnwxcg/
-for_window [class="Spotify"] move to workspace $WS4
+for_window [class="Spotify"] move to workspace $WS5
 
 # reload the configuration file
 bindsym $Win+Shift+c reload
