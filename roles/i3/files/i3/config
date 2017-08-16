@@ -124,15 +124,6 @@ bindsym $Win+Shift+8 move container to workspace 8
 bindsym $Win+Shift+9 move container to workspace 9
 bindsym $Win+Shift+0 move container to workspace 10
 
-# monitores
-# bindsym $Win+Shift+p exec xrandr --output VGA1 --off
-# bindsym $Win+p       exec xrandr --output VGA1 --auto --right-of LVDS1
-bindsym $Win+p exec --no-startup-id "test -x ~/bin/display-config.sh && ~/bin/display-config.sh"
-
-# move workspaces
-bindsym Control+$Alt+Left  move workspace to output left
-bindsym Control+$Alt+Right move workspace to output right
-
 # assign apps to workspaces
 # run "xprop", click in a window and search for e.g. 'WM_CLASS(STRING) = "Navigator", "Firefox"'
 assign [class="Xfce4-terminal"] $WS1
@@ -146,6 +137,15 @@ assign [class="VirtualBox"]     $WS4
 
 # https://www.reddit.com/r/i3wm/comments/5oxosf/assigning_spotify_to_a_workspace/dcnwxcg/
 for_window [class="Spotify"] move to workspace $WS5
+
+# move workspaces
+bindsym Control+$Alt+Left  move workspace to output left
+bindsym Control+$Alt+Right move workspace to output right
+
+# monitores
+# bindsym $Win+Shift+p exec xrandr --output VGA1 --off
+# bindsym $Win+p       exec xrandr --output VGA1 --auto --right-of LVDS1
+bindsym $Win+p exec --no-startup-id "test -x ~/bin/display-config.sh && ~/bin/display-config.sh"
 
 # reload the configuration file
 bindsym $Win+Shift+c reload
