@@ -29,7 +29,7 @@
     - role: docker
       tags: docker
       docker_install_compose: true
-      docker_compose_version: "1.14.0"
+      docker_compose_version: "1.15.0"
     - role: nginx
       tags: nginx
     - role: terraform
