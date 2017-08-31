@@ -23,7 +23,9 @@
 - name: Instala plugins
   command: vagrant plugin install {{ item }}
   with_items: "{{ vagrant_plugins.split(',') }}"
-  when: item + ' ' not in vagrant_plugin_list.stdout
+  when:
+    vagrant_update_plugins|bool
+    or (item + ' ' not in vagrant_plugin_list.stdout)
   become: yes
   become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
   changed_when: false
