@@ -51,6 +51,8 @@ pkg_sysadmin:
   - xfce4-power-manager
 
 pkg_media:
+  - fonts-dejavu
+  - fonts-dejavu-extra
   - fonts-roboto
   - gimp
   - pavucontrol
