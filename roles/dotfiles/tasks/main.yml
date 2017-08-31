@@ -18,7 +18,7 @@
     repo: https://github.com/flaudisio/rc.git
     dest: "{{ _dotfiles_dir }}"
     version: master
-    update: "{{ dotfiles_update }}"
+    update: "{{ dotfiles_update|bool }}"
   become: yes
   become_user: "{{ _dotfiles_user }}"
 
