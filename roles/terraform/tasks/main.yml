@@ -8,15 +8,10 @@
   unarchive:
     remote_src: true
     src: "{{ terraform_dl_url }}"
-    dest: "{{ terraform_install_dir }}"
-  when: >
-    terraform_check.stdout_lines | length == 0
-    or terraform_version not in terraform_check.stdout_lines[0]
-
-- name: Assegura permissões corretas do executável do Terraform
-  file:
-    path: "{{ terraform_path }}"
+    dest: "{{ terraform_path | dirname }}"
     owner: root
     group: root
     mode: 0755
-    state: file
+  when: >
+    terraform_check.stdout_lines | length == 0
+    or terraform_version not in terraform_check.stdout_lines[0]
