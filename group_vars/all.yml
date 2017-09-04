@@ -1,4 +1,12 @@
 ---
+# Docker
+
+docker_install_compose: true
+
+docker_compose_version: "1.15.0"
+
+# nginx
+
 nginx_official_repo: true
 
 nginx_sites:
