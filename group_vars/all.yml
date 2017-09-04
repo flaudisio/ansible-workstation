@@ -7,6 +7,7 @@ nginx_sites:
     - server_name _
     - root /var/www
     - autoindex on
+    - autoindex_exact_size off
     - autoindex_localtime on
     # - error_log   /var/log/nginx/default.error.log   warn
     # - access_log  /var/log/nginx/default.access.log  main
