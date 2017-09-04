@@ -114,7 +114,7 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] virtualenv, virtualenvwrapper
   - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
   - [x] [jq](https://github.com/stedolan/jq/releases)
-  - [ ] [doctl](https://github.com/digitalocean/doctl/releases)
+  - [x] [doctl](https://github.com/digitalocean/doctl/releases)
   - [x] [Terraform](https://www.terraform.io/downloads.html)
 
 - Configurações sensíveis
