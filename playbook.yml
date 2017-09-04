@@ -32,6 +32,8 @@
       docker_compose_version: "1.15.0"
     - role: nginx
       tags: nginx
+    - role: ctop
+      tags: ctop
     - role: terraform
       tags: terraform
     - role: borg

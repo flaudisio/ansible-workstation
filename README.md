@@ -108,7 +108,7 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] [MEGAsync](https://mega.nz/sync)
   - [x] Docker
   - [x] Docker Compose
-  - [ ] [ctop](https://github.com/bcicen/ctop/releases)
+  - [x] [ctop](https://github.com/bcicen/ctop/releases)
   - [ ] nginx
   - [ ] pip (sistema)
   - [ ] virtualenv, virtualenvwrapper
