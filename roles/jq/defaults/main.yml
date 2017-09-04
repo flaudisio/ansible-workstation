@@ -1,0 +1,6 @@
+---
+jq_version: "1.5"
+
+jq_dl_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-linux64
+
+jq_path: /usr/local/bin/jq

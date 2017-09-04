@@ -1,0 +1,16 @@
+---
+- name: Verifica se jq {{ jq_version }} está instalado
+  shell: jq --version || true
+  register: jq_check
+  changed_when: false
+
+- name: Instala jq
+  get_url:
+    url: "{{ jq_dl_url }}"
+    dest: "{{ jq_path }}"
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    jq_check.stdout_lines | length == 0
+    or jq_version not in jq_check.stdout

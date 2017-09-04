@@ -113,7 +113,7 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
   - [ ] pip (sistema)
   - [ ] virtualenv, virtualenvwrapper
   - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
-  - [ ] [jq](https://github.com/stedolan/jq/releases)
+  - [x] [jq](https://github.com/stedolan/jq/releases)
   - [ ] [doctl](https://github.com/digitalocean/doctl/releases)
   - [x] [Terraform](https://www.terraform.io/downloads.html)
 
