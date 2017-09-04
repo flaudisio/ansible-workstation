@@ -15,3 +15,10 @@
   when: >
     doctl_check.stdout_lines | length == 0
     or doctl_version not in doctl_check.stdout_lines[0]
+
+- name: Configura Bash completion
+  shell: doctl completion bash > /etc/bash_completion.d/doctl
+  changed_when: false
+  when: >
+    doctl_check.stdout_lines | length == 0
+    or doctl_version not in doctl_check.stdout_lines[0]
