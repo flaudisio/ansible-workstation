@@ -40,3 +40,5 @@
       tags: jq
     - role: borg
       tags: borg
+    - role: steam
+      tags: steam
