@@ -85,6 +85,7 @@
     - git
     - git-doc
     - git-gui
+    - gitk
     - qgit
     - tig
   tags:
