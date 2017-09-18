@@ -213,6 +213,11 @@ bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20
 bindsym $Win+e exec thunar
 bindsym $Win+r exec spotify-ctl.sh Start
 
+# PrintScreen
+bindsym --release Print       exec xfce4-screenshooter --fullscreen
+bindsym --release Shift+Print exec xfce4-screenshooter --window
+bindsym --release $WIn+Print  exec xfce4-screenshooter --region
+
 # Apps on startup
 exec_always --no-startup-id xfce4-power-manager
 
