@@ -219,6 +219,7 @@ bindsym --release Shift+Print exec xfce4-screenshooter --window
 bindsym --release $WIn+Print  exec xfce4-screenshooter --region
 
 # Apps on startup
+exec_always --no-startup-id nm-applet
 exec_always --no-startup-id xfce4-power-manager
 
 # Start i3bar to display a workspace bar (plus the system information i3status
