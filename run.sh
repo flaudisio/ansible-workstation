@@ -2,4 +2,4 @@
 
 set -ex
 
-exec ansible-playbook -bK playbook.yml -i inventory.ini "$@"
+ansible-playbook -b -K -v playbook.yml -i inventory.ini "$@"
