@@ -40,5 +40,7 @@
       tags: jq
     - role: borg
       tags: borg
+    - role: megasync
+      tags: megasync
     - role: steam
       tags: steam

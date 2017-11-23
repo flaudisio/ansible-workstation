@@ -105,11 +105,11 @@ Os seguintes programas foram escolhidos ou estão sob avaliação.
 - Software
   - [x] [Mattermost](https://docs.mattermost.com/install/desktop.html#ubuntu-and-debian-based-systems)
   - [x] [Franz](http://meetfranz.com/#download)
-  - [ ] [MEGAsync](https://mega.nz/sync)
+  - [x] [MEGAsync](https://mega.nz/sync)
   - [x] Docker
   - [x] Docker Compose
   - [x] [ctop](https://github.com/bcicen/ctop/releases)
-  - [ ] nginx
+  - [x] nginx
   - [ ] pip (sistema)
   - [ ] virtualenv, virtualenvwrapper
   - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
