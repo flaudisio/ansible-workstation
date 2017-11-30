@@ -4,6 +4,7 @@
     keyserver: keyserver.ubuntu.com
     id: "{{ spotify_repo_key }}"
     state: present
+    keyring: /etc/apt/trusted.gpg.d/spotify.gpg
 
 - name: Configura repositório
   apt_repository:
