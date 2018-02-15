@@ -14,7 +14,7 @@ main()
         software-properties-common
 
     if ! dpkg-query --show ansible ; then
-        sudo add-apt-repository --yes ppa:ansible/ansible
+        sudo add-apt-repository --yes 'ppa:ansible/ansible-2.3'
         sudo apt update
         sudo apt install --no-install-recommends --yes ansible
     fi
