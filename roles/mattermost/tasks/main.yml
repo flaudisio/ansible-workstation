@@ -1,6 +1,6 @@
 ---
-# Formato de versão do pacote: "X.Y.Z-X.Y.Z"
-# Exemplo: "3.7.0-3.7.0"
+# Formato de versão do pacote: "X.Y.Z-AA"
+# Exemplo: "4.0.0-43"
 - name: Verifica se Mattermost {{ mattermost_version }} está instalado
   shell: dpkg-query --showformat='${Version}' --show mattermost-desktop || true
   register: mattermost_check
