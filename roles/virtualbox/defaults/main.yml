@@ -13,6 +13,6 @@ vbox_repo_file: virtualbox
 
 # Extension Pack - Ref: https://www.virtualbox.org/wiki/Downloads
 
-vbox_extpack_version: 5.1.32
+vbox_extpack_version: 5.1.34
 vbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ vbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_extpack_version }}.vbox-extpack
 vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
