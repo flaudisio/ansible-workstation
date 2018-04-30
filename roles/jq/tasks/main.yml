@@ -8,6 +8,7 @@
   get_url:
     url: "{{ jq_dl_url }}"
     dest: "{{ jq_path }}"
+    force: yes
     owner: root
     group: root
     mode: 0755
