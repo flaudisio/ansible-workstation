@@ -18,13 +18,20 @@
   become: yes
   become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
   changed_when: false
+  failed_when: >
+    vagrant_plugin_list.rc != 0
+    and 'plugin expunge --reinstall' not in vagrant_plugin_list.stderr
   tags: vagrant:plugins
+
+- name: Executa expunge dos plugins
+  command: vagrant plugin expunge --reinstall --force
+  when: "'plugin expunge --reinstall' in vagrant_plugin_list.stderr"
 
 - name: Instala plugins
   command: vagrant plugin install {{ item }}
   with_items: "{{ vagrant_plugins.split(',') }}"
   when:
-    vagrant_update_plugins|bool
+    vagrant_update_plugins
     or (item + ' ' not in vagrant_plugin_list.stdout)
   become: yes
   become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
