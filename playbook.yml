@@ -1,5 +1,5 @@
 ---
-- name: Provisionamento de uma workstation
+- name: Ansible Workstation
   hosts: localhost
   connection: local
 
@@ -9,7 +9,7 @@
     - role: base-system
       tags: base
     - role: dotfiles
-      tags: [dotfiles, rc]
+      tags: dotfiles
     - role: i3
       tags: i3
     - role: chrome
