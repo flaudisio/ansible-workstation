@@ -7,3 +7,10 @@ terraform_dl_url: >
   https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
 
 terraform_path: /usr/local/bin/terraform
+
+terraform_tflint_version: 0.7.0
+
+terraform_tflint_dl_url: >
+  https://github.com/wata727/tflint/releases/download/v{{ terraform_tflint_version }}/tflint_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
+
+terraform_tflint_path: /usr/local/bin/tflint
