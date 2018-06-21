@@ -17,7 +17,7 @@
     or terraform_version not in terraform_check.stdout_lines[0]
 
 - name: Verifica se TFLint {{ terraform_tflint_version }} está instalado
-  shell: tflint -v || true
+  shell: tflint --version || true
   register: terraform_tflint_check
   changed_when: false
   tags: terraform:tflint
@@ -34,3 +34,21 @@
     terraform_tflint_check.stdout_lines | length == 0
     or terraform_tflint_version not in terraform_tflint_check.stdout_lines[0]
   tags: terraform:tflint
+
+- name: Verifica se terraform-docs {{ terraform_docs_version }} está instalado
+  shell: terraform-docs --version || true
+  register: terraform_docs_check
+  changed_when: false
+  tags: terraform:docs
+
+- name: Instala terraform-docs
+  get_url:
+    url: "{{ terraform_docs_dl_url }}"
+    dest: "{{ terraform_docs_path }}"
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    terraform_docs_check.stdout_lines | length == 0
+    or terraform_docs_version not in terraform_docs_check.stdout_lines[0]
+  tags: terraform:docs
