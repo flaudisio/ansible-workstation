@@ -6,7 +6,7 @@
 
 - name: Instala MEGAsync
   apt:
-    deb: https://mega.nz/linux/MEGAsync/xUbuntu_16.04/amd64/megasync-xUbuntu_16.04_amd64.deb
+    deb: https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync-xUbuntu_{{ ansible_distribution_version }}_amd64.deb
     state: present
     install_recommends: no
   when: "'no packages found matching' in megasync_check.stderr"
