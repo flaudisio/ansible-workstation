@@ -3,6 +3,7 @@
   apt_key:
     url: "{{ vbox_repo_key_url }}"
     state: present
+    keyring: /etc/apt/trusted.gpg.d/virtualbox.gpg
   tags: vbox:install
 
 - name: Configura repositório
