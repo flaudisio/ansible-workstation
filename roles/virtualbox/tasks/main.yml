@@ -4,7 +4,9 @@
     url: "{{ vbox_repo_key_url }}"
     state: present
     keyring: /etc/apt/trusted.gpg.d/virtualbox.gpg
-  tags: vbox:install
+  tags:
+    - vbox:repo
+    - vbox:install
 
 - name: Configura repositório
   apt_repository:
@@ -12,7 +14,9 @@
     filename: "{{ vbox_repo_file }}"
     state: present
     update_cache: yes
-  tags: vbox:install
+  tags:
+    - vbox:repo
+    - vbox:install
 
 - name: Instala VirtualBox
   apt:
