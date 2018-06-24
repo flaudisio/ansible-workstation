@@ -19,7 +19,7 @@ terraform_tflint_path: /usr/local/bin/tflint
 
 # terraform-docs
 
-terraform_docs_version: 0.1.0
+terraform_docs_version: 0.3.0
 
 terraform_docs_dl_url: >
   https://github.com/segmentio/terraform-docs/releases/download/v{{ terraform_docs_version }}/terraform-docs_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
