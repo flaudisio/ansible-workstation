@@ -26,7 +26,7 @@
   when: terraform_docs_install
   tags: terraform:docs
 
-# Graphviz é útil para visualização do 'terraform plan'
+# Graphviz é útil para visualização do 'terraform graph'
 # Docs: https://www.terraform.io/docs/commands/graph.html#generating-images
 - name: Instala Graphviz
   apt:
