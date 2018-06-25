@@ -16,40 +16,13 @@
     terraform_check.stdout_lines | length == 0
     or terraform_version not in terraform_check.stdout_lines[0]
 
-- name: Verifica se TFLint {{ terraform_tflint_version }} está instalado
-  shell: tflint --version || true
-  register: terraform_tflint_check
-  changed_when: false
+- name: Inclui tarefas do TFLint
+  include_tasks: tflint.yml
+  when: terraform_tflint_install
   tags: terraform:tflint
 
-- name: Instala TFLint
-  unarchive:
-    remote_src: true
-    src: "{{ terraform_tflint_dl_url }}"
-    dest: "{{ terraform_tflint_path | dirname }}"
-    owner: root
-    group: root
-    mode: 0755
-  when: >
-    terraform_tflint_check.stdout_lines | length == 0
-    or terraform_tflint_version not in terraform_tflint_check.stdout_lines[0]
-  tags: terraform:tflint
-
-- name: Verifica se terraform-docs {{ terraform_docs_version }} está instalado
-  shell: terraform-docs --version || true
-  register: terraform_docs_check
-  changed_when: false
+- name: Inclui tarefas do terraform-docs
+  include_tasks: terraform-docs.yml
+  when: terraform_docs_install
   tags: terraform:docs
 
-- name: Instala terraform-docs
-  get_url:
-    url: "{{ terraform_docs_dl_url }}"
-    dest: "{{ terraform_docs_path }}"
-    force: yes
-    owner: root
-    group: root
-    mode: 0755
-  when: >
-    terraform_docs_check.stdout_lines | length == 0
-    or terraform_docs_version not in terraform_docs_check.stdout_lines[0]
-  tags: terraform:docs

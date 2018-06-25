@@ -10,6 +10,8 @@ terraform_path: /usr/local/bin/terraform
 
 # TFLint
 
+terraform_tflint_install: yes
+
 terraform_tflint_version: 0.7.0
 
 terraform_tflint_dl_url: >
@@ -18,6 +20,8 @@ terraform_tflint_dl_url: >
 terraform_tflint_path: /usr/local/bin/tflint
 
 # terraform-docs
+
+terraform_docs_install: yes
 
 terraform_docs_version: 0.3.0
 
