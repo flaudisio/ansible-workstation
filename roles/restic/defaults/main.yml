@@ -1,0 +1,11 @@
+---
+# Ref: https://restic.readthedocs.io/en/stable/020_installation.html
+
+restic_version: 0.9.1
+
+restic_dl_url: >
+  https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_amd64.bz2
+
+restic_sha256_checksum: f7f76812fa26ca390029216d1378e5504f18ba5dde790878dfaa84afef29bda7
+
+restic_path: /usr/local/bin/restic

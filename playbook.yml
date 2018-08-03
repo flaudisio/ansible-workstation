@@ -44,5 +44,7 @@
       tags: megasync
     - role: rclone
       tags: rclone
+    - role: restic
+      tags: restic
     - role: steam
       tags: steam
