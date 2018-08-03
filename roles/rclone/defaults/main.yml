@@ -1,0 +1,11 @@
+---
+# Ref: https://rclone.org/install/#linux-installation-from-precompiled-binary
+
+rclone_install: yes
+
+rclone_version: "1.42"
+
+rclone_dl_url: >
+  https://github.com/ncw/rclone/releases/download/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-amd64.zip
+
+rclone_path: /usr/local/bin/rclone

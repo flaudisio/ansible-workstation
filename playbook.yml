@@ -42,5 +42,7 @@
       tags: borg
     - role: megasync
       tags: megasync
+    - role: rclone
+      tags: rclone
     - role: steam
       tags: steam
