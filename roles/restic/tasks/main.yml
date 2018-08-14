@@ -4,7 +4,7 @@
   register: restic_check
   changed_when: false
 
-- name: Baixa arquivo comprimido
+- name: Baixa arquivo compactado
   get_url:
     url: "{{ restic_dl_url }}"
     dest: /tmp/restic.bz2
