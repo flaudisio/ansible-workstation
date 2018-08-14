@@ -4,7 +4,7 @@
   register: rclone_check
   changed_when: false
 
-- name: Baixa e extrai arquivo comprimido
+- name: Baixa e extrai arquivo zip
   unarchive:
     remote_src: true
     src: "{{ rclone_dl_url }}"

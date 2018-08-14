@@ -1,7 +1,7 @@
 - src: geerlingguy.docker
-  version: "2.1.0"
+  version: 2.1.0
   name: docker
 
 - src: jdauphant.nginx
-  version: "v2.9"
+  version: v2.18.1
   name: nginx
