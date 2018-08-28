@@ -16,6 +16,15 @@
     terraform_check.stdout_lines | length == 0
     or terraform_version not in terraform_check.stdout_lines[0]
 
+- name: Instala Bash completion
+  get_url:
+    url: "{{ terraform_completion_url }}"
+    dest: /etc/bash_completion.d/terraform
+    owner: root
+    group: root
+    mode: 0644
+  tags: terraform:completion
+
 - name: Inclui tarefas do TFLint
   include_tasks: tflint.yml
   when: terraform_tflint_install

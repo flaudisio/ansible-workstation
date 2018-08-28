@@ -8,6 +8,10 @@ terraform_dl_url: >
 
 terraform_path: /usr/local/bin/terraform
 
+terraform_completion_version: 209a55a
+
+terraform_completion_url: https://raw.githubusercontent.com/Bash-it/bash-it/{{ terraform_completion_version }}/completion/available/terraform.completion.bash
+
 # TFLint
 
 terraform_tflint_install: yes
