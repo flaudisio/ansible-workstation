@@ -7,7 +7,7 @@
 #  - https://www.vagrantup.com/downloads.html
 #  - https://github.com/cogitatio/vagrant-hostsupdater#installation
 
-vagrant_version: 2.1.2
+vagrant_version: 2.2.0
 
 # Exemplo: plugin1,plugin2,plugin3
 vagrant_plugins: vagrant-digitalocean,vagrant-hostsupdater
