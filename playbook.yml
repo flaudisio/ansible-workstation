@@ -1,6 +1,6 @@
 ---
 - name: Ansible Workstation
-  hosts: localhost
+  hosts: "{{ target_host | default('localhost') }}"
   connection: local
 
   roles:
