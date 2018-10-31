@@ -80,7 +80,7 @@ $ ansible-playbook -b -K playbook.yml -i inventory.ini -t vbox,vagrant
 ## Licença
 
 ```
-Copyright © 2017 Flaudísio Tolentino
+Copyright © 2017-2018 Flaudísio Tolentino
 This work is free. You can redistribute it and/or modify it under the
 terms of the Do What The Fuck You Want To Public License, Version 2,
 as published by Sam Hocevar. See http://www.wtfpl.net/ for more details.
