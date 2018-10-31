@@ -1,9 +1,7 @@
 # Ansible: Workstation
 
-Playbook e roles do Ansible que utilizo para provisionar minhas workstations.
-
-O projeto ainda está no começo e não provisiona 100% do meu ambiente. Atualizações
-regulares deverão ocorrer nas próximas semanas.
+Playbook e roles do Ansible para provisionamento do meu computador pessoal e de
+trabalho.
 
 ## Compatibilidade
 
