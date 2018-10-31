@@ -54,7 +54,6 @@ pkg_media:
   - flameshot
   - fonts-dejavu
   - fonts-dejavu-extra
-  - fonts-roboto
   - gimp
   - pavucontrol
   - ristretto
@@ -103,7 +102,6 @@ pkg_misc:
   - zenity
 
 # Pacotes que serão removidos via 'purge'.
-# TODO: verificar eventual uso do 'autoremove'.
 pkg_purge:
   # Xubuntu-desktop
   - gmusicbrowser
