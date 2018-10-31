@@ -7,8 +7,7 @@ regulares deverão ocorrer nas próximas semanas.
 
 ## Compatibilidade
 
-As roles foram criadas para o **Ubuntu 16.04 (amd64)** instalado via [Netboot][netboot],
-porém devem ser compatíveis com qualquer Ubuntu 16.04 (ou mesmo mais recentes).
+As roles foram criadas e testadas no **Ubuntu 18.04 (amd64)**.
 
 De qualquer forma, leia as tasks e execute com cautela para evitar problemas em seu sistema.
 
@@ -27,7 +26,7 @@ $ ./scripts/bootstrap.sh
 Feito isso, execute o playbook:
 
 ```console
-$ ansible-playbook -bK playbook.yml -i inventory.ini
+$ ansible-playbook -b -K playbook.yml -i inventory.ini
 ```
 
 Observe que:
@@ -54,71 +53,28 @@ Exemplo: para instalar pacotes utilitários e, depois, VirtualBox e Vagrant:
 
 ```console
 $ ansible-playbook playbook.yml -i inventory.ini --list-tasks
-$ ansible-playbook -bK playbook.yml -i inventory.ini -t pkg:misc
-$ ansible-playbook -bK playbook.yml -i inventory.ini -t vbox,vagrant
+$ ansible-playbook -b -K playbook.yml -i inventory.ini -t pkg:misc
+$ ansible-playbook -b -K playbook.yml -i inventory.ini -t vbox,vagrant
 ```
-
-## Software
-
-### i3
-
-O [i3][i3-wm] é o gerenciador de janelas [escolhido](roles/i3/tasks/main.yml)
-para esse projeto. Use a tag `i3` para as tarefas relacionadas.
-
-[i3-wm]: https://i3wm.org/
-
-### Utilitários e outros
-
-Os seguintes programas foram escolhidos ou estão sob avaliação.
-
-| Uso | Software(s) |
-|-----|-------------|
-| Emulador de terminal | xfce4-terminal
-| Abertura de URLs e aplicativos via terminal | `exo-open` |
-| Navegador de arquivos | Thunar |
-| Lançador | `dmenu`? [`j4-dmenu-desktop`][j4]? |
-| Áudio | `pavucontrol` |
-| Inicialização automática de aplicativos | `exec`, `exec_always` ([docs][exec-docs]) |
-| Rede | `nmcli`, `nmtui` |
-| Fontes do sistema | TBD |
-| Screensaver | TBD |
-| Screenshooter | TBD (`xfce4-screenshooter`? `import`?) |
-| Background do desktop | TBD (`feh`?) |
-
-[j4]: https://github.com/enkore/j4-dmenu-desktop
-[exec-docs]: https://i3wm.org/docs/userguide.html#exec
 
 ## TODO
 
-- Docs e Configurações
-  - [ ] Expandir tabela de programas usados
-  - [ ] Configurar i3
-  - [ ] Configurar `sources.list` (sem `deb-src`, etc.)
+- Configurações
+  - [ ] Configurar `/etc/apt/sources.list` (sem `deb-src`, etc.)
   - [ ] Configurar sudoers (`Defaults insults`)
-  - [ ] Configurar ícones e fontes padrões (`lxappearance`?)
-  - [ ] Configurar programas padrões
 
 - Utilitários
   - [x] Dotfiles
-  - [ ] Scripts (GH: `flaudisio/scripts`)
+  - [ ] Scripts (GitHub: `flaudisio/scripts`)
 
 - Software
-  - [x] [Mattermost](https://docs.mattermost.com/install/desktop.html#ubuntu-and-debian-based-systems)
-  - [x] [Franz](http://meetfranz.com/#download)
-  - [x] [MEGAsync](https://mega.nz/sync)
-  - [x] Docker
-  - [x] Docker Compose
-  - [x] [ctop](https://github.com/bcicen/ctop/releases)
-  - [x] nginx
   - [ ] pip (sistema)
-  - [ ] virtualenv, virtualenvwrapper
+  - [ ] `virtualenv`, `virtualenvwrapper`
   - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
-  - [x] [jq](https://github.com/stedolan/jq/releases)
-  - [x] [doctl](https://github.com/digitalocean/doctl/releases)
-  - [x] [Terraform](https://www.terraform.io/downloads.html)
+  - [ ] [nvm](https://github.com/creationix/nvm#manual-install)
 
 - Configurações sensíveis
-  - [ ] `.ssh/config` (pessoal e do trabalho)
+  - [ ] `.ssh/config` (pessoal e trabalho)
   - [ ] VPNs
 
 ## Licença

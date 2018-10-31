@@ -10,8 +10,6 @@
       tags: base
     - role: dotfiles
       tags: dotfiles
-    - role: i3
-      tags: i3
     - role: chrome
       tags: chrome
     - role: virtualbox
