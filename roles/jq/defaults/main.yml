@@ -1,5 +1,5 @@
 ---
-jq_version: "1.5"
+jq_version: "1.6"
 
 jq_dl_url: https://github.com/stedolan/jq/releases/download/jq-{{ jq_version }}/jq-linux64
 
