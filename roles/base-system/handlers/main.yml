@@ -3,3 +3,8 @@
   service:
     name: ssh
     state: restarted
+
+- name: Reinicia systemd-journald
+  service:
+    name: systemd-journald
+    state: restarted

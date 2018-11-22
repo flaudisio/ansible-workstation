@@ -28,6 +28,18 @@
     mode: 0644
   tags: base:lightdm
 
+- name: Configura tamanho máximo de logs do Journal (systemd)
+  ini_file:
+    path: /etc/systemd/journald.conf
+    section: Journal
+    option: SystemMaxUse
+    value: "{{ base_journald_system_max_use }}"
+    create: no
+    backup: yes
+    state: present
+  notify: Reinicia systemd-journald
+  tags: base:journald
+
 - name: Configura insultos do sudo
   copy:
     content: "Defaults  insults\n"
