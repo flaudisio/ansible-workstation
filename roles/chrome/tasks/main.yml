@@ -27,6 +27,6 @@
   alternatives:
     name: "{{ item }}"
     path: /usr/bin/firefox
-  with_items:
+  loop:
     - gnome-www-browser
     - x-www-browser

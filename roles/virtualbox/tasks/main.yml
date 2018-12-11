@@ -23,7 +23,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items:
+  loop:
     - virtualbox-{{ vbox_version_major }}
     - libsdl-ttf2.0-0
   tags: vbox:install

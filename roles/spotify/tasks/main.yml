@@ -18,6 +18,6 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items:
+  loop:
     - spotify-client
     - libavcodec-extra

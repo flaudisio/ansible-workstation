@@ -10,7 +10,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_base }}"
+  loop: "{{ pkg_base }}"
   tags: pkg:base
 
 - name: Instala ferramentas de desenvolvimento
@@ -18,7 +18,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_dev }}"
+  loop: "{{ pkg_dev }}"
   tags: pkg:dev
 
 - name: Instala ferramentas de administração de sistema
@@ -26,7 +26,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_sysadmin }}"
+  loop: "{{ pkg_sysadmin }}"
   tags: pkg:sysadmin
 
 - name: Instala ferramentas de gráficos e multimídia
@@ -34,7 +34,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_media }}"
+  loop: "{{ pkg_media }}"
   tags: pkg:media
 
 - name: Instala pacotes utilitários
@@ -42,7 +42,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_misc }}"
+  loop: "{{ pkg_misc }}"
   tags:
     - pkg:misc
     - pkg:utils
@@ -52,7 +52,7 @@
     name: "{{ item }}"
     state: absent
     purge: yes
-  with_items: "{{ pkg_purge }}"
+  loop: "{{ pkg_purge }}"
   tags: pkg:purge
 
 - name: Instala pacotes extras
@@ -60,7 +60,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items: "{{ pkg_extra.strip(',').split(',') }}"
+  loop: "{{ pkg_extra.strip(',').split(',') }}"
   when: pkg_extra != ""
   tags: pkg:extra
 
@@ -81,7 +81,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  with_items:
+  loop:
     - git
     - git-doc
     - git-gui
