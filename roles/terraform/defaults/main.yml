@@ -1,7 +1,7 @@
 ---
 # Ref: https://www.terraform.io/downloads.html
 
-terraform_version: 0.11.10
+terraform_version: 0.11.11
 
 terraform_dl_url: >
   https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
@@ -16,7 +16,7 @@ terraform_completion_url: https://raw.githubusercontent.com/Bash-it/bash-it/{{ t
 
 terraform_tflint_install: yes
 
-terraform_tflint_version: 0.7.2
+terraform_tflint_version: 0.7.3
 
 terraform_tflint_dl_url: >
   https://github.com/wata727/tflint/releases/download/v{{ terraform_tflint_version }}/tflint_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
@@ -27,7 +27,7 @@ terraform_tflint_path: /usr/local/bin/tflint
 
 terraform_docs_install: yes
 
-terraform_docs_version: 0.5.0
+terraform_docs_version: 0.6.0
 
 terraform_docs_dl_url: >
   https://github.com/segmentio/terraform-docs/releases/download/v{{ terraform_docs_version }}/terraform-docs-v{{ terraform_docs_version }}-linux-{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
