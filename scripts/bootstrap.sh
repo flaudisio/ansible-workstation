@@ -1,36 +1,20 @@
 #!/bin/sh
 
-set -e
-
-main()
+die()
 {
-    sudo apt update
-
-    sudo apt install --no-install-recommends --yes \
-        ca-certificates \
-        curl \
-        python \
-        python-apt \
-        software-properties-common
-
-    if ! dpkg-query --show ansible ; then
-        sudo add-apt-repository --yes 'ppa:ansible/ansible-2.3'
-        sudo apt update
-        sudo apt install --no-install-recommends --yes ansible
-    fi
-
-    ansible --version
-    ansible-galaxy install --force -r requirements.yml -p roles/
+    [ -n "$1" ] && echo "$*"
+    exit 1
 }
 
-echo "Starting in 3 seconds..."
-echo
+echo "Verificando Ansible"
 
-(
-    set -x
-    sleep 3
-    main
-)
+ansible --version || die "Fatal: erro ao executar o Ansible. Verifique seu ambiente."
 
 echo
-echo "Done!"
+echo "Instalando roles externas"
+
+ansible-galaxy install --force -r requirements.yml -p roles/ \
+    || die "Fatal: erro ao instalar roles externas."
+
+echo
+echo "Feito! :-)"
