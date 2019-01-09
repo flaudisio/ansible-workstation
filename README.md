@@ -3,7 +3,7 @@
 Playbook e roles do Ansible para provisionamento do meu computador pessoal e de
 trabalho.
 
-Versão atual: **0.9.0**.
+Última versão: **0.10.0**
 
 ## Compatibilidade
 
