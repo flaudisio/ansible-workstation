@@ -11,11 +11,15 @@ As roles foram criadas e testadas no **Ubuntu 18.04 (amd64)**.
 
 De qualquer forma, leia as tasks e execute com cautela para evitar problemas em seu sistema.
 
-[netboot]: http://cdimage.ubuntu.com/netboot/xenial/
+## Pré-requisitos
+
+- Ansible 2.5+
 
 ## Uso
 
-No _primeiro uso_, certifique-se de que o Ansible e as roles externas estão instalados:
+Antes, assegure que o Ansible esteja instalado :-)
+
+No _primeiro uso_, instale as roles externas:
 
 ```console
 $ wget -nv https://github.com/flaudisio/ansible-workstation/archive/master.tar.gz -O - | tar -xzf -
@@ -38,9 +42,18 @@ Observe que:
 - Tarefas como a instalação de "dotfiles" são executadas pelo usuário que executou
   o Ansible. Por exemplo, o `.bashrc` será instalado em `/home/usuario` em vez de
   `/root`;
-- Nenhum pacote existente é atualizado (e.g. APT sempre com `state: present`).
+- _Nenhum_ pacote já instalado é atualizado (ou seja, APT sempre com `state: present`).
 
-## Roles externas
+**Dica:** use o script [`run.sh`](run.sh) como alias do comando acima. Exemplos:
+
+```console
+$ ./run.sh --list-tasks
+$ ./run.sh --tags spotify
+```
+
+## Roles externas utilizadas
+
+As (excelentes) roles externas abaixo são utilizadas:
 
 - [geerlingguy.docker](https://github.com/geerlingguy/ansible-role-docker)
 - [jdauphant.nginx](https://github.com/jdauphant/ansible-role-nginx)
@@ -61,7 +74,6 @@ $ ansible-playbook -b -K playbook.yml -i inventory.ini -t vbox,vagrant
 
 - Configurações
   - [ ] Configurar `/etc/apt/sources.list` (sem `deb-src`, etc.)
-  - [ ] Configurar sudoers (`Defaults insults`)
 
 - Utilitários
   - [x] Dotfiles
