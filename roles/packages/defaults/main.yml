@@ -30,6 +30,8 @@ pkg_sysadmin:
   - gdebi-core
   - gnome-disk-utility
   - cracklib-runtime
+  - exfat-fuse
+  - exfat-utils
   - gparted
   - htop
   - iotop
