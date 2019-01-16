@@ -3,7 +3,7 @@
 
 docker_install_compose: true
 
-docker_compose_version: "1.22.0"
+docker_compose_version: 1.23.2
 
 # nginx
 
