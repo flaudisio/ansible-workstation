@@ -60,8 +60,7 @@
     name: "{{ item }}"
     state: present
     install_recommends: no
-  loop: "{{ pkg_extra.strip(',').split(',') }}"
-  when: pkg_extra != ""
+  loop: "{{ pkg_extra }}"
   tags: pkg:extra
 
 # Git (instalado à parte por usar PPA)

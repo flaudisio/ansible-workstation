@@ -119,5 +119,7 @@ pkg_purge:
   - xul-ext-ubufox
 
 # Pacotes extras, para flexibilidade.
-# pkg_extra: "pacote1,pacote2,pacote3"
-pkg_extra: ""
+# pkg_extra:
+#   - foo
+#   - bar
+pkg_extra: []
