@@ -67,12 +67,12 @@
 
 - name: Habilita PPA do Git
   apt_repository:
-    repo: "ppa:git-core/ppa"
+    repo: ppa:git-core/ppa
     state: present
     update_cache: yes
   tags:
-    - git
-    - git:ppa
+    - pkg:git
+    - pkg:git:ppa
     - pkg:dev
 
 - name: Instala pacotes relacionados ao Git
@@ -88,5 +88,5 @@
     - qgit
     - tig
   tags:
-    - git
+    - pkg:git
     - pkg:dev
