@@ -3,5 +3,5 @@
   name: docker
 
 - src: jdauphant.nginx
-  version: v2.18.1
+  version: v2.21.2
   name: nginx
