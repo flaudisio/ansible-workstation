@@ -11,11 +11,30 @@ nginx_official_repo: true
 
 nginx_sites:
   default:
-    - listen 80 default_server
+    - listen      80 default_server
     - server_name _
-    - root /var/www
-    - autoindex on
+    - root        /var/www
+
+    - index  index.php index.html index.htm
+    - autoindex   on
     - autoindex_exact_size off
-    - autoindex_localtime on
+    - autoindex_localtime  on
+
+    # PHP
+    - |
+      location ~ ^.+\.php$ {
+        # http://goo.gl/uhiN3
+        tcp_nopush      off;
+
+        # 4k + 256 * 4k = 1028k
+        fastcgi_buffers 256 4k;
+
+        fastcgi_param   SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        fastcgi_param   PATH_INFO        $fastcgi_script_name;
+        fastcgi_index   index.php;
+        include         fastcgi_params;
+        fastcgi_pass    unix:/run/php/php7.2-fpm.sock;
+      }
+
     # - error_log   /var/log/nginx/default.error.log   warn
     # - access_log  /var/log/nginx/default.access.log  main
