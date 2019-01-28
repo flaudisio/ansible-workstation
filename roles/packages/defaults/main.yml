@@ -27,6 +27,7 @@ pkg_dev:
 
 pkg_sysadmin:
   - cifs-utils
+  - conntrack
   - gdebi-core
   - gnome-disk-utility
   - cracklib-runtime
