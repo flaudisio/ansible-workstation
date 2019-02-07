@@ -90,10 +90,12 @@ pkg_misc:
   - p7zip-rar
   - pbzip2
   - pigz
+  - pwgen
   - remmina
   - remmina-plugin-rdp
   - remmina-plugin-vnc
   - libfreerdp-plugins-standard
+  - rename
   - thunar
   - thunar-archive-plugin
   - transmission-gtk
