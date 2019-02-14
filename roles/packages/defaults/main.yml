@@ -69,6 +69,7 @@ pkg_misc:
   - atool
   - colordiff
   - cups-pdf
+  - dconf-editor
   - dos2unix
   - evince
   - file-roller
