@@ -1,7 +1,7 @@
 ---
-# Ref: https://www.terraform.io/downloads.html
+# Terraform
 
-terraform_version: 0.11.11
+terraform_version: 0.11.13
 
 terraform_dl_url: >
   https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
