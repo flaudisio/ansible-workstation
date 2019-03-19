@@ -34,6 +34,8 @@
       tags: doctl
     - role: terraform
       tags: terraform
+    - role: terragrunt
+      tags: terragrunt
     - role: jq
       tags: jq
     - role: borg
