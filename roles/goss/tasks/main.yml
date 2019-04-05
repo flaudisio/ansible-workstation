@@ -1,0 +1,17 @@
+---
+- name: Verifica se goss {{ goss_version }} está instalado
+  shell: goss --version || true
+  register: goss_check
+  changed_when: false
+
+- name: Instala goss
+  get_url:
+    url: "{{ goss_dl_url }}"
+    dest: "{{ goss_path }}"
+    force: yes
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    goss_check.stdout_lines | length == 0
+    or goss_version not in goss_check.stdout_lines[0]

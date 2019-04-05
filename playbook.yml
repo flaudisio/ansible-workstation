@@ -36,6 +36,8 @@
       tags: terraform
     - role: terragrunt
       tags: terragrunt
+    - role: goss
+      tags: goss
     - role: jq
       tags: jq
     - role: borg
