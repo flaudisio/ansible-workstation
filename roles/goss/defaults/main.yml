@@ -5,3 +5,10 @@ goss_dl_url: >
   https://github.com/aelsabbahy/goss/releases/download/v{{ goss_version }}/goss-linux-{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
 
 goss_path: /usr/local/bin/goss
+
+# dgoss
+
+goss_dgoss_dl_url: >
+  https://github.com/aelsabbahy/goss/releases/download/v{{ goss_version }}/dgoss
+
+goss_dgoss_path: /usr/local/bin/dgoss

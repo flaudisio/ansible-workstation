@@ -15,3 +15,16 @@
   when: >
     goss_check.stdout_lines | length == 0
     or goss_version not in goss_check.stdout_lines[0]
+
+- name: Instala dgoss
+  get_url:
+    url: "{{ goss_dgoss_dl_url }}"
+    dest: "{{ goss_dgoss_path }}"
+    force: yes
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    goss_check.stdout_lines | length == 0
+    or goss_version not in goss_check.stdout_lines[0]
+  tags: goss:dgoss
