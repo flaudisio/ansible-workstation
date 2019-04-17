@@ -1,0 +1,17 @@
+---
+- name: Verifica se aws-vault {{ awsvault_version }} está instalado
+  shell: aws-vault --version || true
+  register: awsvault_check
+  changed_when: false
+
+- name: Instala aws-vault
+  get_url:
+    url: "{{ awsvault_dl_url }}"
+    dest: "{{ awsvault_path }}"
+    force: yes
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    awsvault_check.stdout_lines | length == 0
+    or awsvault_version not in awsvault_check.stdout_lines[0]

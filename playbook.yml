@@ -32,6 +32,8 @@
       tags: ctop
     - role: doctl
       tags: doctl
+    - role: aws-vault
+      tags: aws-vault
     - role: terraform
       tags: terraform
     - role: terragrunt
