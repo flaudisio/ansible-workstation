@@ -16,7 +16,7 @@ terraform_completion_url: https://raw.githubusercontent.com/Bash-it/bash-it/{{ t
 
 terraform_tflint_install: yes
 
-terraform_tflint_version: 0.7.4
+terraform_tflint_version: 0.7.5
 
 terraform_tflint_dl_url: >
   https://github.com/wata727/tflint/releases/download/v{{ terraform_tflint_version }}/tflint_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
