@@ -1,0 +1,4 @@
+---
+q_version: 1.6.3
+
+q_package_version: "{{ q_version }}-2"

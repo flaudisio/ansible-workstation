@@ -42,6 +42,8 @@
       tags: goss
     - role: jq
       tags: jq
+    - role: q
+      tags: q
     - role: borg
       tags: borg
     - role: megasync
