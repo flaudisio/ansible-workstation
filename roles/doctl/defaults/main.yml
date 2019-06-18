@@ -1,5 +1,5 @@
 ---
-doctl_version: 1.18.0
+doctl_version: 1.20.1
 
 doctl_dl_url: >
   https://github.com/digitalocean/doctl/releases/download/v{{ doctl_version }}/doctl-{{ doctl_version }}-linux-{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.tar.gz
