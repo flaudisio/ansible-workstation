@@ -17,8 +17,8 @@
   register: chrome_check
   changed_when: false
 
-# Tarefas de instalação
-- include: install-deb.yml
+- name: Importa tarefas de instalação
+  import_tasks: install-deb.yml
   when: "'no packages found matching' in chrome_check.stderr"
 
 # O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
