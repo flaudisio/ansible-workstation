@@ -5,8 +5,16 @@
   changed_when: false
 
 - name: Instala MEGAsync
-  apt:
-    deb: https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync-xUbuntu_{{ ansible_distribution_version }}_amd64.deb
-    state: present
-    install_recommends: no
+  block:
+  - name: Instala chave do repositório
+    apt_key:
+      url: "{{ megasync_repo_key_url }}"
+      state: present
+      keyring: /etc/apt/trusted.gpg.d/megasync.gpg
+
+  - name: Instala pacote do MEGAsync
+    apt:
+      deb: "{{ megasync_package_url }}"
+      state: present
+      install_recommends: no
   when: "'no packages found matching' in megasync_check.stderr"
