@@ -7,6 +7,7 @@
 
 - name: Obtém lista de dependências do .deb
   shell: >
+    set -o pipefail &&
     dpkg --info /tmp/chrome.deb
     | grep '^ Depends:'
     | sed -e 's/ Depends: //' -e 's/, /\n/g'

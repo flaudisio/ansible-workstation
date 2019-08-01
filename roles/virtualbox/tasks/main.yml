@@ -36,7 +36,9 @@
   tags: vbox:install
 
 - name: Verifica se Extension Pack está instalado
-  shell: vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
+  shell: >
+    set -o pipefail &&
+    vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
   register: vbox_check_extpack
   failed_when: vbox_check_extpack.rc > 1
   changed_when: false
@@ -50,6 +52,8 @@
   tags: vbox:extpack
 
 - name: Instala Extension Pack
-  shell: echo yes | vboxmanage extpack install --replace {{ vbox_extpack_dl_file }}
+  shell: >
+    set -o pipefail &&
+    echo yes | vboxmanage extpack install --replace {{ vbox_extpack_dl_file }}
   when: vbox_check_extpack.rc == 1
   tags: vbox:extpack
