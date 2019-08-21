@@ -40,6 +40,8 @@
       tags: terragrunt
     - role: goss
       tags: goss
+    - role: hugo
+      tags: hugo
     - role: jq
       tags: jq
     - role: q
