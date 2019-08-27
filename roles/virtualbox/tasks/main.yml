@@ -1,22 +1,22 @@
 ---
 - name: Instala chave do repositório
   apt_key:
-    url: "{{ vbox_repo_key_url }}"
+    url: "{{ virtualbox_repo_key_url }}"
     state: present
     keyring: /etc/apt/trusted.gpg.d/virtualbox.gpg
   tags:
-    - vbox:repo
-    - vbox:install
+    - virtualbox:repo
+    - virtualbox:install
 
 - name: Configura repositório
   apt_repository:
-    repo: "{{ vbox_repo_line }}"
-    filename: "{{ vbox_repo_file }}"
+    repo: "{{ virtualbox_repo_line }}"
+    filename: "{{ virtualbox_repo_file }}"
     state: present
     update_cache: yes
   tags:
-    - vbox:repo
-    - vbox:install
+    - virtualbox:repo
+    - virtualbox:install
 
 - name: Instala VirtualBox
   apt:
@@ -24,36 +24,36 @@
     state: present
     install_recommends: no
   loop:
-    - virtualbox-{{ vbox_version_major }}
+    - virtualbox-{{ virtualbox_version_major }}
     - libsdl-ttf2.0-0
-  tags: vbox:install
+  tags: virtualbox:install
 
 - name: Adiciona usuário ao grupo 'vboxusers'
   user:
-    name: "{{ vbox_user | default(lookup('env', 'USER')) }}"
+    name: "{{ virtualbox_user | default(lookup('env', 'USER')) }}"
     groups: vboxusers
     append: yes
-  tags: vbox:install
+  tags: virtualbox:install
 
 - name: Verifica se Extension Pack está instalado
   shell: >
     set -o pipefail &&
-    vboxmanage list extpacks | grep '^Version:.*{{ vbox_extpack_version }}$'
-  register: vbox_check_extpack
-  failed_when: vbox_check_extpack.rc > 1
+    vboxmanage list extpacks | grep '^Version:.*{{ virtualbox_extpack_version }}$'
+  register: virtualbox_check_extpack
+  failed_when: virtualbox_check_extpack.rc > 1
   changed_when: false
-  tags: vbox:extpack
+  tags: virtualbox:extpack
 
 - name: Baixa Extension Pack
   get_url:
-    url: "{{ vbox_extpack_url }}"
-    dest: "{{ vbox_extpack_dl_file }}"
-  when: vbox_check_extpack.rc == 1
-  tags: vbox:extpack
+    url: "{{ virtualbox_extpack_url }}"
+    dest: "{{ virtualbox_extpack_dl_file }}"
+  when: virtualbox_check_extpack.rc == 1
+  tags: virtualbox:extpack
 
 - name: Instala Extension Pack
   shell: >
     set -o pipefail &&
-    echo yes | vboxmanage extpack install --replace {{ vbox_extpack_dl_file }}
-  when: vbox_check_extpack.rc == 1
-  tags: vbox:extpack
+    echo yes | vboxmanage extpack install --replace {{ virtualbox_extpack_dl_file }}
+  when: virtualbox_check_extpack.rc == 1
+  tags: virtualbox:extpack

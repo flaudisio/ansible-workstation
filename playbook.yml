@@ -13,7 +13,7 @@
     - role: chrome
       tags: chrome
     - role: virtualbox
-      tags: vbox
+      tags: virtualbox
     - role: vagrant
       tags: vagrant
     - role: mattermost

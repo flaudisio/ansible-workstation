@@ -1,18 +1,17 @@
 ---
 # Usuário do sistema
 # Padrão: $USER (do usuário que executa o Ansible)
-# vbox_user: flaudisio
+# virtualbox_user: flaudisio
 
+virtualbox_version_major: "5.2"
 # VirtualBox - Ref: https://www.virtualbox.org/wiki/Linux_Downloads
 
-vbox_version_major: "5.2"
-
-vbox_repo_key_url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
-vbox_repo_line: deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib
-vbox_repo_file: virtualbox
+virtualbox_repo_key_url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+virtualbox_repo_line: deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian {{ ansible_distribution_release }} contrib
+virtualbox_repo_file: virtualbox
 
 # Extension Pack - Ref: https://www.virtualbox.org/wiki/Downloads
 
-vbox_extpack_version: 5.2.26
-vbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ vbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ vbox_extpack_version }}.vbox-extpack
-vbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack
+virtualbox_extpack_version: 5.2.26
+virtualbox_extpack_url: http://download.virtualbox.org/virtualbox/{{ virtualbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_extpack_version }}.vbox-extpack
+virtualbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack

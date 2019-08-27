@@ -67,7 +67,7 @@ Exemplo: para instalar pacotes utilitários e, depois, VirtualBox e Vagrant:
 ```console
 $ ansible-playbook playbook.yml -i inventory.ini --list-tasks
 $ ansible-playbook -b -K playbook.yml -i inventory.ini -t pkg:misc
-$ ansible-playbook -b -K playbook.yml -i inventory.ini -t vbox,vagrant
+$ ansible-playbook -b -K playbook.yml -i inventory.ini -t virtualbox,vagrant
 ```
 
 ## TODO
