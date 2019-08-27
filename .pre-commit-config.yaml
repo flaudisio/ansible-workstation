@@ -1,12 +1,12 @@
 repos:
-- repo: https://github.com/ansible/ansible-lint.git
-  rev: v4.1.0
-  hooks:
-    - id: ansible-lint
-      files: playbook.yml
 - repo: git://github.com/pre-commit/pre-commit-hooks
-  rev: v2.2.3
+  rev: v2.3.0
   hooks:
     - id: check-added-large-files
     - id: check-merge-conflict
     - id: trailing-whitespace
+- repo: git://github.com/ansible/ansible-lint.git
+  rev: v4.1.0
+  hooks:
+    - id: ansible-lint
+      files: playbook.yml
