@@ -3,7 +3,7 @@
 
 restic_version: 0.9.5
 
-restic_dl_url: >
+restic_dl_url: >-
   https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_amd64.bz2
 
 restic_sha256_checksum: 08cd75e56a67161e9b16885816f04b2bf1fb5b03bc0677b0ccf3812781c1a2ec

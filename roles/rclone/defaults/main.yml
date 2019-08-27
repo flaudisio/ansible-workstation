@@ -5,7 +5,7 @@ rclone_install: yes
 
 rclone_version: "1.48.0"
 
-rclone_dl_url: >
+rclone_dl_url: >-
   https://github.com/ncw/rclone/releases/download/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-amd64.zip
 
 rclone_path: /usr/local/bin/rclone
