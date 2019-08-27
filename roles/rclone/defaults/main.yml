@@ -1,8 +1,4 @@
 ---
-# Ref: https://rclone.org/install/#linux-installation-from-precompiled-binary
-
-rclone_install: yes
-
 rclone_version: "1.48.0"
 
 rclone_dl_url: >-

@@ -3,10 +3,6 @@
 # Padrão: $USER (do usuário que executa o Ansible)
 # vagrant_user: flaudisio
 
-# Refs:
-#  - https://www.vagrantup.com/downloads.html
-#  - https://github.com/cogitatio/vagrant-hostsupdater#installation
-
 vagrant_version: 2.2.4
 
 # Exemplo: plugin1,plugin2,plugin3

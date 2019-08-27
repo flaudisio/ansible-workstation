@@ -1,6 +1,4 @@
 ---
-# Ref: https://restic.readthedocs.io/en/stable/020_installation.html
-
 restic_version: 0.9.5
 
 restic_dl_url: >-
