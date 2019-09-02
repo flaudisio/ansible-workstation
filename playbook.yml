@@ -34,6 +34,8 @@
       tags: doctl
     - role: aws-vault
       tags: aws-vault
+    - role: packer
+      tags: packer
     - role: terraform
       tags: terraform
     - role: terragrunt
