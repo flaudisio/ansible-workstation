@@ -122,6 +122,7 @@ pkg_purge:
   - python3-commandnotfound
   - sessioninstaller
   # Outros
+  - thunderbird
   - xul-ext-ubufox
 
 # Pacotes extras, para flexibilidade.
