@@ -8,4 +8,5 @@
   apt:
     deb: https://steamcdn-a.akamaihd.net/client/installer/steam.deb
     state: present
+    install_recommends: false
   when: "'no packages found matching' in steam_check.stderr"

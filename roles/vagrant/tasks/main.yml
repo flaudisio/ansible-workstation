@@ -9,6 +9,7 @@
   apt:
     deb: "{{ vagrant_package_url }}"
     state: present
+    install_recommends: false
   when: vagrant_check.stdout[2:] != vagrant_version
   tags: vagrant:install
 

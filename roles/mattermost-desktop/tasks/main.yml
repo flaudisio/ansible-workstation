@@ -10,4 +10,5 @@
   apt:
     deb: "{{ mattermost_desktop_package_url }}"
     state: present
+    install_recommends: false
   when: mattermost_desktop_version not in mattermost_desktop_check.stdout.split('-')

@@ -8,4 +8,5 @@
   apt:
     deb: https://github.com/harelba/q/releases/download/{{ q_version }}/q-text-as-data_{{ q_package_version }}_all.deb
     state: present
+    install_recommends: false
   when: q_package_version != q_check.stdout
