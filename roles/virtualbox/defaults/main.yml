@@ -1,7 +1,7 @@
 ---
 # Usuário do sistema
 # Padrão: $USER (do usuário que executa o Ansible)
-# virtualbox_user: flaudisio
+virtualbox_user: ""
 
 virtualbox_version_major: "5.2"
 

@@ -1,7 +1,7 @@
 ---
 # Usuário do sistema
 # Padrão: $USER (do usuário que executa o Ansible)
-# vagrant_user: flaudisio
+vagrant_user: ""
 
 vagrant_version: 2.2.4
 
