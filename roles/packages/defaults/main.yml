@@ -57,6 +57,7 @@ pkg_media:
   - flameshot
   - fonts-dejavu
   - fonts-dejavu-extra
+  - fonts-firacode
   - gimp
   - pavucontrol
   - ristretto
@@ -67,6 +68,7 @@ pkg_media:
 pkg_misc:
   - ack
   - atool
+  - chromium-browser
   - colordiff
   - cups-pdf
   - dconf-editor
