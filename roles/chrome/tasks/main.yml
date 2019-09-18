@@ -1,24 +1,27 @@
 ---
 - name: Cancela se arquitetura do sistema não for x64
   fail:
-    msg: >
+    msg: |
       Fatal: o Chrome 32 bits foi descontinuado para o Linux em Março de 2016.
       Desculpe, seu sistema não é compatível.
       Dica: o Chromium ainda é uma opção para sistemas 32 bits.
   when: ansible_architecture != "x86_64"
 
-# O Chrome é instalado via download direto do .deb porque ele mantém um cron
-# ("/opt/google/chrome/cron/google-chrome") que manipula diretamente o arquivo
-# "/etc/apt/sources.list.d/google-chrome.list". Logo, prefiro não manipular
-# a configuração do repositório pelo Ansible.
 
 - name: Verifica se Chrome está instalado
   shell: dpkg-query --show google-chrome-stable || true
   register: chrome_check
   changed_when: false
 
-- name: Importa tarefas de instalação
-  import_tasks: install-deb.yml
+# O Chrome é instalado via download direto do .deb porque ele mantém um cron
+# ("/opt/google/chrome/cron/google-chrome") que manipula diretamente o arquivo
+# "/etc/apt/sources.list.d/google-chrome.list". Logo, prefiro não manipular
+# a configuração do repositório pelo Ansible.
+- name: Instala Chrome
+  apt:
+    deb: "{{ chrome_package_url }}"
+    state: present
+    install_recommends: false
   when: "'no packages found matching' in chrome_check.stderr"
 
 # O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
