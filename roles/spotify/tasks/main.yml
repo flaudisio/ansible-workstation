@@ -1,8 +1,7 @@
 ---
 - name: Instala chave do repositório
   apt_key:
-    keyserver: keyserver.ubuntu.com
-    id: "{{ spotify_repo_key }}"
+    url: "{{ spotify_repo_key_url }}"
     state: present
     keyring: /etc/apt/trusted.gpg.d/spotify.gpg
 

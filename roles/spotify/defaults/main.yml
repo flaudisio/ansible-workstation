@@ -1,6 +1,6 @@
 ---
-# Ref: https://www.spotify.com/download/linux/
+spotify_repo_key_url: https://download.spotify.com/debian/pubkey.gpg
 
-spotify_repo_key: 0DF731E45CE24F27EEEB1450EFDC8610341D9410
 spotify_repo_line: deb http://repository.spotify.com stable non-free
+
 spotify_repo_file: spotify
