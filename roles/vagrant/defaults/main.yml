@@ -3,7 +3,7 @@
 # Padrão: $USER (do usuário que executa o Ansible)
 vagrant_user: ""
 
-vagrant_version: 2.2.4
+vagrant_version: 2.2.5
 
 vagrant_package_url: >-
   https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb
