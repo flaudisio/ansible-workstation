@@ -8,6 +8,6 @@
 
 - name: Instala Mattermost
   apt:
-    deb: https://releases.mattermost.com/desktop/{{ mattermost_desktop_version }}/mattermost-desktop-{{ mattermost_desktop_version }}-linux-amd64.deb
+    deb: "{{ mattermost_desktop_package_url }}"
     state: present
   when: mattermost_desktop_version not in mattermost_desktop_check.stdout.split('-')
