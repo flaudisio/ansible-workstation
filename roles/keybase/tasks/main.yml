@@ -1,0 +1,12 @@
+---
+- name: Verifica se Keybase está instalado
+  shell: dpkg-query --showformat='${Version}' --show keybase || true
+  register: keybase_check
+  changed_when: false
+
+- name: Instala Keybase
+  apt:
+    deb: "{{ keybase_package_url }}"
+    state: present
+    install_recommends: false
+  when: "'no packages found matching' in keybase_check.stderr"
