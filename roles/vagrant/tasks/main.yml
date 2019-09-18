@@ -29,7 +29,7 @@
 
 - name: Instala plugins
   command: vagrant plugin install {{ item }}
-  loop: "{{ vagrant_plugins.split(',') }}"
+  loop: "{{ vagrant_plugins }}"
   when: >
     vagrant_update_plugins
     or (item + ' ' not in vagrant_plugin_list.stdout)
@@ -46,5 +46,5 @@
     group: root
     mode: 0440
     validate: "visudo -cf %s"
-  when: "'vagrant-hostsupdater' in vagrant_plugins.split(',')"
+  when: "'vagrant-hostsupdater' in vagrant_plugins"
   tags: vagrant:plugins
