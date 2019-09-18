@@ -2,4 +2,4 @@
 
 set -ex
 
-ansible-playbook -b -K -v playbook.yml -i inventory.ini "$@"
+ansible-playbook --become --ask-become-pass --verbose --inventory inventory.ini playbook.yml "$@"
