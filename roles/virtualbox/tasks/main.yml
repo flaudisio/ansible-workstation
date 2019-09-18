@@ -38,6 +38,8 @@
   shell: >
     set -o pipefail &&
     vboxmanage list extpacks | grep '^Version:.*{{ virtualbox_extpack_version }}$'
+  args:
+    executable: /bin/bash
   register: virtualbox_check_extpack
   failed_when: virtualbox_check_extpack.rc > 1
   changed_when: false
@@ -54,5 +56,7 @@
   shell: >
     set -o pipefail &&
     echo yes | vboxmanage extpack install --replace {{ virtualbox_extpack_dl_file }}
+  args:
+    executable: /bin/bash
   when: virtualbox_check_extpack.rc == 1
   tags: virtualbox:extpack
