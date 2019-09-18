@@ -3,7 +3,7 @@
 # Padrão: $USER (do usuário que executa o Ansible)
 virtualbox_user: "{{ lookup('env', 'USER') }}"
 
-virtualbox_version_major: "5.2"
+virtualbox_version_major: "6.0"
 
 virtualbox_repo_key_url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
 
@@ -14,7 +14,7 @@ virtualbox_repo_file: virtualbox
 
 # Extension Pack
 
-virtualbox_extpack_version: 5.2.26
+virtualbox_extpack_version: "6.0.12"
 
 virtualbox_extpack_url: >-
   http://download.virtualbox.org/virtualbox/{{ virtualbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_extpack_version }}.vbox-extpack
