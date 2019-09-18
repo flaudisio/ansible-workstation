@@ -1,6 +1,29 @@
-# Ansible
-*.retry
+### Misc ###
 
-# Roles externas
-roles/docker
-roles/nginx
+*~
+*.bak
+*.swp
+
+### Ansible ###
+
+*.retry
+.vault_password
+roles_galaxy/
+
+### Python ###
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+### VirtualEnv ###
+
+.Python
+.venv
+pyvenv.cfg
+pip-selfcheck.json
+
+### VSCode ###
+
+.vscode/**
+!.vscode/settings.json
