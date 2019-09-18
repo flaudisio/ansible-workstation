@@ -5,6 +5,9 @@ vagrant_user: ""
 
 vagrant_version: 2.2.4
 
+vagrant_package_url: >-
+  https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb
+
 # Exemplo: plugin1,plugin2,plugin3
 vagrant_plugins: vagrant-digitalocean,vagrant-hostsupdater
 

@@ -7,7 +7,7 @@
 
 - name: Instala Vagrant
   apt:
-    deb: https://releases.hashicorp.com/vagrant/{{ vagrant_version }}/vagrant_{{ vagrant_version }}_{{ ansible_architecture }}.deb
+    deb: "{{ vagrant_package_url }}"
     state: present
   when: vagrant_check.stdout[2:] != vagrant_version
   tags: vagrant:install
