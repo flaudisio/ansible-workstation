@@ -30,7 +30,7 @@
 - name: Instala plugins
   command: vagrant plugin install {{ item }}
   loop: "{{ vagrant_plugins.split(',') }}"
-  when:
+  when: >
     vagrant_update_plugins
     or (item + ' ' not in vagrant_plugin_list.stdout)
   become: true
