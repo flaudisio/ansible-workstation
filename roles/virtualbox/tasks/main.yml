@@ -20,12 +20,11 @@
 
 - name: Instala VirtualBox
   apt:
-    name: "{{ item }}"
+    name:
+      - virtualbox-{{ virtualbox_version_major }}
+      - libsdl-ttf2.0-0
     state: present
     install_recommends: false
-  loop:
-    - virtualbox-{{ virtualbox_version_major }}
-    - libsdl-ttf2.0-0
   tags: virtualbox:install
 
 - name: Adiciona usuário ao grupo 'vboxusers'

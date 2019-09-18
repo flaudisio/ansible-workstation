@@ -7,60 +7,53 @@
 
 - name: Instala pacotes básicos
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_base }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_base }}"
   tags: pkg:base
 
 - name: Instala ferramentas de desenvolvimento
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_dev }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_dev }}"
   tags: pkg:dev
 
 - name: Instala ferramentas de administração de sistema
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_sysadmin }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_sysadmin }}"
   tags: pkg:sysadmin
 
 - name: Instala ferramentas de gráficos e multimídia
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_media }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_media }}"
   tags: pkg:media
 
 - name: Instala pacotes utilitários
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_misc }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_misc }}"
   tags:
     - pkg:misc
     - pkg:utils
 
 - name: Remove pacotes selecionados
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_purge }}"
     state: absent
     purge: true
-  loop: "{{ pkg_purge }}"
   tags: pkg:purge
 
 - name: Instala pacotes extras
   apt:
-    name: "{{ item }}"
+    name: "{{ pkg_extra }}"
     state: present
     install_recommends: false
-  loop: "{{ pkg_extra }}"
   tags: pkg:extra
 
 # Git (instalado à parte por usar PPA)
@@ -77,16 +70,15 @@
 
 - name: Instala pacotes relacionados ao Git
   apt:
-    name: "{{ item }}"
+    name:
+      - git
+      - git-doc
+      - git-gui
+      - gitk
+      - qgit
+      - tig
     state: present
     install_recommends: false
-  loop:
-    - git
-    - git-doc
-    - git-gui
-    - gitk
-    - qgit
-    - tig
   tags:
     - pkg:git
     - pkg:dev

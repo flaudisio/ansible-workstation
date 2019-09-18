@@ -15,9 +15,8 @@
 
 - name: Instala Spotify
   apt:
-    name: "{{ item }}"
+    name:
+      - spotify-client
+      - libavcodec-extra
     state: present
     install_recommends: false
-  loop:
-    - spotify-client
-    - libavcodec-extra
