@@ -1,4 +1,6 @@
 ---
+# yamllint disable rule:line-length
+
 # Terraform
 
 terraform_version: 0.11.14
@@ -14,7 +16,7 @@ terraform_completion_url: https://raw.githubusercontent.com/Bash-it/bash-it/{{ t
 
 # TFLint
 
-terraform_tflint_install: yes
+terraform_tflint_install: true
 
 terraform_tflint_version: 0.7.6
 
@@ -25,7 +27,7 @@ terraform_tflint_path: /usr/local/bin/tflint
 
 # terraform-docs
 
-terraform_docs_install: yes
+terraform_docs_install: true
 
 terraform_docs_version: 0.6.0
 
@@ -36,4 +38,4 @@ terraform_docs_path: /usr/local/bin/terraform-docs
 
 # Graphviz
 
-terraform_graphviz_install: yes
+terraform_graphviz_install: true

@@ -1,7 +1,7 @@
 ---
 - name: Atualiza cache do APT
   apt:
-    update_cache: yes
+    update_cache: true
     cache_valid_time: 3600
   tags: pkg:update
 
@@ -9,7 +9,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_base }}"
   tags: pkg:base
 
@@ -17,7 +17,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_dev }}"
   tags: pkg:dev
 
@@ -25,7 +25,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_sysadmin }}"
   tags: pkg:sysadmin
 
@@ -33,7 +33,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_media }}"
   tags: pkg:media
 
@@ -41,7 +41,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_misc }}"
   tags:
     - pkg:misc
@@ -51,7 +51,7 @@
   apt:
     name: "{{ item }}"
     state: absent
-    purge: yes
+    purge: true
   loop: "{{ pkg_purge }}"
   tags: pkg:purge
 
@@ -59,7 +59,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop: "{{ pkg_extra }}"
   tags: pkg:extra
 
@@ -69,7 +69,7 @@
   apt_repository:
     repo: ppa:git-core/ppa
     state: present
-    update_cache: yes
+    update_cache: true
   tags:
     - pkg:git
     - pkg:git:ppa
@@ -79,7 +79,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop:
     - git
     - git-doc

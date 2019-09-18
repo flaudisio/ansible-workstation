@@ -8,7 +8,7 @@
   get_url:
     url: "{{ awsvault_dl_url }}"
     dest: "{{ awsvault_path }}"
-    force: yes
+    force: true
     owner: root
     group: root
     mode: 0755

@@ -1,4 +1,6 @@
 ---
+# yamllint disable rule:line-length
+
 hugo_version: "0.57.2"
 
 hugo_dl_url: >-

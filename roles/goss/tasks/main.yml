@@ -8,7 +8,7 @@
   get_url:
     url: "{{ goss_dl_url }}"
     dest: "{{ goss_path }}"
-    force: yes
+    force: true
     owner: root
     group: root
     mode: 0755
@@ -20,7 +20,7 @@
   get_url:
     url: "{{ goss_dgoss_dl_url }}"
     dest: "{{ goss_dgoss_path }}"
-    force: yes
+    force: true
     owner: root
     group: root
     mode: 0755

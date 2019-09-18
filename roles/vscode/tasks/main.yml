@@ -22,5 +22,5 @@
   apt:
     name: code
     state: present
-    install_recommends: no
+    install_recommends: false
   tags: vscode:install

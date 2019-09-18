@@ -13,7 +13,7 @@
     repo: "{{ virtualbox_repo_line }}"
     filename: "{{ virtualbox_repo_file }}"
     state: present
-    update_cache: yes
+    update_cache: true
   tags:
     - virtualbox:repo
     - virtualbox:install
@@ -22,7 +22,7 @@
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop:
     - virtualbox-{{ virtualbox_version_major }}
     - libsdl-ttf2.0-0
@@ -32,7 +32,7 @@
   user:
     name: "{{ virtualbox_user | default(lookup('env', 'USER')) }}"
     groups: vboxusers
-    append: yes
+    append: true
   tags: virtualbox:install
 
 - name: Verifica se Extension Pack está instalado

@@ -11,13 +11,13 @@
     repo: "{{ spotify_repo_line }}"
     filename: "{{ spotify_repo_file }}"
     state: present
-    update_cache: yes
+    update_cache: true
 
 - name: Instala Spotify
   apt:
     name: "{{ item }}"
     state: present
-    install_recommends: no
+    install_recommends: false
   loop:
     - spotify-client
     - libavcodec-extra

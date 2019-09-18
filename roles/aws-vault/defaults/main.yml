@@ -1,4 +1,6 @@
 ---
+# yamllint disable rule:line-length
+
 awsvault_version: 4.6.2
 
 awsvault_dl_url: >-

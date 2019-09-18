@@ -41,8 +41,8 @@
   apt:
     name: graphviz
     state: present
-    install_recommends: no
-    update_cache: yes
+    install_recommends: false
+    update_cache: true
     cache_valid_time: 3600
   when: terraform_graphviz_install
   tags: terraform:graphviz

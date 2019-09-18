@@ -1,4 +1,5 @@
 ---
 megasync_repo_key_url: https://mega.nz/keys/MEGA_signing.key
 
-megasync_package_url: https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync-xUbuntu_{{ ansible_distribution_version }}_amd64.deb
+megasync_package_url: >-
+  https://mega.nz/linux/MEGAsync/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync-xUbuntu_{{ ansible_distribution_version }}_amd64.deb

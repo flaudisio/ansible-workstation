@@ -10,4 +10,4 @@
     repo: "{{ postgres_repo_line }}"
     filename: "{{ postgres_repo_file }}"
     state: present
-    update_cache: yes
+    update_cache: true

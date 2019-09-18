@@ -8,7 +8,7 @@
   get_url:
     url: "{{ ctop_dl_url }}"
     dest: "{{ ctop_path }}"
-    force: yes
+    force: true
     owner: root
     group: root
     mode: 0755

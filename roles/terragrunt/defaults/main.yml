@@ -1,4 +1,6 @@
 ---
+# yamllint disable rule:line-length
+
 terragrunt_version: 0.18.7
 
 terragrunt_dl_url: >-

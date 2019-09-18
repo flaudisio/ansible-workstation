@@ -8,4 +8,4 @@ vagrant_version: 2.2.4
 # Exemplo: plugin1,plugin2,plugin3
 vagrant_plugins: vagrant-digitalocean,vagrant-hostsupdater
 
-vagrant_update_plugins: yes
+vagrant_update_plugins: true

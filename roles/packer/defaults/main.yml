@@ -1,4 +1,6 @@
 ---
+# yamllint disable rule:line-length
+
 packer_version: 1.4.3
 
 packer_dl_url: >-

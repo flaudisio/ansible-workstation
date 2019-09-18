@@ -19,16 +19,16 @@
     dest: "{{ _dotfiles_dir }}"
     version: master
     update: "{{ dotfiles_update|bool }}"
-  become: yes
+  become: true
   become_user: "{{ _dotfiles_user }}"
 
 - name: Instala dotfiles
   file:
     src: "{{ item }}"
     dest: "{{ _dotfiles_home }}/.{{ item | basename }}"
-    force: yes
+    force: true
     state: link
   with_fileglob:
     - "{{ _dotfiles_dir }}/dotfiles/*"
-  become: yes
+  become: true
   become_user: "{{ _dotfiles_user }}"
