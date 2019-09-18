@@ -1,7 +1,7 @@
 ---
 # Usuário do sistema
 # Padrão: $USER (do usuário que executa o Ansible)
-vagrant_user: ""
+vagrant_user: "{{ lookup('env', 'USER') }}"
 
 vagrant_version: 2.2.5
 

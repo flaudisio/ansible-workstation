@@ -16,7 +16,7 @@
   command: vagrant plugin list
   register: vagrant_plugin_list
   become: true
-  become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
+  become_user: "{{ vagrant_user }}"
   changed_when: false
   failed_when: >
     vagrant_plugin_list.rc != 0
@@ -34,7 +34,7 @@
     vagrant_update_plugins
     or (item + ' ' not in vagrant_plugin_list.stdout)
   become: true
-  become_user: "{{ vagrant_user | default(lookup('env', 'USER')) }}"
+  become_user: "{{ vagrant_user }}"
   changed_when: false
   tags: vagrant:plugins
 

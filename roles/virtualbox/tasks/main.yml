@@ -29,7 +29,7 @@
 
 - name: Adiciona usuário ao grupo 'vboxusers'
   user:
-    name: "{{ virtualbox_user | default(lookup('env', 'USER')) }}"
+    name: "{{ virtualbox_user }}"
     groups: vboxusers
     append: true
   tags: virtualbox:install
