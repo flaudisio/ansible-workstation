@@ -72,9 +72,6 @@ $ ansible-playbook -b -K playbook.yml -i inventory.ini -t virtualbox,vagrant
 
 ## TODO
 
-- Configurações
-  - [ ] Configurar `/etc/apt/sources.list` (sem `deb-src`, etc.)
-
 - Utilitários
   - [x] Dotfiles
   - [ ] Scripts (GitHub: `flaudisio/scripts`)
