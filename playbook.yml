@@ -22,6 +22,8 @@
       tags: franz
     - role: spotify
       tags: spotify
+    - role: vscode
+      tags: vscode
     - role: postgres-repo
       tags: postgres-repo
     - role: docker
