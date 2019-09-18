@@ -13,7 +13,7 @@ De qualquer forma, leia as tasks e execute com cautela para evitar problemas em 
 
 ## Pré-requisitos
 
-- Ansible 2.5+
+- Ansible 2.8+
 
 ## Uso
 
