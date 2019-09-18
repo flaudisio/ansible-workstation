@@ -16,8 +16,8 @@
       tags: virtualbox
     - role: vagrant
       tags: vagrant
-    - role: mattermost
-      tags: mattermost
+    - role: mattermost-desktop
+      tags: mattermost-desktop
     - role: franz
       tags: franz
     - role: spotify
