@@ -39,8 +39,8 @@
   tags: vagrant:plugins
 
 - name: Configura sudoers para vagrant-hostsupdater
-  copy:
-    src: vagrant-hostsupdater.sudoers
+  template:
+    src: vagrant-hostsupdater.sudoers.j2
     dest: /etc/sudoers.d/vagrant-hostsupdater
     owner: root
     group: root
