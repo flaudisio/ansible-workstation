@@ -13,39 +13,6 @@
   when: vagrant_check.stdout[2:] != vagrant_version
   tags: vagrant:install
 
-- name: Obtém lista de plugins
-  command: vagrant plugin list
-  register: vagrant_plugin_list
-  become: true
-  become_user: "{{ vagrant_user }}"
-  changed_when: false
-  failed_when: >
-    vagrant_plugin_list.rc != 0
-    and 'plugin expunge --reinstall' not in vagrant_plugin_list.stderr
-  tags: vagrant:plugins
-
-- name: Executa expunge dos plugins
-  command: vagrant plugin expunge --reinstall --force
-  when: "'plugin expunge --reinstall' in vagrant_plugin_list.stderr"
-
-- name: Instala plugins
-  command: vagrant plugin install {{ item }}
-  loop: "{{ vagrant_plugins }}"
-  when: >
-    vagrant_update_plugins
-    or (item + ' ' not in vagrant_plugin_list.stdout)
-  become: true
-  become_user: "{{ vagrant_user }}"
-  changed_when: false
-  tags: vagrant:plugins
-
-- name: Configura sudoers para vagrant-hostsupdater
-  template:
-    src: vagrant-hostsupdater.sudoers.j2
-    dest: /etc/sudoers.d/vagrant-hostsupdater
-    owner: root
-    group: root
-    mode: 0440
-    validate: "visudo -cf %s"
-  when: "'vagrant-hostsupdater' in vagrant_plugins"
+- name: Inclui tarefas de plugins
+  import_tasks: plugins.yml
   tags: vagrant:plugins
