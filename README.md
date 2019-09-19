@@ -2,8 +2,6 @@
 
 Playbook e roles do Ansible para provisionamento do meu computador.
 
-Última versão: **0.10.0**
-
 ## Compatibilidade
 
 As roles são desenvolvidas e testadas no **Xubuntu 18.04 (amd64)**, mas deverão
