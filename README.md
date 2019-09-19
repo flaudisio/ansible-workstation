@@ -24,7 +24,7 @@ No _primeiro uso_, instale as roles externas:
 ```console
 $ wget -nv https://github.com/flaudisio/ansible-workstation/archive/master.tar.gz -O - | tar -xzf -
 $ cd ansible-workstation-master/
-$ ./scripts/bootstrap.sh
+$ ./update-roles.sh
 ```
 
 Feito isso, execute o playbook:
