@@ -3,7 +3,5 @@
   hosts: all
 
   roles:
-    - role: franz
-      tags: franz
     - role: mattermost-desktop
       tags: mattermost-desktop
