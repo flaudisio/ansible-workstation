@@ -10,3 +10,10 @@
     state: present
     install_recommends: false
   when: "'no packages found matching' in keybase_check.stderr"
+
+- name: Desativa inicialização automática
+  command: keybase ctl autostart --disable
+  become: true
+  become_user: "{{ keybase_user }}"
+  changed_when: false
+  when: keybase_disable_autostart
