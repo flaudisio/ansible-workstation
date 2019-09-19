@@ -1,0 +1,11 @@
+---
+- name: Workstation - Utilities
+  hosts: all
+
+  roles:
+    - role: keybase
+      tags: keybase
+    - role: spotify
+      tags: spotify
+    - role: steam
+      tags: steam

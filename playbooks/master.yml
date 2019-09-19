@@ -1,0 +1,28 @@
+---
+# This play is REQUIRED in order to run any role directly by using -t/--tags.
+- name: Ansible Workstation
+  hosts: all
+
+- import_playbook: base.yml
+  tags: base
+
+- import_playbook: chat.yml
+  tags: chat
+
+- import_playbook: services.yml
+  tags: services
+
+- import_playbook: infrastructure.yml
+  tags: infrastructure
+
+- import_playbook: cloud-tools.yml
+  tags: cloud-tools
+
+- import_playbook: development.yml
+  tags: development
+
+- import_playbook: backup.yml
+  tags: backup
+
+- import_playbook: utilities.yml
+  tags: utilities

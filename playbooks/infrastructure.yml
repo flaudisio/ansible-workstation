@@ -1,0 +1,19 @@
+---
+- name: Workstation - Infrastructure
+  hosts: all
+
+  roles:
+    - role: ctop
+      tags: ctop
+    - role: goss
+      tags: goss
+    - role: virtualbox
+      tags: virtualbox
+    - role: vagrant
+      tags: vagrant
+    - role: packer
+      tags: packer
+    - role: terraform
+      tags: terraform
+    - role: terragrunt
+      tags: terragrunt

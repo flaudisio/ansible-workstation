@@ -1,0 +1,13 @@
+---
+- name: Workstation - Base System
+  hosts: all
+
+  roles:
+    - role: packages
+      tags: pkg
+    - role: base-system
+      tags: base
+    - role: dotfiles
+      tags: dotfiles
+    - role: chrome
+      tags: chrome

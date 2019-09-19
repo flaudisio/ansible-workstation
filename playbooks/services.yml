@@ -1,0 +1,11 @@
+---
+- name: Workstation - Services
+  hosts: all
+
+  roles:
+    - role: docker
+      tags: docker
+    - role: nginx
+      tags: nginx
+    - role: postgres-repo
+      tags: postgres-repo

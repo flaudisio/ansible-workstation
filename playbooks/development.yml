@@ -1,0 +1,13 @@
+---
+- name: Workstation - Development
+  hosts: all
+
+  roles:
+    - role: vscode
+      tags: vscode
+    - role: hugo
+      tags: hugo
+    - role: jq
+      tags: jq
+    - role: q
+      tags: q

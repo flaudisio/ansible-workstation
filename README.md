@@ -30,15 +30,14 @@ $ ./scripts/bootstrap.sh
 Feito isso, execute o playbook:
 
 ```console
-$ ansible-playbook -b -K playbook.yml -i inventory.ini
+$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml
 ```
 
 Observe que:
 
-- As opções `-b` e `-K` são, respectivamente, `--become` e `--ask-become-pass`;
-- O playbook provisiona a própria máquina ([`connection: local`](playbook.yml)),
-  assumindo um usuário com permissão de `sudo`, como em uma instalação típica do
-  Ubuntu;
+- O comando provisiona a própria máquina (`-c local`) e assume que está sendo executado
+  por um usuário com permissão de `sudo` (`-b` e `-K`), como em uma instalação típica
+  do Ubuntu;
 - Tarefas como a instalação de "dotfiles" são executadas pelo usuário que executou
   o Ansible. Por exemplo, o `.bashrc` será instalado em `/home/usuario` em vez de
   `/root`;
@@ -47,8 +46,9 @@ Observe que:
 **Dica:** use o script [`run.sh`](run.sh) como alias do comando acima. Exemplos:
 
 ```console
-$ ./run.sh --list-tasks
-$ ./run.sh --tags spotify
+$ ./run.sh playbooks/master.yml --list-tasks
+$ ./run.sh playbooks/master.yml --tags backup,spotify
+$ ./run.sh playbooks/chat.yml
 ```
 
 ## Roles externas utilizadas
@@ -60,14 +60,22 @@ As (excelentes) roles externas abaixo são utilizadas:
 
 ## Execução de tarefas específicas
 
-Use o poder das tags! ;-)
+Use o poder dos playbooks e tags! ;-)
 
-Exemplo: para instalar pacotes utilitários e, depois, VirtualBox e Vagrant:
+Exemplos:
 
 ```console
-$ ansible-playbook playbook.yml -i inventory.ini --list-tasks
-$ ansible-playbook -b -K playbook.yml -i inventory.ini -t pkg:misc
-$ ansible-playbook -b -K playbook.yml -i inventory.ini -t virtualbox,vagrant
+$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml --list-tasks
+$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml -t pkg:misc,backup
+$ ansible-playbook -b -K -c local -i inventory.ini playbooks/cloud-tools.yml
+```
+
+Exemplos (equivalentes, via script):
+
+```console
+$ ./run.sh playbooks/master.yml --list-tasks
+$ ./run.sh playbooks/master.yml -t pkg:misc,backup
+$ ./run.sh playbooks/cloud-tools.yml
 ```
 
 ## TODO
