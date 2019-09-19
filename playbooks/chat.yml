@@ -5,3 +5,5 @@
   roles:
     - role: mattermost-desktop
       tags: mattermost-desktop
+    - role: slack
+      tags: slack

@@ -1,0 +1,7 @@
+---
+- name: Instala Slack
+  snap:
+    name: slack
+    channel: stable
+    classic: true
+    state: present
