@@ -1,15 +1,16 @@
 # Ansible: Workstation
 
-Playbook e roles do Ansible para provisionamento do meu computador pessoal e de
-trabalho.
+Playbook e roles do Ansible para provisionamento do meu computador.
 
 Última versão: **0.10.0**
 
 ## Compatibilidade
 
-As roles foram criadas e testadas no **Ubuntu 18.04 (amd64)**.
+As roles são desenvolvidas e testadas no **Xubuntu 18.04 (amd64)**, mas deverão
+funcionar em qualquer "flavor" e/ou versão recente do Ubuntu.
 
-De qualquer forma, leia as tasks e execute com cautela para evitar problemas em seu sistema.
+> **Atenção:** leia as tasks e execute com cautela. Não posso me responsabilizar
+> por eventuais problemas em seu sistema! ;)
 
 ## Pré-requisitos
 
@@ -41,9 +42,9 @@ Observe que:
 - Tarefas como a instalação de "dotfiles" são executadas pelo usuário que executou
   o Ansible. Por exemplo, o `.bashrc` será instalado em `/home/usuario` em vez de
   `/root`;
-- _Nenhum_ pacote já instalado é atualizado (ou seja, APT sempre com `state: present`).
+- _Nenhum_ pacote previamente instalado é atualizado (ou seja, APT sempre com `state: present`).
 
-**Dica:** use o script [`run.sh`](run.sh) como alias do comando acima. Exemplos:
+**Dica:** use o script [`run.sh`](run.sh) como "alias" do comando acima. Exemplos:
 
 ```console
 $ ./run.sh playbooks/master.yml --list-tasks
