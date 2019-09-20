@@ -19,7 +19,7 @@
 - name: Configura Bash completion
   copy:
     content: >
-      complete -C /usr/local/bin/packer packer
+      complete -C {{ packer_path }} packer
     dest: /etc/bash_completion.d/packer
     owner: root
     group: root
