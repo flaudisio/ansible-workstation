@@ -27,4 +27,5 @@
     - name: Configura Bash completion
       command: >
         rclone genautocomplete bash /etc/bash_completion.d/rclone
+      when: rclone_enable_bash_completion
       tags: rclone:completion
