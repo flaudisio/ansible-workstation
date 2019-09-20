@@ -24,4 +24,5 @@
     owner: root
     group: root
     mode: 0644
+  when: packer_enable_bash_completion
   tags: packer:completion
