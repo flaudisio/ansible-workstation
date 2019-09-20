@@ -7,6 +7,9 @@ docker_compose_version: 1.23.2
 
 docker_compose_path: /usr/local/bin/docker-compose
 
+docker_users:
+  - "{{ lookup('env', 'USER') }}"
+
 # nginx
 
 nginx_official_repo: true
