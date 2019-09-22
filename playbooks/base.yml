@@ -6,7 +6,7 @@
     - role: packages
       tags: pkg
     - role: base-system
-      tags: base
+      tags: base-system
     - role: dotfiles
       tags: dotfiles
     - role: chrome

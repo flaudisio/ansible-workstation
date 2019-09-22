@@ -6,7 +6,7 @@
     sysctl_file: /etc/sysctl.d/90-ansible-workstation.conf
     state: present
     reload: true
-  tags: base:sysctl
+  tags: base-system:sysctl
 
 - name: Configura porta do SSH
   lineinfile:
@@ -15,7 +15,7 @@
     line: "Port {{ base_ssh_port }}"
     validate: "sshd -t -f %s"
   notify: Reinicia SSH
-  tags: base:ssh
+  tags: base-system:ssh
 
 - name: Desativa usuário Guest do LightDM
   copy:
@@ -26,7 +26,7 @@
     owner: root
     group: root
     mode: 0644
-  tags: base:lightdm
+  tags: base-system:lightdm
 
 - name: Configura tamanho máximo de logs do Journal (systemd)
   ini_file:
@@ -38,7 +38,7 @@
     backup: true
     state: present
   notify: Reinicia systemd-journald
-  tags: base:journald
+  tags: base-system:journald
 
 - name: Configura insultos do sudo
   copy:
@@ -48,7 +48,7 @@
     group: root
     mode: 0440
     validate: "visudo -cf %s"
-  tags: base:sudo
+  tags: base-system:sudo
 
 - name: Configura alternatives
   alternatives:
@@ -59,4 +59,4 @@
       path: /usr/bin/vim.basic
     - name: x-cursor-theme
       path: /usr/share/icons/DMZ-Black/cursor.theme
-  tags: base:alternatives
+  tags: base-system:alternatives
