@@ -50,6 +50,17 @@
     validate: "visudo -cf %s"
   tags: base-system:sudo
 
+- name: Configura comportamento do Num Lock
+  lineinfile:
+    path: /etc/default/numlockx
+    regexp: '^NUMLOCK=.*$'
+    line: "NUMLOCK=keep"
+    owner: root
+    group: root
+    mode: 0644
+    create: false
+  tags: base-system:numlock
+
 - name: Configura alternatives
   alternatives:
     name: "{{ item.name }}"
