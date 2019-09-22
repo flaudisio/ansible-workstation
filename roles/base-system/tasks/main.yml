@@ -58,5 +58,5 @@
     - name: editor
       path: /usr/bin/vim.basic
     - name: x-cursor-theme
-      path: /usr/share/icons/DMZ-Black/cursor.theme
+      path: /etc/X11/cursors/oxy-zion.theme
   tags: base-system:alternatives
