@@ -1,34 +1,27 @@
 ---
-- name: Define variáveis de usuário, $HOME e diretório de instalação
-  set_fact:
-    _dotfiles_user: "{{ dotfiles_user | default(lookup('env', 'USER')) }}"
-    _dotfiles_home: "{{ dotfiles_home | default(lookup('env', 'HOME')) }}"
-    _dotfiles_dir: "{{ dotfiles_dir | default(lookup('env', 'HOME') + '/.rc') }}"
-
 - name: Cria diretório de instalação
   file:
-    path: "{{ _dotfiles_dir }}"
+    path: "{{ dotfiles_install_dir }}"
     state: directory
-    owner: "{{ _dotfiles_user }}"
-    group: "{{ _dotfiles_user }}"
+    owner: "{{ dotfiles_user }}"
+    group: "{{ dotfiles_user }}"
     mode: 0755
 
-- name: Clona e/ou atualiza repositório
-  git:
-    repo: https://github.com/flaudisio/rc.git
-    dest: "{{ _dotfiles_dir }}"
-    version: master
-    update: "{{ dotfiles_update|bool }}"
-  become: true
-  become_user: "{{ _dotfiles_user }}"
-
 - name: Instala dotfiles
-  file:
-    src: "{{ item }}"
-    dest: "{{ _dotfiles_home }}/.{{ item | basename }}"
-    force: true
-    state: link
-  with_fileglob:
-    - "{{ _dotfiles_dir }}/dotfiles/*"
   become: true
-  become_user: "{{ _dotfiles_user }}"
+  become_user: "{{ dotfiles_user }}"
+  block:
+    - name: Clona e/ou atualiza repositório
+      git:
+        repo: "{{ dotfiles_git_repo }}"
+        dest: "{{ dotfiles_install_dir }}"
+        version: "{{ dotfiles_git_version }}"
+        update: "{{ dotfiles_git_update }}"
+
+    - name: Instala dotfiles
+      file:
+        src: "{{ item }}"
+        dest: "{{ dotfiles_home }}/.{{ item | basename }}"
+        force: true
+        state: link
+      loop: "{{ lookup('fileglob', dotfiles_files_glob, wantlist=True) | sort }}"

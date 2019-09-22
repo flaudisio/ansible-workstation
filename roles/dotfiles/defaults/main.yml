@@ -1,12 +1,11 @@
 ---
-# Usuário e $HOME do sistema
-# Padrão: $USER e $HOME (do usuário que executa o Ansible)
-# dotfiles_user: flaudisio
-# dotfiles_home: /home/flaudisio
+dotfiles_user: "{{ lookup('env', 'USER') }}"
 
-# Diretório dos dotfiles
-# Padrão: $HOME/.rc (do usuário que executa o Ansible)
-# dotfiles_dir: /home/flaudisio/.rc
+dotfiles_home: "{{ lookup('env', 'HOME') }}"
 
-# Força atualização (via Git) do diretório de dotfiles
-dotfiles_update: false
+dotfiles_install_dir: "{{ lookup('env', 'HOME') }}/.rc"
+dotfiles_files_glob: "{{ dotfiles_install_dir }}/dotfiles/*"
+
+dotfiles_git_repo: https://github.com/flaudisio/rc.git
+dotfiles_git_version: master
+dotfiles_git_update: false
