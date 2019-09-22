@@ -6,6 +6,7 @@
 # Nota: os pacotes são instalados com *no-install-recommends*!
 
 pkg_base:
+  - apt-transport-https
   - bash-completion
   - ca-certificates
   - cryptsetup
@@ -14,6 +15,8 @@ pkg_base:
   - exo-utils
   - less
   - software-properties-common
+  - synapse
+  - zeitgeist
   - tmux
   - tree
   - wget
