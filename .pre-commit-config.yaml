@@ -11,14 +11,14 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
-  - repo: git://github.com/adrienverge/yamllint.git
+  - repo: git://github.com/adrienverge/yamllint
     rev: v1.17.0
     hooks:
       - id: yamllint
         files: \.(yaml|yml)$
         types: [file, yaml]
         entry: yamllint --strict
-  - repo: git://github.com/ansible/ansible-lint.git
+  - repo: git://github.com/ansible/ansible-lint
     rev: v4.1.0
     hooks:
       - id: ansible-lint
