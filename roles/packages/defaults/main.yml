@@ -127,6 +127,7 @@ pkg_purge:
   - sessioninstaller
   # Outros
   - thunderbird
+  - unattended-upgrades
   - xul-ext-ubufox
 
 # Pacotes extras, para flexibilidade.
