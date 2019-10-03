@@ -52,3 +52,6 @@ desktop_xfconf_settings:
     property: /Gtk/DecorationLayout
     value: close,maximize,minimize:menu
     value_type: string
+
+# Keyboard shortcuts
+# See 'defaults/main/keyboard-shortcuts.yml'.

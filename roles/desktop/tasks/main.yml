@@ -8,10 +8,10 @@
 - import_tasks: bookmarks.yml
   tags: desktop:bookmarks
 
-- import_tasks: shortcuts.yml
+- import_tasks: keyboard-shortcuts.yml
   become: true
   become_user: "{{ desktop_user }}"
-  tags: desktop:shortcuts
+  tags: desktop:keyboard-shortcuts
 
 - name: Configura ambiente via Xfconf
   xfconf:

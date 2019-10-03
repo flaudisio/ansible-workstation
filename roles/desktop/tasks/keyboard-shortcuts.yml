@@ -4,7 +4,7 @@
 - name: Remove atalhos do teclado selecionados
   command: >
     xfconf-query --channel xfce4-keyboard-shortcuts --property '/commands/custom/{{ item }}' --reset
-  loop: "{{ desktop_remove_shortcuts }}"
+  loop: "{{ desktop_remove_keyboard_shortcuts }}"
   changed_when: false
 
 - name: Configura atalhos do teclado
@@ -14,5 +14,5 @@
     value: "{{ item.cmd }}"
     value_type: string
     state: present
-  loop: "{{ desktop_shortcuts }}"
-  when: item.shortcut not in desktop_remove_shortcuts
+  loop: "{{ desktop_keyboard_shortcuts }}"
+  when: item.shortcut not in desktop_remove_keyboard_shortcuts

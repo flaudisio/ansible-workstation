@@ -2,7 +2,7 @@
 # Shortcuts
 # NOTE: <Primary> is the same of <Ctrl>.
 
-desktop_remove_shortcuts:
+desktop_remove_keyboard_shortcuts:
   - <Alt>F1
   - <Alt>F3
   - <Alt>Print
@@ -15,7 +15,7 @@ desktop_remove_shortcuts:
   - <Super>w
   - XF86Messenger
 
-desktop_shortcuts:
+desktop_keyboard_shortcuts:
   # Volume
   - shortcut: <Primary><Super>Down
     cmd: amixer set Master 5%-
