@@ -12,3 +12,27 @@ desktop_autostart_dir: "{{ desktop_config_dir }}/autostart"
 desktop_autostart_disable_apps:
   - blueman
   - update-notifier
+
+# User dirs
+
+desktop_user_dirs_base_dir: "{{ desktop_home_dir }}"
+
+desktop_user_dirs:
+  - name: desktop
+    path: Desktop
+  - name: download
+    path: cache
+  - name: templates
+    path: library/Templates
+  - name: publicshare
+    path: library/Public
+  - name: documents
+    path: library/Documents
+  - name: music
+    path: library/Music
+  - name: pictures
+    path: library/Pictures
+  - name: videos
+    path: library/Videos
+
+desktop_user_dirs_remove_default_dirs: false

@@ -1,0 +1,30 @@
+---
+- name: Cria user dirs
+  file:
+    path: "{{ desktop_user_dirs_base_dir }}/{{ item.path }}"
+    state: directory
+    owner: "{{ desktop_user }}"
+    group: "{{ desktop_user }}"
+  loop: "{{ desktop_user_dirs }}"
+
+- name: Configura user dirs
+  command: >
+    xdg-user-dirs-update --set '{{ item.name | upper }}' '{{ desktop_user_dirs_base_dir }}/{{ item.path }}'
+  loop: "{{ desktop_user_dirs }}"
+  become: true
+  become_user: "{{ desktop_user }}"
+  changed_when: false
+
+- name: Remove user dirs padrões
+  file:
+    path: "{{ item }}"
+    state: absent
+  loop:
+    - "{{ desktop_home_dir }}/Documents"
+    - "{{ desktop_home_dir }}/Downloads"
+    - "{{ desktop_home_dir }}/Music"
+    - "{{ desktop_home_dir }}/Pictures"
+    - "{{ desktop_home_dir }}/Public"
+    - "{{ desktop_home_dir }}/Templates"
+    - "{{ desktop_home_dir }}/Videos"
+  when: desktop_user_dirs_remove_default_dirs | bool

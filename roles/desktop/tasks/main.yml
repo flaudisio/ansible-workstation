@@ -1,3 +1,6 @@
 ---
 - import_tasks: autostart.yml
   tags: desktop:autostart
+
+- import_tasks: user-dirs.yml
+  tags: desktop:user-dirs
