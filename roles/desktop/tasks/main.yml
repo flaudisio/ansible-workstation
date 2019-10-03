@@ -7,3 +7,15 @@
 
 - import_tasks: bookmarks.yml
   tags: desktop:bookmarks
+
+- name: Configura ambiente via Xfconf
+  xfconf:
+    channel: "{{ item.channel }}"
+    property: "{{ item.property }}"
+    value: "{{ item.value }}"
+    value_type: "{{ item.value_type | default('string') }}"
+    state: present
+  loop: "{{ desktop_xfconf_settings }}"
+  become: true
+  become_user: "{{ desktop_user }}"
+  tags: desktop:xfconf

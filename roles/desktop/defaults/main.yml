@@ -44,3 +44,10 @@ desktop_bookmarks_file: "{{ desktop_config_dir }}/gtk-3.0/bookmarks"
 desktop_bookmarks:
   - /arquivos
   - "{{ desktop_home_dir }}/cache"
+
+# Xfconf
+
+desktop_xfconf_settings:
+  - channel: xsettings
+    property: /Gtk/DecorationLayout
+    value: close,maximize,minimize:menu
