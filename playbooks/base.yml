@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: desktop
+      tags: desktop
     - role: packages
       tags: pkg
     - role: base-system
