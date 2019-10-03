@@ -2,4 +2,4 @@
 
 set -ex
 
-ansible-playbook --connection local --become --ask-become-pass --verbose --inventory inventory.ini "$@"
+ansible-playbook --connection local --become --ask-become-pass --inventory inventory.ini "$@"
