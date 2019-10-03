@@ -4,3 +4,6 @@
 
 - import_tasks: user-dirs.yml
   tags: desktop:user-dirs
+
+- import_tasks: bookmarks.yml
+  tags: desktop:bookmarks

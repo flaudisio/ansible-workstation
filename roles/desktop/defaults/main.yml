@@ -36,3 +36,11 @@ desktop_user_dirs:
     path: library/Videos
 
 desktop_user_dirs_remove_default_dirs: false
+
+# Bookmarks
+
+desktop_bookmarks_file: "{{ desktop_config_dir }}/gtk-3.0/bookmarks"
+
+desktop_bookmarks:
+  - /arquivos
+  - "{{ desktop_home_dir }}/cache"
