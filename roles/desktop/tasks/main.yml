@@ -8,6 +8,11 @@
 - import_tasks: bookmarks.yml
   tags: desktop:bookmarks
 
+- import_tasks: shortcuts.yml
+  become: true
+  become_user: "{{ desktop_user }}"
+  tags: desktop:shortcuts
+
 - name: Configura ambiente via Xfconf
   xfconf:
     channel: "{{ item.channel }}"
