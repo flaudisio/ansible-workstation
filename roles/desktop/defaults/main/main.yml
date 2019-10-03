@@ -51,3 +51,4 @@ desktop_xfconf_settings:
   - channel: xsettings
     property: /Gtk/DecorationLayout
     value: close,maximize,minimize:menu
+    value_type: string
