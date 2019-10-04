@@ -55,3 +55,8 @@ desktop_xfconf_settings:
 
 # Keyboard shortcuts
 # See 'defaults/main/keyboard-shortcuts.yml'.
+
+# Packages
+
+desktop_packages:
+  - oxygen-cursor-theme

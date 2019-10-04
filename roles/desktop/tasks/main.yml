@@ -24,3 +24,20 @@
   become: true
   become_user: "{{ desktop_user }}"
   tags: desktop:xfconf
+
+- name: Instala pacotes selecionados
+  apt:
+    name: "{{ desktop_packages }}"
+    state: present
+    install_recommends: false
+    update_cache: true
+    cache_valid_time: 3600
+  tags: desktop:packages
+
+- name: Define Oxygen Zion como tema do cursor do mouse
+  alternatives:
+    name: x-cursor-theme
+    path: /etc/X11/cursors/oxy-zion.theme
+  when: >
+    'oxygen-cursor-theme' in desktop_packages
+  tags: desktop:cursor
