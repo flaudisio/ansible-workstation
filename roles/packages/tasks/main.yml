@@ -82,3 +82,9 @@
   tags:
     - pkg:git
     - pkg:dev
+
+- name: Configura alternatives
+  alternatives:
+    name: editor
+    path: /usr/bin/vim.basic
+  tags: pkg:alternatives

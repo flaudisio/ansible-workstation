@@ -60,12 +60,3 @@
     mode: 0644
     create: false
   tags: base-system:numlock
-
-- name: Configura alternatives
-  alternatives:
-    name: "{{ item.name }}"
-    path: "{{ item.path }}"
-  loop:
-    - name: editor
-      path: /usr/bin/vim.basic
-  tags: base-system:alternatives
