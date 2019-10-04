@@ -48,6 +48,37 @@ desktop_bookmarks:
 # Xfconf
 
 desktop_xfconf_settings:
+  # Thunar
+  - channel: thunar
+    property: /last-menubar-visible
+    value: "false"
+    value_type: bool
+  - channel: thunar
+    property: /last-view
+    value: ThunarDetailsView
+    value_type: string
+  - channel: thunar
+    property: /misc-date-style
+    value: THUNAR_DATE_STYLE_LONG
+    value_type: string
+  - channel: thunar
+    property: /misc-thumbnail-mode
+    value: THUNAR_THUMBNAIL_MODE_ONLY_LOCAL
+    value_type: string
+  - channel: thunar
+    property: /misc-folders-first
+    value: "true"
+    value_type: bool
+  - channel: thunar
+    property: /misc-volume-management
+    value: "false"
+    value_type: bool
+  - channel: thunar
+    property: /shortcuts-icon-size
+    value: THUNAR_ICON_SIZE_SMALLEST
+    value_type: string
+
+  # xsettings
   - channel: xsettings
     property: /Gtk/DecorationLayout
     value: close,maximize,minimize:menu
