@@ -18,21 +18,21 @@ desktop_autostart_disable_apps:
 desktop_user_dirs_base_dir: "{{ desktop_home_dir }}"
 
 desktop_user_dirs:
-  - name: desktop
+  - name: DESKTOP
     path: Desktop
-  - name: download
+  - name: DOWNLOAD
     path: cache
-  - name: templates
+  - name: TEMPLATES
     path: library/Templates
-  - name: publicshare
+  - name: PUBLICSHARE
     path: library/Public
-  - name: documents
+  - name: DOCUMENTS
     path: library/Documents
-  - name: music
+  - name: MUSIC
     path: library/Music
-  - name: pictures
+  - name: PICTURES
     path: library/Pictures
-  - name: videos
+  - name: VIDEOS
     path: library/Videos
 
 desktop_user_dirs_remove_default_dirs: false

@@ -9,7 +9,7 @@
 
 - name: Configura user dirs
   command: >
-    xdg-user-dirs-update --set '{{ item.name | upper }}' '{{ desktop_user_dirs_base_dir }}/{{ item.path }}'
+    xdg-user-dirs-update --set '{{ item.name }}' '{{ desktop_user_dirs_base_dir }}/{{ item.path }}'
   loop: "{{ desktop_user_dirs }}"
   become: true
   become_user: "{{ desktop_user }}"
