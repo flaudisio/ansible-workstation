@@ -4,6 +4,6 @@
 terragrunt_version: 0.18.7
 
 terragrunt_dl_url: >-
-  https://github.com/gruntwork-io/terragrunt/releases/download/v{{ terragrunt_version }}/terragrunt_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
+  https://github.com/gruntwork-io/terragrunt/releases/download/v{{ terragrunt_version }}/terragrunt_linux_amd64
 
 terragrunt_path: /usr/local/bin/terragrunt

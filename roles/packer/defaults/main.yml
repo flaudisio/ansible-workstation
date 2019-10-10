@@ -4,7 +4,7 @@
 packer_version: 1.4.4
 
 packer_dl_url: >-
-  https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}.zip
+  https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip
 
 packer_path: /usr/local/bin/packer
 

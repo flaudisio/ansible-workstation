@@ -2,7 +2,7 @@
 goss_version: 0.3.7
 
 goss_dl_url: >-
-  https://github.com/aelsabbahy/goss/releases/download/v{{ goss_version }}/goss-linux-{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
+  https://github.com/aelsabbahy/goss/releases/download/v{{ goss_version }}/goss-linux-amd64
 
 goss_path: /usr/local/bin/goss
 
