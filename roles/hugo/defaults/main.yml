@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 
-hugo_version: 0.57.2
+hugo_version: 0.58.3
 
 hugo_dl_url: >-
   https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_{{ hugo_version }}_Linux-{% if ansible_architecture == 'x86_64' %}64{% else %}32{% endif %}bit.tar.gz

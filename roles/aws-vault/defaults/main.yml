@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 
-awsvault_version: 4.6.2
+awsvault_version: 4.6.4
 
 awsvault_dl_url: >-
   https://github.com/99designs/aws-vault/releases/download/v{{ awsvault_version }}/aws-vault-linux-{% if ansible_architecture == 'x86_64' %}amd64{% else %}386{% endif %}
