@@ -9,5 +9,7 @@
       tags: base-system
     - role: dotfiles
       tags: dotfiles
+    - role: desktop
+      tags: desktop
     - role: chrome
       tags: chrome

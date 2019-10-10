@@ -60,14 +60,3 @@
     mode: 0644
     create: false
   tags: base-system:numlock
-
-- name: Configura alternatives
-  alternatives:
-    name: "{{ item.name }}"
-    path: "{{ item.path }}"
-  loop:
-    - name: editor
-      path: /usr/bin/vim.basic
-    - name: x-cursor-theme
-      path: /etc/X11/cursors/oxy-zion.theme
-  tags: base-system:alternatives

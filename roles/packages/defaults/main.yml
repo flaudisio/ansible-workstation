@@ -91,7 +91,6 @@ pkg_misc:
   - gtk2-engines
   - makepasswd
   - multitail
-  - oxygen-cursor-theme
   - p7zip
   - p7zip-full
   - p7zip-rar
