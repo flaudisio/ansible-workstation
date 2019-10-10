@@ -1,8 +1,7 @@
----
 extends: default
 
 ignore: |
-  .gitlab-ci.yml
+  .travis.yml
 
 rules:
   braces:
@@ -12,7 +11,7 @@ rules:
     max-spaces-inside: 1
     level: error
   line-length:
-    max: 160
+    max: 120
     level: warning
   new-line-at-end-of-file: enable
   truthy: enable
