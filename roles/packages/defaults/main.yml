@@ -68,7 +68,7 @@ pkg_media:
   - vlc
   - vlc-plugin-notify
 
-pkg_misc:
+pkg_utils:
   - ack
   - atool
   - chromium-browser

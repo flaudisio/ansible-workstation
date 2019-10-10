@@ -3,7 +3,7 @@
   apt:
     update_cache: true
     cache_valid_time: 3600
-  tags: pkg:update
+  tags: pkg:apt-update
 
 - name: Instala pacotes básicos
   apt:
@@ -35,12 +35,10 @@
 
 - name: Instala pacotes utilitários
   apt:
-    name: "{{ pkg_misc }}"
+    name: "{{ pkg_utils }}"
     state: present
     install_recommends: false
-  tags:
-    - pkg:misc
-    - pkg:utils
+  tags: pkg:utils
 
 - name: Remove pacotes selecionados
   apt:
