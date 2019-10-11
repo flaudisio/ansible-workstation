@@ -18,9 +18,9 @@ desktop_remove_keyboard_shortcuts:
 desktop_keyboard_shortcuts:
   # Volume
   - shortcut: <Primary><Super>Down
-    cmd: amixer set Master 5%-
+    cmd: amixer -q -M -D pulse sset Master 5%-
   - shortcut: <Primary><Super>Up
-    cmd: amixer set Master 5%+
+    cmd: amixer -q -M -D pulse sset Master 5%+
 
   # Spotify
   - shortcut: XF86Music
