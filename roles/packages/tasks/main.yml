@@ -3,56 +3,56 @@
   apt:
     update_cache: true
     cache_valid_time: 3600
-  tags: pkg:apt-update
+  tags: packages:apt-update
 
 - name: Instala pacotes básicos
   apt:
-    name: "{{ pkg_base }}"
+    name: "{{ packages_base }}"
     state: present
     install_recommends: false
-  tags: pkg:base
+  tags: packages:base
 
 - name: Instala ferramentas de desenvolvimento
   apt:
-    name: "{{ pkg_dev }}"
+    name: "{{ packages_dev }}"
     state: present
     install_recommends: false
-  tags: pkg:dev
+  tags: packages:dev
 
 - name: Instala ferramentas de administração de sistema
   apt:
-    name: "{{ pkg_sysadmin }}"
+    name: "{{ packages_sysadmin }}"
     state: present
     install_recommends: false
-  tags: pkg:sysadmin
+  tags: packages:sysadmin
 
 - name: Instala ferramentas de gráficos e multimídia
   apt:
-    name: "{{ pkg_media }}"
+    name: "{{ packages_media }}"
     state: present
     install_recommends: false
-  tags: pkg:media
+  tags: packages:media
 
 - name: Instala pacotes utilitários
   apt:
-    name: "{{ pkg_utils }}"
+    name: "{{ packages_utils }}"
     state: present
     install_recommends: false
-  tags: pkg:utils
+  tags: packages:utils
 
 - name: Remove pacotes selecionados
   apt:
-    name: "{{ pkg_purge }}"
+    name: "{{ packages_purge }}"
     state: absent
     purge: true
-  tags: pkg:purge
+  tags: packages:purge
 
 - name: Instala pacotes extras
   apt:
-    name: "{{ pkg_extra }}"
+    name: "{{ packages_extra }}"
     state: present
     install_recommends: false
-  tags: pkg:extra
+  tags: packages:extra
 
 # Git (instalado à parte por usar PPA)
 
@@ -62,9 +62,9 @@
     state: present
     update_cache: true
   tags:
-    - pkg:git
-    - pkg:git:ppa
-    - pkg:dev
+    - packages:git
+    - packages:git:ppa
+    - packages:dev
 
 - name: Instala pacotes relacionados ao Git
   apt:
@@ -78,11 +78,11 @@
     state: present
     install_recommends: false
   tags:
-    - pkg:git
-    - pkg:dev
+    - packages:git
+    - packages:dev
 
 - name: Configura alternatives
   alternatives:
     name: editor
     path: /usr/bin/vim.basic
-  tags: pkg:alternatives
+  tags: packages:alternatives

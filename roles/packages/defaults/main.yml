@@ -1,11 +1,11 @@
 ---
-# Variáveis "pkg_*": listas de pacotes independentes e/ou que são dependências de
+# Variáveis "packages_*": listas de pacotes independentes e/ou que são dependências de
 # várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
 # mas não custa documentá-los.
 
 # Nota: os pacotes são instalados com *no-install-recommends*!
 
-pkg_base:
+packages_base:
   - apt-transport-https
   - bash-completion
   - ca-certificates
@@ -23,14 +23,14 @@ pkg_base:
   - xbacklight
   - xfce4-terminal
 
-pkg_dev:
+packages_dev:
   - gedit
   - gedit-developer-plugins
   - python-dev
   - python3-dev
   - vim
 
-pkg_sysadmin:
+packages_sysadmin:
   - cifs-utils
   - conntrack
   - gdebi-core
@@ -58,7 +58,7 @@ pkg_sysadmin:
   - whois
   - xfce4-power-manager
 
-pkg_media:
+packages_media:
   - flameshot
   - fonts-dejavu
   - fonts-dejavu-extra
@@ -70,7 +70,7 @@ pkg_media:
   - vlc
   - vlc-plugin-notify
 
-pkg_utils:
+packages_utils:
   - ack
   - atool
   - chromium-browser
@@ -115,7 +115,7 @@ pkg_utils:
   - zenity
 
 # Pacotes que serão removidos via 'purge'.
-pkg_purge:
+packages_purge:
   # Xubuntu-desktop
   - gmusicbrowser
   - gnumeric
@@ -136,7 +136,7 @@ pkg_purge:
   - xul-ext-ubufox
 
 # Pacotes extras, para flexibilidade.
-# pkg_extra:
+# packages_extra:
 #   - foo
 #   - bar
-pkg_extra: []
+packages_extra: []

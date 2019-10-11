@@ -4,7 +4,7 @@
 
   roles:
     - role: packages
-      tags: pkg
+      tags: packages
     - role: base-system
       tags: base-system
     - role: dotfiles
