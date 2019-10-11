@@ -119,12 +119,16 @@ pkg_purge:
   - gnumeric
   - mousepad
   - pidgin
+  - pidgin-data
+  - pidgin-otr
   # "Command not found"
   - command-not-found
   - command-not-found-data
   - python3-commandnotfound
   - sessioninstaller
   # Outros
+  - gnome-software
+  - gnome-software-common
   - thunderbird
   - unattended-upgrades
   - xul-ext-ubufox
