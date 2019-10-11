@@ -33,6 +33,7 @@ packages_dev:
 packages_sysadmin:
   - cifs-utils
   - conntrack
+  - ethtool
   - gdebi-core
   - gnome-disk-utility
   - cracklib-runtime
