@@ -12,3 +12,8 @@ before_script:
 script:
   - pre-commit install
   - pre-commit run --all-files --verbose
+
+notifications:
+  email:
+    on_success: never
+    on_failure: always
