@@ -26,6 +26,8 @@ pkg_base:
 pkg_dev:
   - gedit
   - gedit-developer-plugins
+  - python-dev
+  - python3-dev
   - vim
 
 pkg_sysadmin:
