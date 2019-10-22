@@ -14,6 +14,7 @@ packages_base:
   - dkms
   - exo-utils
   - less
+  - seahorse
   - software-properties-common
   - synapse
   - zeitgeist
