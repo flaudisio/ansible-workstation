@@ -140,6 +140,7 @@ packages_purge:
   # Outros
   - gnome-software
   - gnome-software-common
+  - sgt-puzzles
   - thunderbird
   - unattended-upgrades
   - xul-ext-ubufox
