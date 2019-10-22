@@ -15,6 +15,11 @@ terraform_completion_version: 209a55a
 terraform_completion_url: >-
   https://raw.githubusercontent.com/Bash-it/bash-it/{{ terraform_completion_version }}/completion/available/terraform.completion.bash
 
+terraform_user: "{{ lookup('ENV', 'USER') }}"
+terraform_home_dir: "{{ lookup('ENV', 'HOME') }}"
+
+terraform_config_file: "{{ terraform_home_dir }}/.terraformrc"
+
 # TFLint
 
 terraform_tflint_install: true

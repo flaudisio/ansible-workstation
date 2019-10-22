@@ -25,6 +25,14 @@
     mode: 0644
   tags: terraform:completion
 
+- name: Cria arquivo de configuração
+  copy:
+    src: terraformrc
+    dest: "{{ terraform_config_file }}"
+    owner: "{{ terraform_user }}"
+    group: "{{ terraform_user }}"
+  tags: terraform:config
+
 - name: Inclui tarefas do TFLint
   include_tasks: tflint.yml
   when: terraform_tflint_install
