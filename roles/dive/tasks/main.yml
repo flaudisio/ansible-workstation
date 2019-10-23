@@ -1,0 +1,12 @@
+---
+- name: Check if dive {{ dive_version }} is already installed
+  shell: dpkg-query --showformat='${Version}' --show dive || true
+  register: dive_check
+  changed_when: false
+
+- name: Install package
+  apt:
+    deb: "{{ dive_package_url }}"
+    state: present
+    install_recommends: false
+  when: dive_version != dive_check.stdout

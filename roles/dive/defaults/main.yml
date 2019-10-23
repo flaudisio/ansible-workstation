@@ -1,0 +1,5 @@
+---
+dive_version: 0.8.1
+
+dive_package_url: >-
+  https://github.com/wagoodman/dive/releases/download/v{{ dive_version }}/dive_{{ dive_version }}_linux_amd64.deb

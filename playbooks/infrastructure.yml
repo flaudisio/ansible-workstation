@@ -5,6 +5,8 @@
   roles:
     - role: ctop
       tags: ctop
+    - role: dive
+      tags: dive
     - role: goss
       tags: goss
     - role: virtualbox
