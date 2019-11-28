@@ -1,0 +1,12 @@
+---
+awscli_version: 1.16.291
+
+awscli_install_dir: /opt/awscli
+
+awscli_symlink_dir: /usr/local/bin
+
+# aws-shell
+
+awscli_install_shell: true
+
+awscli_shell_version: 0.2.1

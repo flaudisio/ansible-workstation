@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: awscli
+      tags: awscli
     - role: aws-vault
       tags: aws-vault
     - role: doctl

@@ -1,0 +1,34 @@
+---
+- name: Ensure AWS CLI is installed
+  pip:
+    name: awscli
+    version: "{{ awscli_version }}"
+    state: present
+    virtualenv: "{{ awscli_install_dir }}"
+    virtualenv_python: python3
+    extra_args: --no-cache
+
+- name: Ensure 'aws' symlink exists
+  file:
+    src: "{{ awscli_install_dir }}/bin/aws"
+    path: "{{ awscli_symlink_dir }}/aws"
+    state: link
+
+- name: Ensure aws-shell is installed (if enabled)
+  pip:
+    name: aws-shell
+    version: "{{ awscli_shell_version }}"
+    state: present
+    virtualenv: "{{ awscli_install_dir }}"
+    virtualenv_python: python3
+    extra_args: --no-cache
+  when: awscli_install_shell
+
+- name: Ensure 'aws-shell' symlink exists
+  file:
+    src: "{{ awscli_install_dir }}/bin/aws-shell"
+    path: "{{ awscli_symlink_dir }}/aws-shell"
+    state: link
+    follow: false
+    force: false
+  when: awscli_install_shell
