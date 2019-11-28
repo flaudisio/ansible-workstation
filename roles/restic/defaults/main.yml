@@ -1,9 +1,9 @@
 ---
-restic_version: 0.9.5
+restic_version: 0.9.6
 
 restic_dl_url: >-
   https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_amd64.bz2
 
-restic_sha256_checksum: 08cd75e56a67161e9b16885816f04b2bf1fb5b03bc0677b0ccf3812781c1a2ec
+restic_sha256_checksum: a88ca09d1dd051d470965667a224a2b81930c6628a0566b7b17868be40207dc8
 
 restic_path: /usr/local/bin/restic
