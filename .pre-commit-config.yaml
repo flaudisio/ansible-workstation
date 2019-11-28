@@ -1,7 +1,7 @@
 ---
 repos:
   - repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v2.3.0
+    rev: v2.4.0
     hooks:
       - id: check-added-large-files
       - id: check-byte-order-marker
@@ -12,14 +12,14 @@ repos:
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
   - repo: git://github.com/adrienverge/yamllint
-    rev: v1.17.0
+    rev: v1.19.0
     hooks:
       - id: yamllint
         files: \.(yaml|yml)$
         types: [file, yaml]
         entry: yamllint --strict
   - repo: git://github.com/ansible/ansible-lint
-    rev: v4.1.0
+    rev: v4.2.0rc1
     hooks:
       - id: ansible-lint
         args:
