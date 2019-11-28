@@ -9,3 +9,18 @@
       tags: nginx
     - role: postgres-repo
       tags: postgres-repo
+
+  post_tasks:
+    - name: Install Docker Compose completion
+      get_url:
+        # yamllint disable rule:line-length
+        url: https://raw.githubusercontent.com/docker/compose/{{ docker_compose_version }}/contrib/completion/bash/docker-compose
+        # yamllint enable rule:line-length
+        dest: /etc/bash_completion.d/docker-compose
+        owner: root
+        group: root
+        mode: 0644
+      when: docker_install_compose | bool
+      tags:
+        - docker
+        - docker:compose
