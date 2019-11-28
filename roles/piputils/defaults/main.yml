@@ -1,0 +1,26 @@
+---
+piputils_install_dir: /opt/ansible-piputils
+
+piputils_bin_symlink_dir: /usr/local/bin
+
+piputils_packages:
+  - name: cookiecutter
+    packages:
+      - name: cookiecutter
+        version: 1.6.0
+    binaries:
+      - cookiecutter
+  - name: pre-commit
+    packages:
+      - name: pre-commit
+        version: 1.20.0
+    binaries:
+      - pre-commit
+      - pre-commit-validate-config
+      - pre-commit-validate-manifest
+
+# piputils_uninstall_packages:
+#   - name: glances
+#     binaries:
+#       - glances
+piputils_uninstall_packages: []

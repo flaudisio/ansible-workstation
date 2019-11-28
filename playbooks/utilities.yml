@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: piputils
+      tags: piputils
     - role: keybase
       tags: keybase
     - role: spotify
