@@ -52,8 +52,6 @@ desktop_keyboard_shortcuts:
     cmd: xfce4-find-cursor
   - shortcut: <Super>p
     cmd: xfce4-display-settings --minimal
-  - shortcut: <Super>w
-    cmd: xfce4-popup-notes
   - shortcut: <Super>z
     cmd: xfce4-popup-applicationsmenu
 
@@ -64,7 +62,11 @@ desktop_keyboard_shortcuts:
   # Utilities
   - shortcut: <Super>e
     cmd: exo-open --launch FileManager
+  - shortcut: <Super>k
+    cmd: discord
   - shortcut: <Super>m
     cmd: slack
   - shortcut: <Super>t
     cmd: exo-open --launch TerminalEmulator
+  - shortcut: <Super>w
+    cmd: sensible-browser https://keep.google.com
