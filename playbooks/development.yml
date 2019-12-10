@@ -11,5 +11,7 @@
       tags: bat
     - role: jq
       tags: jq
+    - role: yq
+      tags: yq
     - role: q
       tags: q
