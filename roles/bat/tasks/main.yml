@@ -1,0 +1,12 @@
+---
+- name: Check if bat {{ bat_version }} is installed
+  shell: dpkg-query --showformat='${Version}' --show bat || true
+  register: bat_check
+  changed_when: false
+
+- name: Install bat
+  apt:
+    deb: "{{ bat_package_url }}"
+    state: present
+    install_recommends: false
+  when: bat_check.stdout != bat_version
