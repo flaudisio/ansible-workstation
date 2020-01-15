@@ -25,4 +25,4 @@ repos:
         args:
           - --force-color
           - --exclude=roles_galaxy
-        files: playbooks/master.yml
+        files: ^playbooks/.+\.yml$
