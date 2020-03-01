@@ -73,6 +73,7 @@ packages_media:
   - fonts-dejavu-extra
   - fonts-firacode
   - gimp
+  - gpick
   - pavucontrol
   - ristretto
   - shotwell
