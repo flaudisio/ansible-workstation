@@ -11,6 +11,8 @@
       tags: goss
     - role: k9s
       tags: k9s
+    - role: kubespy
+      tags: kubespy
     - role: virtualbox
       tags: virtualbox
     - role: vagrant
