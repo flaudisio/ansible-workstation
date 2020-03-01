@@ -27,7 +27,7 @@ repos:
         args:
           - --exclude=roles_galaxy
           - playbooks/master.yml
-          - playbooks/deprecated.yml
+          - playbooks/unused.yml
         files: ^(roles|playbooks)/
         pass_filenames: false
         always_run: false
