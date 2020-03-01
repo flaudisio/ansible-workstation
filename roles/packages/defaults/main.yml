@@ -102,6 +102,8 @@ packages_utils:
   - lxappearance
   - gtk2-engines
   - makepasswd
+  - moreutils
+  - most
   - multitail
   - p7zip
   - p7zip-full
@@ -123,6 +125,7 @@ packages_utils:
   - unzip
   - wmctrl
   - xclip
+  - xz-utils
   - zenity
 
 # Pacotes que serão removidos via 'purge'.
