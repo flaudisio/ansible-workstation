@@ -27,4 +27,4 @@
     - "{{ desktop_home_dir }}/Public"
     - "{{ desktop_home_dir }}/Templates"
     - "{{ desktop_home_dir }}/Videos"
-  when: desktop_user_dirs_remove_default_dirs | bool
+  when: desktop_remove_default_user_dirs | bool

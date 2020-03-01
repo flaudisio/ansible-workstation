@@ -35,7 +35,7 @@ desktop_user_dirs:
   - name: VIDEOS
     path: library/Videos
 
-desktop_user_dirs_remove_default_dirs: false
+desktop_remove_default_user_dirs: false
 
 # Bookmarks
 
