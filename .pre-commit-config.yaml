@@ -21,6 +21,5 @@ repos:
     hooks:
       - id: ansible-lint
         args:
-          - --force-color
           - --exclude=roles_galaxy
         files: ^playbooks/.+\.yml$
