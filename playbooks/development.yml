@@ -5,8 +5,6 @@
   roles:
     - role: vscode
       tags: vscode
-    - role: hugo
-      tags: hugo
     - role: bat
       tags: bat
     - role: jq

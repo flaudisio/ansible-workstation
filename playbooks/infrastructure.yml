@@ -13,13 +13,3 @@
       tags: k9s
     - role: kubespy
       tags: kubespy
-    - role: virtualbox
-      tags: virtualbox
-    - role: vagrant
-      tags: vagrant
-    - role: packer
-      tags: packer
-    - role: terraform
-      tags: terraform
-    - role: terragrunt
-      tags: terragrunt

@@ -5,10 +5,6 @@
   roles:
     - role: docker
       tags: docker
-    - role: nginx
-      tags: nginx
-    - role: postgres-repo
-      tags: postgres-repo
 
   post_tasks:
     - name: Install Docker Compose completion

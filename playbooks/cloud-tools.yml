@@ -7,5 +7,3 @@
       tags: awscli
     - role: aws-vault
       tags: aws-vault
-    - role: doctl
-      tags: doctl

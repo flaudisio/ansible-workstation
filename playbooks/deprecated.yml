@@ -1,0 +1,40 @@
+---
+- name: Workstation - Deprecated / not used anymore
+  hosts: all
+
+  roles:
+    # Backup
+    - role: borg
+      tags: borg
+    - role: rclone
+      tags: rclone
+
+    # Chat
+    - role: mattermost-desktop
+      tags: mattermost-desktop
+
+    # Cloud Tools
+    - role: doctl
+      tags: doctl
+
+    # Development
+    - role: hugo
+      tags: hugo
+
+    # Infrastructure
+    - role: virtualbox
+      tags: virtualbox
+    - role: vagrant
+      tags: vagrant
+    - role: packer
+      tags: packer
+    - role: terraform
+      tags: terraform
+    - role: terragrunt
+      tags: terragrunt
+
+    # Services
+    - role: nginx
+      tags: nginx
+    - role: postgres-repo
+      tags: postgres-repo

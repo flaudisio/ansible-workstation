@@ -3,10 +3,6 @@
   hosts: all
 
   roles:
-    - role: borg
-      tags: borg
-    - role: rclone
-      tags: rclone
     - role: restic
       tags: restic
     - role: megasync
