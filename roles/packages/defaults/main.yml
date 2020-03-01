@@ -87,8 +87,8 @@ packages_utils:
   - cups-pdf
   - dconf-editor
   - dos2unix
+  - engrampa
   - evince
-  - file-roller
   - firefox
   - gvfs-backends
   - ipcalc
