@@ -9,6 +9,8 @@
       tags: dive
     - role: goss
       tags: goss
+    - role: k9s
+      tags: k9s
     - role: virtualbox
       tags: virtualbox
     - role: vagrant
