@@ -1,12 +1,17 @@
 ---
 - name: Verifica se q {{ q_version }} está instalado
-  shell: dpkg-query --showformat='${Version}' --show q-text-as-data || true
+  shell: q --version || true
   register: q_check
   changed_when: false
 
 - name: Instala q
-  apt:
-    deb: https://github.com/harelba/q/releases/download/{{ q_version }}/q-text-as-data_{{ q_package_version }}_all.deb
-    state: present
-    install_recommends: false
-  when: q_package_version != q_check.stdout
+  get_url:
+    url: "{{ q_dl_url }}"
+    dest: "{{ q_path }}"
+    force: true
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    q_check.stderr_lines | length == 0
+    or q_version not in q_check.stderr_lines[0]
