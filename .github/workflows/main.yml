@@ -1,0 +1,21 @@
+---
+# yamllint disable rule:truthy
+
+name: Main
+
+on: [push]
+
+jobs:
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    container:
+      image: flaudisio/pre-commit:latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Run lint checks
+        env:
+          PYTHONUNBUFFERED: "1"
+        run: |
+          pre-commit --version
+          pre-commit run --all-files --verbose --color always
