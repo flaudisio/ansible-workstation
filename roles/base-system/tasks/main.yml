@@ -1,5 +1,5 @@
 ---
-- name: Configura sysctl
+- name: Configura swappiness
   sysctl:
     name: vm.swappiness
     value: "10"
@@ -40,9 +40,10 @@
   notify: Reinicia systemd-journald
   tags: base-system:journald
 
-- name: Configura insultos do sudo
+- name: Habilita insultos do sudo
   copy:
-    content: "Defaults  insults\n"
+    content: |
+      Defaults  insults
     dest: /etc/sudoers.d/insults
     owner: root
     group: root
@@ -53,7 +54,7 @@
 - name: Configura comportamento do Num Lock
   lineinfile:
     path: /etc/default/numlockx
-    regexp: '^NUMLOCK=.*$'
+    regexp: "^NUMLOCK=.*$"
     line: "NUMLOCK=keep"
     owner: root
     group: root
