@@ -1,5 +1,5 @@
 ---
-- name: Check if dive {{ dive_version }} is already installed
+- name: Check if dive {{ dive_version }} is installed
   shell: dpkg-query --showformat='${Version}' --show dive || true
   register: dive_check
   changed_when: false
