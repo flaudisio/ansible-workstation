@@ -8,11 +8,25 @@
     virtualenv_python: python3
     extra_args: --no-cache
 
-- name: Ensure 'aws' symlink exists
+- name: Ensure executable symlinks exists
   file:
-    src: "{{ awscli_install_dir }}/bin/aws"
-    path: "{{ awscli_symlink_dir }}/aws"
+    src: "{{ awscli_install_dir }}/bin/{{ item }}"
+    path: "{{ awscli_symlink_dir }}/{{ item }}"
     state: link
+  loop:
+    - aws
+    - aws_completer
+
+- name: Configure Bash completion
+  copy:
+    content: |
+      complete -C aws_completer aws
+    dest: /etc/bash_completion.d/aws
+    owner: root
+    group: root
+    mode: 0644
+  when: awscli_enable_bash_completion
+  tags: awscli:completion
 
 - name: Ensure aws-shell is installed (if enabled)
   pip:
