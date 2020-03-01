@@ -10,12 +10,15 @@ jobs:
     name: Lint
     runs-on: ubuntu-latest
     container:
-      image: flaudisio/pre-commit:latest
+      image: flaudisio/pre-commit:alpine
     steps:
       - uses: actions/checkout@v1
       - uses: actions/setup-python@v1
         with:
           python-version: 3.7
+      - name: Install lint dependencies
+        run: |
+          apk add --no-cache gcc libffi-dev make musl-dev openssl-dev
       - name: Run lint checks
         env:
           PYTHONUNBUFFERED: "1"
