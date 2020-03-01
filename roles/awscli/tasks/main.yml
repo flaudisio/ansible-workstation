@@ -19,14 +19,14 @@
     name: aws-shell
     version: "{{ awscli_shell_version }}"
     state: present
-    virtualenv: "{{ awscli_install_dir }}"
+    virtualenv: "{{ awscli_shell_install_dir }}"
     virtualenv_python: python3
     extra_args: --no-cache
   when: awscli_install_shell
 
 - name: Ensure 'aws-shell' symlink exists
   file:
-    src: "{{ awscli_install_dir }}/bin/aws-shell"
+    src: "{{ awscli_shell_install_dir }}/bin/aws-shell"
     path: "{{ awscli_symlink_dir }}/aws-shell"
     state: link
     follow: false

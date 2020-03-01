@@ -9,4 +9,6 @@ awscli_symlink_dir: /usr/local/bin
 
 awscli_install_shell: true
 
+awscli_shell_install_dir: /opt/aws-shell
+
 awscli_shell_version: 0.2.1
