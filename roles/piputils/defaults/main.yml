@@ -7,13 +7,13 @@ piputils_packages:
   - name: cookiecutter
     packages:
       - name: cookiecutter
-        version: 1.6.0
+        version: 1.7.0
     binaries:
       - cookiecutter
   - name: pre-commit
     packages:
       - name: pre-commit
-        version: 1.20.0
+        version: 2.1.1
     binaries:
       - pre-commit
       - pre-commit-validate-config
