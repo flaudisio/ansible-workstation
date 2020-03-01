@@ -18,6 +18,30 @@ piputils_packages:
       - pre-commit
       - pre-commit-validate-config
       - pre-commit-validate-manifest
+  - name: ps_mem
+    packages:
+      - name: ps_mem
+        version: 3.12
+    binaries:
+      - ps_mem
+  - name: pygments
+    packages:
+      - name: Pygments
+        version: 2.5.2
+    binaries:
+      - pygmentize
+  - name: yamale
+    packages:
+      - name: yamale
+        version: 2.0.1
+    binaries:
+      - yamale
+  - name: yamllint
+    packages:
+      - name: yamllint
+        version: 1.20.0
+    binaries:
+      - yamllint
 
 # piputils_uninstall_packages:
 #   - name: glances
