@@ -24,11 +24,11 @@
   when: "'no packages found matching' in chrome_check.stderr"
 
 # O Chrome sobrepõe os padrões dos alternatives '*-www-browser'
-# (aparentemente ele se considera o último biscoito do pacote).
-- name: Configura alternatives de '*-www-browser' para o Firefox
+- name: Reverte alternatives de '*-www-browser' para o Firefox
   alternatives:
     name: "{{ item }}"
     path: /usr/bin/firefox
   loop:
     - gnome-www-browser
     - x-www-browser
+  when: not chrome_set_as_default_browser
