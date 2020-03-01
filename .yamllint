@@ -1,9 +1,6 @@
 ---
 extends: default
 
-ignore: |
-  .travis.yml
-
 rules:
   braces:
     max-spaces-inside: 1
