@@ -20,6 +20,14 @@ repos:
     rev: v4.2.0
     hooks:
       - id: ansible-lint
+        # NOTE: filenames are not passed to the ansible-lint hook by default[1], so we must pass
+        # the playbook files as explicit args and also tweak the 'files', 'pass_filenames' and 'always_run' options.
+        #
+        # [1] https://github.com/ansible/ansible-lint/blob/v4.2.0/.pre-commit-hooks.yaml#L11
         args:
           - --exclude=roles_galaxy
-        files: ^playbooks/.+\.yml$
+          - playbooks/master.yml
+          - playbooks/deprecated.yml
+        files: ^(roles|playbooks)/
+        pass_filenames: false
+        always_run: false
