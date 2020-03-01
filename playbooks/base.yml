@@ -11,5 +11,3 @@
       tags: dotfiles
     - role: desktop
       tags: desktop
-    - role: chrome
-      tags: chrome

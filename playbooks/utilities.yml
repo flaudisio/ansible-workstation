@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: chrome
+      tags: chrome
     - role: piputils
       tags: piputils
     - role: keybase
