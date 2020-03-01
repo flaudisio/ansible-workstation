@@ -7,7 +7,6 @@
       Dica: o Chromium ainda é uma opção para sistemas 32 bits.
   when: ansible_architecture != "x86_64"
 
-
 - name: Verifica se Chrome está instalado
   shell: dpkg-query --show google-chrome-stable || true
   register: chrome_check
