@@ -23,7 +23,7 @@ No _primeiro uso_, instale as roles externas:
 ```console
 $ wget -nv https://github.com/flaudisio/ansible-workstation/archive/master.tar.gz -O - | tar -xzf -
 $ cd ansible-workstation-master/
-$ ./update-requirements.sh
+$ ./scripts/update-requirements.sh
 ```
 
 Feito isso, execute o playbook:
