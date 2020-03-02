@@ -11,12 +11,13 @@ is_command()
 check_sanity()
 {
     if ! is_command curl ; then
-        echo "'curl' not found; aborting"
+        echo "'curl' not found; aborting" >&2
+        exit 1
     fi
 
     if is_command pip && [[ -z "$FORCE_PIP_INSTALL" ]] ; then
-        echo "pip already installed; aborting"
-        exit 0
+        echo "pip already installed; aborting. Use \$FORCE_PIP_INSTALL to ignore this check." >&2
+        exit 1
     fi
 }
 
