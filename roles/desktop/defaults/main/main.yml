@@ -79,6 +79,12 @@ desktop_xfconf_settings:
     value: THUNAR_ICON_SIZE_SMALLEST
     value_type: string
 
+  # Desktop
+  - channel: xfce4-desktop
+    property: /desktop-icons/style
+    value: "0"
+    value_type: int
+
   # xsettings
   - channel: xsettings
     property: /Gtk/DecorationLayout
