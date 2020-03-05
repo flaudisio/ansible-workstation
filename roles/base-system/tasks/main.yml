@@ -51,7 +51,7 @@
 
 - name: Configura anti-tearing para placa gráfica Intel
   copy:
-    src: xorg/intel.conf
+    src: xorg.conf.d/intel.conf
     dest: /etc/X11/xorg.conf.d/20-intel.conf
     owner: root
     group: root
