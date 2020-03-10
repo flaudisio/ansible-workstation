@@ -47,6 +47,12 @@ desktop_keyboard_shortcuts:
   - shortcut: <Primary><Alt>l
     cmd: xflock4
 
+  # Window Manager
+  - shortcut: <Primary><Alt>Left
+    cmd: move-to-next-monitor
+  - shortcut: <Primary><Alt>Right
+    cmd: move-to-next-monitor
+
   # Xfce tools
   - shortcut: <Super>F1
     cmd: xfce4-find-cursor
