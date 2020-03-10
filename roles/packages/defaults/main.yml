@@ -125,6 +125,7 @@ packages_utils:
   - unzip
   - wmctrl
   - xclip
+  - xdotool
   - xz-utils
   - zenity
 
