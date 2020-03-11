@@ -32,6 +32,8 @@
       tags: terraform
     - role: terragrunt
       tags: terragrunt
+    - role: k9s
+      tags: k9s
 
     # Services
     - role: nginx

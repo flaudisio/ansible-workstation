@@ -9,7 +9,5 @@
       tags: dive
     - role: goss
       tags: goss
-    - role: k9s
-      tags: k9s
     - role: kubespy
       tags: kubespy
