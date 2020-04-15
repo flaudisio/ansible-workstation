@@ -3,6 +3,13 @@ piputils_install_dir: /opt/ansible-piputils
 
 piputils_bin_symlink_dir: /usr/local/bin
 
+# piputils_packages:
+# - name: example
+#     packages:
+#       - name: example
+#         version: 1.0.0
+#     binaries:
+#       - example
 piputils_packages:
   - name: cookiecutter
     packages:
