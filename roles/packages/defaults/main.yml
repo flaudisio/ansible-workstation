@@ -72,6 +72,9 @@ packages_media:
   - fonts-dejavu
   - fonts-dejavu-extra
   - fonts-firacode
+  - fonts-inconsolata
+  - fonts-liberation
+  - fonts-liberation2
   - gimp
   - gpick
   - pavucontrol
