@@ -5,6 +5,8 @@ set -o pipefail
 
 VirtualEnvDir="/var/tmp/ansible-workstation-temp-virtualenv"
 
+AnsibleVersion="2.9.*"
+
 
 check_sanity()
 {
@@ -27,7 +29,7 @@ install_ansible()
     echo "Installing Ansible to '$VirtualEnvDir'"
     run virtualenv "$VirtualEnvDir"
     run . "$VirtualEnvDir/bin/activate"
-    run pip install "ansible==2.9.*"
+    run pip install "ansible==${AnsibleVersion}"
 
     echo "Checking Ansible version"
     run ansible --version
