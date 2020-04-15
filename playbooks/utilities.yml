@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: albert
+      tags: albert
     - role: chrome
       tags: chrome
     - role: piputils
