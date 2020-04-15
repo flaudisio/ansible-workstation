@@ -1,5 +1,5 @@
 ---
-hugo_version: 0.65.3
+hugo_version: 0.69.0
 
 hugo_dl_url: >-
   https://github.com/gohugoio/hugo/releases/download/v{{ hugo_version }}/hugo_{{ hugo_version }}_Linux-64bit.tar.gz

@@ -13,7 +13,7 @@ piputils_packages:
   - name: pre-commit
     packages:
       - name: pre-commit
-        version: 2.1.1
+        version: 2.2.0
     binaries:
       - pre-commit
       - pre-commit-validate-config
