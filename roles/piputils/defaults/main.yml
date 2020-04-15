@@ -27,7 +27,7 @@ piputils_packages:
   - name: pygments
     packages:
       - name: Pygments
-        version: 2.5.2
+        version: 2.6.1
     binaries:
       - pygmentize
   - name: yamale
@@ -39,7 +39,7 @@ piputils_packages:
   - name: yamllint
     packages:
       - name: yamllint
-        version: 1.20.0
+        version: 1.22.1
     binaries:
       - yamllint
 
