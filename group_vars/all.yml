@@ -1,4 +1,8 @@
 ---
+# AWS CLI
+
+awscli_enable_bash_completion: false
+
 # Docker
 
 docker_install_compose: true
