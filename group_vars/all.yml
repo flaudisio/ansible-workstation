@@ -7,7 +7,7 @@ awscli_enable_bash_completion: false
 
 docker_install_compose: true
 
-docker_compose_version: 1.25.4
+docker_compose_version: 1.25.5
 
 docker_compose_path: /usr/local/bin/docker-compose
 
