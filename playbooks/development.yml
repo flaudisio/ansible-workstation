@@ -13,3 +13,5 @@
       tags: yq
     - role: q
       tags: q
+    - role: helm-docs
+      tags: helm-docs
