@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-VirtualenvDir="/var/tmp/ansible-workstation-temp-virtualenv"
+VirtualEnvDir="/var/tmp/ansible-workstation-temp-virtualenv"
 
 
 check_sanity()
@@ -24,9 +24,9 @@ run()
 
 install_ansible()
 {
-    echo "Installing Ansible to '$VirtualenvDir'"
-    run virtualenv "$VirtualenvDir"
-    run . "$VirtualenvDir/bin/activate"
+    echo "Installing Ansible to '$VirtualEnvDir'"
+    run virtualenv "$VirtualEnvDir"
+    run . "$VirtualEnvDir/bin/activate"
     run pip install "ansible==2.9.*"
 
     echo "Checking Ansible version"
@@ -38,13 +38,13 @@ install_ansible()
     echo
     echo "Use this commands for using this Ansible installation:"
     echo
-    echo ". $VirtualenvDir/bin/activate"
+    echo ". $VirtualEnvDir/bin/activate"
     echo
     echo "ansible --version"
     echo
     echo "For uninstalling Ansible, just run:"
     echo
-    echo "rm -rf '$VirtualenvDir'"
+    echo "rm -rf '$VirtualEnvDir'"
     echo
 }
 
