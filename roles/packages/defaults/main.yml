@@ -106,7 +106,6 @@ packages_utils:
   - gtk2-engines
   - makepasswd
   - moreutils
-  - most
   - multitail
   - p7zip
   - p7zip-full
