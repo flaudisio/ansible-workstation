@@ -1,5 +1,5 @@
 ---
-awsvault_version: 5.4.1
+awsvault_version: 5.4.4
 
 awsvault_dl_url: >-
   https://github.com/99designs/aws-vault/releases/download/v{{ awsvault_version }}/aws-vault-linux-amd64

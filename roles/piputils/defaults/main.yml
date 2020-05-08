@@ -14,13 +14,13 @@ piputils_packages:
   - name: cookiecutter
     packages:
       - name: cookiecutter
-        version: 1.7.0
+        version: 1.7.2
     binaries:
       - cookiecutter
   - name: pre-commit
     packages:
       - name: pre-commit
-        version: 2.2.0
+        version: 2.3.0
     binaries:
       - pre-commit
       - pre-commit-validate-config
@@ -46,7 +46,7 @@ piputils_packages:
   - name: yamllint
     packages:
       - name: yamllint
-        version: 1.22.1
+        version: 1.23.0
     binaries:
       - yamllint
 
