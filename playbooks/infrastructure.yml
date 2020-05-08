@@ -11,3 +11,5 @@
       tags: goss
     - role: kubespy
       tags: kubespy
+    - role: opa
+      tags: opa
