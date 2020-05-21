@@ -79,19 +79,24 @@ $ ./run.sh playbooks/cloud-tools.yml
 
 ## TODO
 
-- Utilitários
-  - [x] Dotfiles
-  - [ ] Scripts (GitHub: `flaudisio/scripts`)
-
 - Software
   - [ ] pip (sistema)
-  - [ ] `virtualenv`, `virtualenvwrapper`
-  - [ ] [rbenv](https://github.com/rbenv/rbenv#installation)
-  - [ ] [nvm](https://github.com/creationix/nvm#manual-install)
+  - [ ] `virtualenv`, `virtualenvwrapper` (sistema)
+  - [ ] [ASDF](https://github.com/asdf-vm/asdf)
+  - [ ] Scripts (GitHub: `flaudisio/scripts`)
 
-- Configurações sensíveis
-  - [ ] `.ssh/config` (pessoal e trabalho)
+- Dotfiles/configurações
+  - [ ] xfce4-terminal
+  - [ ] Synapse (`Alt+F1`)
+  - [ ] Tearing (`/etc/X11/xorg.conf.d/20-intel.conf`)
+  - [ ] `.aws/config`
+  - [ ] `.ssh/config`
   - [ ] VPNs
+
+- Desktop
+  - [ ] Fix window button layout
+  - [ ] Window Manager keyboard shortcuts
+  - [ ] Desktop (wallpaper, icons)
 
 ## Licença
 
