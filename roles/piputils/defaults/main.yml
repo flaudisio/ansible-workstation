@@ -43,6 +43,12 @@ piputils_packages:
         version: 2.0.1
     binaries:
       - yamale
+  - name: speedtest-cli
+    packages:
+      - name: speedtest-cli
+        version: 2.1.2
+    binaries:
+      - speedtest-cli
   - name: yamllint
     packages:
       - name: yamllint
