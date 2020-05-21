@@ -75,6 +75,8 @@ desktop_keyboard_shortcuts:
     cmd: discord
   - shortcut: <Super>m
     cmd: slack
+  - shortcut: <Super>n
+    cmd: code {{ desktop_home_dir }}/notes
   - shortcut: <Super>t
     cmd: exo-open --launch TerminalEmulator
   - shortcut: <Super>w
