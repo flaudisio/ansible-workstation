@@ -20,7 +20,7 @@ check_sanity()
 
 run()
 {
-    echo "+ $@"
+    echo "+ $@" >&2
     "$@"
 }
 
