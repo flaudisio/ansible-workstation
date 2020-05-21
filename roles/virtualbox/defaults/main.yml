@@ -16,7 +16,7 @@ virtualbox_repo_file: virtualbox
 
 # Extension Pack
 
-virtualbox_extpack_version: 6.1.6
+virtualbox_extpack_version: 6.1.8
 
 virtualbox_extpack_url: >-
   http://download.virtualbox.org/virtualbox/{{ virtualbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_extpack_version }}.vbox-extpack

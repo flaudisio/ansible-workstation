@@ -20,7 +20,7 @@ piputils_packages:
   - name: pre-commit
     packages:
       - name: pre-commit
-        version: 2.3.0
+        version: 2.4.0
     binaries:
       - pre-commit
       - pre-commit-validate-config
