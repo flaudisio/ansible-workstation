@@ -1,0 +1,26 @@
+---
+- name: Instala chave do repositório
+  apt_key:
+    url: "{{ brave_repo_key_url }}"
+    state: present
+    keyring: "{{ brave_apt_keyring_file }}"
+  tags:
+    - brave:repo
+    - brave:install
+
+- name: Configura repositório
+  apt_repository:
+    repo: "{{ brave_repo_line }}"
+    filename: "{{ brave_repo_file }}"
+    state: present
+    update_cache: true
+  tags:
+    - brave:repo
+    - brave:install
+
+- name: Instala Brave
+  apt:
+    name: brave-browser
+    state: present
+    install_recommends: false
+  tags: brave:install
