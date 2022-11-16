@@ -1,0 +1,7 @@
+---
+mark_version: "6.7"
+
+mark_dl_url: >-
+  https://github.com/kovetskiy/mark/releases/download/{{ mark_version }}/mark_{{ mark_version }}_Linux_x86_64.tar.gz
+
+mark_path: /usr/local/bin/mark

@@ -1,0 +1,19 @@
+---
+- name: Check if Mark {{ mark_version }} is installed
+  shell: mark --version || true
+  register: mark_check
+  changed_when: false
+
+- name: Install Mark
+  unarchive:
+    remote_src: true
+    src: "{{ mark_dl_url }}"
+    dest: "{{ mark_path | dirname }}"
+    extra_opts:
+      - mark  # Extract only the binary
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    mark_check.stdout_lines | length == 0
+    or mark_version != mark_check.stdout_lines[0]
