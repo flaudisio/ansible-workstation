@@ -11,16 +11,33 @@ piputils_bin_symlink_dir: /usr/local/bin
 #     binaries:
 #       - example
 piputils_packages:
+  - name: bump2version
+    packages:
+      - name: bump2version
+        version: 1.0.1
+    binaries:
+      - bump2version
   - name: cookiecutter
     packages:
       - name: cookiecutter
-        version: 1.7.2
+        version: 2.1.1
     binaries:
       - cookiecutter
+  - name: httpie
+    packages:
+      - name: httpie
+        version: 3.2.1
+      - name: httpie-edgegrid
+        version: 2.0.0
+      - name: httpie-jwt-auth
+        version: 0.4.0
+    binaries:
+      - http
+      - https
   - name: pre-commit
     packages:
       - name: pre-commit
-        version: 2.4.0
+        version: 2.20.0
     binaries:
       - pre-commit
       - pre-commit-validate-config
@@ -28,31 +45,31 @@ piputils_packages:
   - name: ps_mem
     packages:
       - name: ps_mem
-        version: 3.12
+        version: 3.14
     binaries:
       - ps_mem
   - name: pygments
     packages:
       - name: Pygments
-        version: 2.6.1
+        version: 2.13.0
     binaries:
       - pygmentize
-  - name: yamale
-    packages:
-      - name: yamale
-        version: 2.0.1
-    binaries:
-      - yamale
   - name: speedtest-cli
     packages:
       - name: speedtest-cli
-        version: 2.1.2
+        version: 2.1.3
     binaries:
       - speedtest-cli
+  - name: yamale
+    packages:
+      - name: yamale
+        version: 4.0.4
+    binaries:
+      - yamale
   - name: yamllint
     packages:
       - name: yamllint
-        version: 1.23.0
+        version: 1.27.1
     binaries:
       - yamllint
 
