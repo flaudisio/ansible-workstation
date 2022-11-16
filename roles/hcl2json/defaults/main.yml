@@ -1,0 +1,9 @@
+---
+hcl2json_version: 0.3.3
+
+hcl2json_dl_url: >-
+  https://github.com/tmccombs/hcl2json/releases/download/v{{ hcl2json_version }}/hcl2json_linux_amd64
+
+hcl2json_sha256_checksum: 24068f1e25a34d8f8ca763f34fce11527472891bfa834d1504f665855021d5d4
+
+hcl2json_path: /usr/local/bin/hcl2json
