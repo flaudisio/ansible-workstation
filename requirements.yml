@@ -1,8 +1,4 @@
 ---
 - src: geerlingguy.docker
-  version: 2.6.2
+  version: 3.1.2
   name: docker
-
-- src: jdauphant.nginx
-  version: v2.21.2
-  name: nginx
