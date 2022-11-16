@@ -1,10 +1,10 @@
 ---
-- name: Verifica se q {{ q_version }} está instalado
+- name: Check if q {{ q_version }} is installed
   shell: q --version || true
   register: q_check
   changed_when: false
 
-- name: Instala q
+- name: Install q
   get_url:
     url: "{{ q_dl_url }}"
     dest: "{{ q_path }}"
