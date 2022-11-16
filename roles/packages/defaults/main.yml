@@ -13,20 +13,21 @@ packages_base:
   - curl
   - dkms
   - exo-utils
+  - language-selector-gnome
   - less
   - seahorse
   - software-properties-common
-  - synapse
-  - zeitgeist
+  # - synapse
+  # - zeitgeist
   - tmux
   - tree
   - wget
-  - xbacklight
+  # - xbacklight
   - xfce4-terminal
 
 packages_dev:
   - gedit
-  - gedit-developer-plugins
+  - gedit-plugins
   - vim
   # Python-related
   - libbz2-dev
@@ -34,8 +35,8 @@ packages_dev:
   - libreadline-dev
   - libsqlite3-dev
   - libssl-dev
-  - python-dev
   - python3-dev
+  - python3-venv
   - zlib1g-dev
 
 packages_sysadmin:
@@ -47,7 +48,8 @@ packages_sysadmin:
   - cracklib-runtime
   - exfat-fuse
   - exfat-utils
-  - gparted
+  # - gparted
+  - gpustat
   - htop
   - iotop
   - iptraf-ng
@@ -61,11 +63,10 @@ packages_sysadmin:
   - openssh-client
   - openssh-server
   - rsync
-  - system-config-printer-gnome
-  - system-config-printer-udev
+  # - system-config-printer
+  # - system-config-printer-udev
   - traceroute
   - whois
-  - xfce4-power-manager
 
 packages_media:
   - flameshot
@@ -77,6 +78,7 @@ packages_media:
   - fonts-liberation2
   - gimp
   - gpick
+  - graphviz
   - pavucontrol
   - ristretto
   - shotwell
@@ -86,52 +88,51 @@ packages_media:
 packages_utils:
   - ack
   - atool
-  - chromium-browser
+  - atril
+  # - chromium-browser
   - colordiff
-  - cups-pdf
   - dconf-editor
   - dos2unix
   - engrampa
-  - evince
+  # - evince
   - firefox
   - gvfs-backends
-  - ipcalc
-  - keepassx
-  - libreoffice-calc
-  - libreoffice-writer
-  - libreoffice-gtk3
-  - libreoffice-style-tango
-  - tango-icon-theme
-  - lxappearance
-  - gtk2-engines
+  - ipcalc-ng
+  - keepassxc
+  # - libreoffice-calc
+  # - libreoffice-writer
+  # - libreoffice-gtk3
+  # - libreoffice-style-tango
+  # - tango-icon-theme
+  # - lxappearance
+  # - gtk2-engines
   - makepasswd
   - moreutils
   - multitail
-  - p7zip
   - p7zip-full
   - p7zip-rar
   - pbzip2
   - pigz
+  - printer-driver-cups-pdf
   - pwgen
-  - remmina
-  - remmina-plugin-rdp
-  - remmina-plugin-vnc
-  - libfreerdp-plugins-standard
+  # - remmina
+  # - remmina-plugin-rdp
+  # - remmina-plugin-vnc
+  # - libfreerdp-plugins-standard
   - rename
   - sqlite3
-  - thunar
-  - thunar-archive-plugin
   - transmission-gtk
   - unar
   - unrar
   - unzip
+  # - v4l2ucp
   - wmctrl
   - xclip
   - xdotool
   - xz-utils
   - zenity
 
-# Pacotes que serão removidos via 'purge'.
+# Pacotes que serão removidos via 'purge'
 packages_purge:
   # Xubuntu-desktop
   - gmusicbrowser
@@ -142,18 +143,18 @@ packages_purge:
   - pidgin-otr
   # "Command not found"
   - command-not-found
-  - command-not-found-data
   - python3-commandnotfound
-  - sessioninstaller
   # Outros
   - gnome-software
   - gnome-software-common
+  - gnome-software-plugin-snap
+  - sgt-launcher
   - sgt-puzzles
   - thunderbird
   - unattended-upgrades
   - xul-ext-ubufox
 
-# Pacotes extras, para flexibilidade.
+# Pacotes extras, para flexibilidade
 # packages_extra:
 #   - foo
 #   - bar
