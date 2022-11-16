@@ -11,7 +11,15 @@
       tags: jq
     - role: yq
       tags: yq
+    - role: hcl2json
+      tags: hcl2json
+    - role: mark
+      tags: mark
     - role: q
       tags: q
-    - role: helm-docs
-      tags: helm-docs
+    - role: glab
+      tags: glab
+    - role: chef-workstation
+      tags: chef-workstation
+    # - role: helm-docs
+    #   tags: helm-docs
