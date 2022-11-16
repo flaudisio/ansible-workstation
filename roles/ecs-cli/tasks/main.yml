@@ -1,0 +1,17 @@
+---
+- name: Check if ECS CLI {{ ecs_cli_version }} is installed
+  shell: ecs-cli --version || true
+  register: ecs_cli_check
+  changed_when: false
+
+- name: Install ECS CLI
+  get_url:
+    url: "{{ ecs_cli_dl_url }}"
+    dest: "{{ ecs_cli_path }}"
+    force: true
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    ecs_cli_check.stdout_lines | length == 0
+    or ecs_cli_version not in ecs_cli_check.stdout
