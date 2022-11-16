@@ -40,23 +40,23 @@
   notify: Reinicia systemd-journald
   tags: base-system:journald
 
-- name: Cria diretório de configurações do XOrg
-  file:
-    path: /etc/X11/xorg.conf.d
-    state: directory
-    owner: root
-    group: root
-    mode: 0755
-  tags: base-system:xorg
-
-- name: Configura anti-tearing para placa gráfica Intel
-  copy:
-    src: xorg.conf.d/intel.conf
-    dest: /etc/X11/xorg.conf.d/20-intel.conf
-    owner: root
-    group: root
-    mode: 0644
-  tags: base-system:xorg
+# - name: Cria diretório de configurações do XOrg
+#   file:
+#     path: /etc/X11/xorg.conf.d
+#     state: directory
+#     owner: root
+#     group: root
+#     mode: 0755
+#   tags: base-system:xorg
+#
+# - name: Configura anti-tearing para placa gráfica Intel
+#   copy:
+#     src: xorg.conf.d/intel.conf
+#     dest: /etc/X11/xorg.conf.d/20-intel.conf
+#     owner: root
+#     group: root
+#     mode: 0644
+#   tags: base-system:xorg
 
 - name: Habilita insultos do sudo
   copy:
