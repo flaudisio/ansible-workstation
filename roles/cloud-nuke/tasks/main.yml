@@ -1,0 +1,17 @@
+---
+- name: Check if cloud-nuke {{ cloud_nuke_version }} is installed
+  shell: cloud-nuke --version || true
+  register: cloud_nuke_check
+  changed_when: false
+
+- name: Install cloud-nuke
+  get_url:
+    url: "{{ cloud_nuke_dl_url }}"
+    dest: "{{ cloud_nuke_path }}"
+    force: true
+    owner: root
+    group: root
+    mode: 0755
+  when: >
+    cloud_nuke_check.stdout_lines | length == 0
+    or cloud_nuke_version not in cloud_nuke_check.stdout_lines[0]
