@@ -10,7 +10,7 @@
     src: "{{ kubespy_dl_url }}"
     dest: "{{ kubespy_path | dirname }}"
     extra_opts:
-      - --strip-components=2
+      - kubespy  # Extract only the binary
     owner: root
     group: root
     mode: 0755
