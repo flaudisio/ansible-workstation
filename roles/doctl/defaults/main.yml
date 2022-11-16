@@ -1,7 +1,7 @@
 ---
 # yamllint disable rule:line-length
 
-doctl_version: 1.32.3
+doctl_version: 1.79.0
 
 doctl_dl_url: >-
   https://github.com/digitalocean/doctl/releases/download/v{{ doctl_version }}/doctl-{{ doctl_version }}-linux-amd64.tar.gz
