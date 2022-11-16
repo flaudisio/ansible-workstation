@@ -13,8 +13,8 @@
     group: root
     mode: 0755
   when: >
-    awsvault_check.stdout_lines | length == 0
-    or awsvault_version not in awsvault_check.stdout_lines[0]
+    awsvault_check.stderr_lines | length == 0
+    or awsvault_version not in awsvault_check.stderr_lines[0]
 
 - name: Instala Bash completion
   get_url:
@@ -25,6 +25,6 @@
     group: root
     mode: 0644
   when: >
-    awsvault_check.stdout_lines | length == 0
-    or awsvault_version not in awsvault_check.stdout_lines[0]
+    awsvault_check.stderr_lines | length == 0
+    or awsvault_version not in awsvault_check.stderr_lines[0]
   tags: awsvault:completion
