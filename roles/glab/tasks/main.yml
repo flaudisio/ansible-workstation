@@ -1,0 +1,17 @@
+---
+- name: Check if glab {{ glab_version }} is installed
+  shell: dpkg-query --showformat='${Version}' --show glab || true
+  register: glab_check
+  changed_when: false
+
+- name: Install package
+  apt:
+    deb: "{{ glab_package_url }}"
+    state: present
+    install_recommends: false
+  when: glab_version != glab_check.stdout
+
+- name: Configure Bash completion
+  shell: >
+    glab completion --shell bash > /etc/bash_completion.d/glab
+  when: glab_version != glab_check.stdout
