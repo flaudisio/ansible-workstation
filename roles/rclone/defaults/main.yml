@@ -1,5 +1,5 @@
 ---
-rclone_version: 1.51.0
+rclone_version: 1.60.0
 
 rclone_dl_url: >-
   https://github.com/ncw/rclone/releases/download/v{{ rclone_version }}/rclone-v{{ rclone_version }}-linux-amd64.zip
