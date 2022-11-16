@@ -17,3 +17,12 @@
   become_user: "{{ keybase_user }}"
   changed_when: false
   when: keybase_disable_autostart
+
+- name: Assegura que inicialização automática permaneça desativada
+  copy:
+    content: ""
+    dest: "{{ keybase_home }}/.config/keybase/autostart_created"
+    force: false
+  become: true
+  become_user: "{{ keybase_user }}"
+  when: keybase_disable_autostart
