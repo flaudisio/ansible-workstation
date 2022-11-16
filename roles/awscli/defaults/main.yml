@@ -1,5 +1,5 @@
 ---
-awscli_version: 1.18.57
+awscli_version: 1.22.73
 
 awscli_install_dir: /opt/awscli
 
