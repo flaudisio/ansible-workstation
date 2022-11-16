@@ -3,7 +3,7 @@
   apt_key:
     url: "{{ vscode_repo_key_url }}"
     state: present
-    keyring: /etc/apt/trusted.gpg.d/vscode.gpg
+    keyring: "{{ vscode_apt_keyring_file }}"
   tags:
     - vscode:repo
     - vscode:install
