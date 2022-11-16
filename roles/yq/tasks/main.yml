@@ -15,3 +15,10 @@
   when: >
     yq_check.stdout_lines | length == 0
     or yq_version not in yq_check.stdout_lines[0]
+
+- name: Configure Bash completion
+  shell: >
+    yq shell-completion bash > /etc/bash_completion.d/yq
+  when: >
+    yq_check.stdout_lines | length == 0
+    or yq_version not in yq_check.stdout_lines[0]
