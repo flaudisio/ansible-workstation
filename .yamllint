@@ -8,12 +8,15 @@ rules:
   brackets:
     max-spaces-inside: 1
     level: error
+  comments-indentation: false
   empty-lines:
     max: 1
   indentation:
     spaces: 2
   line-length:
-    max: 120
-    level: warning
-  new-line-at-end-of-file: enable
-  truthy: enable
+    max: 140
+    ignore: |
+      roles/*/defaults/**
+  truthy:
+    allowed-values: ["true", "false", "yes", "no"]
+    check-keys: true
