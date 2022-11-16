@@ -1,0 +1,6 @@
+---
+chef_workstation_version: 22.4.861
+chef_workstation_version_deb: "{{ chef_workstation_version }}-1"
+
+chef_workstation_package_url: >-
+  https://packages.chef.io/files/stable/chef-workstation/{{ chef_workstation_version }}/ubuntu/20.04/chef-workstation_{{ chef_workstation_version_deb }}_amd64.deb
