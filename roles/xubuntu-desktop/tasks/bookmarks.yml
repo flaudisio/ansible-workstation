@@ -5,7 +5,6 @@
     state: directory
     owner: "{{ desktop_user }}"
     group: "{{ desktop_user }}"
-  tags: desktop:bookmarks
 
 - name: Configura bookmarks
   template:
@@ -13,4 +12,3 @@
     dest: "{{ desktop_bookmarks_file }}"
     owner: "{{ desktop_user }}"
     group: "{{ desktop_user }}"
-  tags: desktop:bookmarks

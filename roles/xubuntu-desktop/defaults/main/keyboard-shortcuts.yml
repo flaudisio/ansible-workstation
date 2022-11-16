@@ -49,10 +49,10 @@ desktop_keyboard_shortcuts:
     cmd: xflock4
 
   # Window Manager
-  - shortcut: <Primary><Alt>Left
-    cmd: move-to-next-monitor
-  - shortcut: <Primary><Alt>Right
-    cmd: move-to-next-monitor
+  # - shortcut: <Primary><Alt>Left
+  #   cmd: move-to-next-monitor
+  # - shortcut: <Primary><Alt>Right
+  #   cmd: move-to-next-monitor
 
   # Xfce tools
   - shortcut: <Super>F1
@@ -71,10 +71,6 @@ desktop_keyboard_shortcuts:
   # Utilities
   - shortcut: <Super>e
     cmd: exo-open --launch FileManager
-  - shortcut: <Super>k
-    cmd: discord
-  - shortcut: <Super>m
-    cmd: slack
   - shortcut: <Super>n
     cmd: code {{ desktop_home_dir }}/notes
   - shortcut: <Super>t

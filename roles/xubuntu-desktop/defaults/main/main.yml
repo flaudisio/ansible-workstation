@@ -51,17 +51,45 @@ desktop_bookmarks:
 desktop_xfconf_settings:
   # Thunar
   - channel: thunar
+    property: /last-location-bar
+    value: ThunarLocationButtons
+    value_type: string
+  - channel: thunar
     property: /last-menubar-visible
     value: "false"
     value_type: bool
+  - channel: thunar
+    property: /last-sort-column
+    value: THUNAR_COLUMN_TYPE
+    value_type: string
+  - channel: thunar
+    property: /last-sort-order
+    value: GTK_SORT_ASCENDING
+    value_type: string
   - channel: thunar
     property: /last-view
     value: ThunarDetailsView
     value_type: string
   - channel: thunar
+    property: /last-window-maximized
+    value: "true"
+    value_type: bool
+  - channel: thunar
+    property: /misc-change-window-icon
+    value: "true"
+    value_type: bool
+  - channel: thunar
     property: /misc-date-style
     value: THUNAR_DATE_STYLE_LONG
     value_type: string
+  - channel: thunar
+    property: /misc-full-path-in-title
+    value: "false"
+    value_type: bool
+  - channel: thunar
+    property: /misc-open-new-window-as-tab
+    value: "true"
+    value_type: bool
   - channel: thunar
     property: /misc-thumbnail-mode
     value: THUNAR_THUMBNAIL_MODE_ONLY_LOCAL
@@ -76,7 +104,7 @@ desktop_xfconf_settings:
     value_type: bool
   - channel: thunar
     property: /shortcuts-icon-size
-    value: THUNAR_ICON_SIZE_SMALLEST
+    value: THUNAR_ICON_SIZE_24
     value_type: string
 
   # Desktop
@@ -85,10 +113,10 @@ desktop_xfconf_settings:
     value: "0"
     value_type: int
 
-  # xsettings
-  - channel: xsettings
-    property: /Gtk/DecorationLayout
-    value: close,maximize,minimize:menu
+  # Window Manager
+  - channel: xfwm4
+    property: /general/button_layout
+    value: "CMH|O"
     value_type: string
 
 # Keyboard shortcuts
@@ -98,3 +126,4 @@ desktop_xfconf_settings:
 
 desktop_packages:
   - oxygen-cursor-theme
+  - tumbler

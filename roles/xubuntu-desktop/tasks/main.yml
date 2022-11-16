@@ -1,17 +1,17 @@
 ---
 - import_tasks: autostart.yml
-  tags: desktop:autostart
+  tags: xubuntu-desktop:autostart
 
 - import_tasks: user-dirs.yml
-  tags: desktop:user-dirs
+  tags: xubuntu-desktop:user-dirs
 
 - import_tasks: bookmarks.yml
-  tags: desktop:bookmarks
+  tags: xubuntu-desktop:bookmarks
 
 - import_tasks: keyboard-shortcuts.yml
   become: true
   become_user: "{{ desktop_user }}"
-  tags: desktop:keyboard-shortcuts
+  tags: xubuntu-desktop:keyboard-shortcuts
 
 - name: Configura ambiente via Xfconf
   xfconf:
@@ -23,7 +23,7 @@
   loop: "{{ desktop_xfconf_settings }}"
   become: true
   become_user: "{{ desktop_user }}"
-  tags: desktop:xfconf
+  tags: xubuntu-desktop:xfconf
 
 - name: Instala pacotes selecionados
   apt:
@@ -32,7 +32,7 @@
     install_recommends: false
     update_cache: true
     cache_valid_time: 3600
-  tags: desktop:packages
+  tags: xubuntu-desktop:packages
 
 - name: Define Oxygen Zion como tema do cursor do mouse
   alternatives:
@@ -40,4 +40,4 @@
     path: /etc/X11/cursors/oxy-zion.theme
   when: >
     'oxygen-cursor-theme' in desktop_packages
-  tags: desktop:cursor
+  tags: xubuntu-desktop:cursor
