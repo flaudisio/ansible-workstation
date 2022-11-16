@@ -1,6 +1,4 @@
 ---
-# yamllint disable rule:line-length
-
 doctl_version: 1.79.0
 
 doctl_dl_url: >-

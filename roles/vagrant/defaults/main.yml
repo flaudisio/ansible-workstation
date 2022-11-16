@@ -1,6 +1,4 @@
 ---
-# yamllint disable rule:line-length
-
 # Usuário do sistema
 # Padrão: $USER (do usuário que executa o Ansible)
 vagrant_user: "{{ lookup('env', 'USER') }}"

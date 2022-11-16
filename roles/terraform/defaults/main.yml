@@ -1,6 +1,4 @@
 ---
-# yamllint disable rule:line-length
-
 # Terraform
 
 terraform_version: 0.11.14

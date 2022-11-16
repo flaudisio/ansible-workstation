@@ -1,6 +1,4 @@
 ---
-# yamllint disable rule:line-length
-
 # System user - defaults to the user running Ansible ($USER)
 virtualbox_user: "{{ lookup('env', 'USER') }}"
 
