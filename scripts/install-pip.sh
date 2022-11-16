@@ -42,16 +42,11 @@ install_pip()
     echo "Downloading get-pip.py"
     run curl --fail -L -o "$pip_script_path" https://bootstrap.pypa.io/get-pip.py
 
-    echo "Installing pip for Python 2"
-    run sudo -H python2 "$pip_script_path"
-    run pip --version
-
     echo "Installing pip for Python 3"
     run sudo -H python3 "$pip_script_path"
     run pip --version
 
     echo "Checking pip versions"
-    run pip2 --version
     run pip3 --version
     run pip --version
 

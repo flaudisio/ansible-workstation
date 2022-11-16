@@ -3,7 +3,7 @@
 set -e
 set -o pipefail
 
-VirtualEnvDir="/var/tmp/ansible-workstation-temp-virtualenv"
+VirtualEnvDir="/var/tmp/ansible-workstation-venv"
 
 AnsibleVersion="2.9.*"
 
