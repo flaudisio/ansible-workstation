@@ -1,10 +1,10 @@
 ---
-- name: Verifica se Slack está instalado
+- name: Check if Slack is installed
   shell: dpkg-query --showformat='${Version}' --show slack-desktop || true
   register: slack_check
   changed_when: false
 
-- name: Instala Slack
+- name: Install Slack
   apt:
     deb: "{{ slack_package_url }}"
     state: present
