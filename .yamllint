@@ -8,7 +8,6 @@ rules:
   brackets:
     max-spaces-inside: 1
     level: error
-  comments-indentation: false
   empty-lines:
     max: 1
   indentation:
@@ -16,7 +15,7 @@ rules:
   line-length:
     max: 140
     ignore: |
-      roles/*/defaults/**
+      roles/*/*/defaults/*
   truthy:
     allowed-values: ["true", "false", "yes", "no"]
     check-keys: true
