@@ -1,0 +1,11 @@
+---
+firefox_apt_keyring_file: /etc/apt/keyrings/firefox.gpg
+
+firefox_repo_key_server: keyserver.ubuntu.com
+firefox_repo_key_id: 0AB215679C571D1C8325275B9BDB3D89CE49EC21
+
+firefox_repo_line: deb [signed-by={{ firefox_apt_keyring_file }}] http://ppa.launchpad.net/mozillateam/ppa/ubuntu {{ ansible_distribution_release }} main
+
+firefox_repo_filename: firefox
+
+firefox_set_as_default_browser: true

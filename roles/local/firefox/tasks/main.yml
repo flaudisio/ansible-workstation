@@ -1,0 +1,72 @@
+---
+# TODO: migrate to Mozilla's official repository:
+# https://support.mozilla.org/en-US/kb/install-firefox-linux#w_install-firefox-deb-package-for-debian-based-distributions
+
+- name: Check if snap command exists
+  ansible.builtin.shell: snap --version || true
+  register: _firefox_check_snap
+  changed_when: false
+  tags: firefox:snap
+
+- name: Ensure Firefox snap is absent
+  community.general.snap:
+    name: firefox
+    state: absent
+  when: _firefox_check_snap.stdout != ""
+  tags: firefox:snap
+
+- name: Install repository key
+  ansible.builtin.apt_key:
+    keyserver: "{{ firefox_repo_key_server }}"
+    id: "{{ firefox_repo_key_id }}"
+    state: present
+    keyring: "{{ firefox_apt_keyring_file }}"
+  tags:
+    - firefox:repo
+    - firefox:install
+
+- name: Configure repository
+  ansible.builtin.apt_repository:
+    repo: "{{ firefox_repo_line }}"
+    filename: "{{ firefox_repo_filename }}"
+    state: present
+    update_cache: true
+  tags:
+    - firefox:repo
+    - firefox:install
+
+- name: Configure package priority to Mozilla PPA
+  ansible.builtin.copy:
+    content: |
+      # Managed by Ansible - ansible-workstation
+      Package: *
+      Pin: release o=LP-PPA-mozillateam
+      Pin-Priority: 1001
+
+      Package: firefox
+      Pin: version /.*snap.*/
+      Pin-Priority: -1
+    dest: /etc/apt/preferences.d/firefox
+    owner: root
+    group: root
+    mode: 0644
+  tags:
+    - firefox:repo
+    - firefox:install
+
+- name: Install package
+  ansible.builtin.apt:
+    name: firefox
+    state: present
+    install_recommends: false
+  tags: firefox:install
+
+- name: Set Firefox as default browser in Alternatives
+  community.general.alternatives:
+    name: "{{ item }}"
+    path: /usr/bin/firefox
+  loop:
+    - gnome-www-browser
+    - x-www-browser
+  when: firefox_set_as_default_browser | bool
+  tags: firefox:alternatives
