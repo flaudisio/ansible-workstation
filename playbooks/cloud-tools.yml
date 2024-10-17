@@ -3,8 +3,8 @@
   hosts: all
 
   roles:
-    - role: awscli
-      tags: awscli
+    - role: aws-cli
+      tags: aws-cli
     - role: aws-vault
       tags: aws-vault
     - role: cloud-nuke

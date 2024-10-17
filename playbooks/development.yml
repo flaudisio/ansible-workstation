@@ -3,10 +3,12 @@
   hosts: all
 
   roles:
-    - role: vscode
-      tags: vscode
     - role: bat
       tags: bat
+    - role: jq
+      tags: jq
+    - role: vscode
+      tags: vscode
     - role: jq
       tags: jq
     - role: yq
@@ -19,7 +21,5 @@
       tags: q
     - role: glab
       tags: glab
-    - role: chef-workstation
-      tags: chef-workstation
-    # - role: helm-docs
-    #   tags: helm-docs
+    - role: helm-docs
+      tags: helm-docs
