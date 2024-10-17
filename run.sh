@@ -1,5 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -ex
+AnsibleOpts=()
 
-ansible-playbook --become --ask-become-pass "$@"
+[[ -z "$NO_SUDO" ]] && AnsibleOpts+=( --become --ask-become-pass )
+
+set -e
+set -o pipefail
+set -x
+
+ansible-playbook "${AnsibleOpts[@]}" "$@"

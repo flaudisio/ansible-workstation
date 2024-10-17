@@ -3,13 +3,31 @@ root = true
 [*]
 charset = utf-8
 end_of_line = lf
+indent_size = 4
+indent_style = space
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{yml,yaml}]
-indent_style = space
-indent_size = 2
+[Makefile]
+indent_style = tab
 
 [*.md]
-max_line_length = 100
+indent_size = 2
+max_line_length = 120
 trim_trailing_whitespace = false
+
+[*.{hcl,tf,tfvars}{,.j2,.tpl}]
+indent_size = 2
+max_line_length = 80
+
+[*.{json,yml,yaml}{,.j2}]
+indent_size = 2
+
+# Note: shell configuration is used by shfmt
+# TODO: add pre-commit hook for shfmt
+[*.sh]
+indent_size = 4
+function_next_line = true
+keep_padding = true
+space_redirects = true
+switch_case_indent = true

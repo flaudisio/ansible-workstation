@@ -1,90 +1,39 @@
+---
 # ------------------------------------------------------------------------------
-# OPERATING SYSTEMS
-# ------------------------------------------------------------------------------
-
-### macOS/Linux/Windows ###
-
-.DS_Store
-.AppleDouble
-.LSOverride
-
-.Trash-*
-
-Thumbs.db
-[Dd]esktop.ini
-*.lnk
-
-# ------------------------------------------------------------------------------
-# EDITORS
+# Locals
 # ------------------------------------------------------------------------------
 
-### Vim ###
-
-# Swap
-[._]*.s[a-v][a-z]
-[._]*.sw[a-p]
-[._]s[a-rt-v][a-z]
-[._]ss[a-gi-z]
-[._]sw[a-p]
-
-### JetBrains (IntelliJ, PyCharm, etc) ###
-
-.idea
-*.iml
-*.ipr
-*.iws
-/out
-
-### Sublime Text ###
-
-*.sublime-project
-*.sublime-workspace
-
-### VSCode ###
-
-.vscode/**
-!.vscode/README.md
-!.vscode/extensions.json
-!.vscode/recommended-*.json
-!.vscode/settings.json
+__current_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
 
 # ------------------------------------------------------------------------------
-# PYTHON
+# Ansible
 # ------------------------------------------------------------------------------
 
-__pycache__/
-*.py[cod]
-*$py.class
-
-### VirtualEnv ###
-
-.Python
-.venv
-pyvenv.cfg
-pip-selfcheck.json
+ansible_connection: local
 
 # ------------------------------------------------------------------------------
-# ANSIBLE
+# base
 # ------------------------------------------------------------------------------
 
-*.retry
-.vault_password
-
-collections/*
-!collections/README.md
-!collections/requirements.yml
-
-roles/public/*
-!roles/public/.gitkeep
-
-logs/*
-!logs/.gitkeep
+# base_disable_snapd: true
 
 # ------------------------------------------------------------------------------
-# MISC
+# awscli
 # ------------------------------------------------------------------------------
 
-### Secrets ###
+awscli_enable_bash_completion: false
 
-*.key
-*.pem
+# ------------------------------------------------------------------------------
+# docker
+# ------------------------------------------------------------------------------
+
+docker_users:
+  - "{{ __current_user }}"
+
+# Ref: https://docs.docker.com/engine/reference/commandline/dockerd/#daemon-configuration-file
+docker_daemon_options:
+  bip: 192.168.243.1/24
+  default-address-pools:
+    # Ref: ipcalc-ng 192.168.244.0/22 -S 27
+    - base: 192.168.244.0/22
+      size: 27
