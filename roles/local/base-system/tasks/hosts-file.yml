@@ -1,0 +1,16 @@
+---
+- name: Add the defined configuration to /etc/hosts
+  ansible.builtin.blockinfile:
+    path: /etc/hosts
+    marker: "### {mark} Managed by Ansible - ansible-workstation ###"
+    block: "{{ base_hosts_config }}"
+    backup: false
+    state: present
+
+- name: Remove defined lines from /etc/hosts
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    regexp: "{{ item }}"
+    backup: false
+    state: absent
+  loop: "{{ base_hosts_file_remove }}"

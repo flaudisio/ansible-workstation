@@ -1,5 +1,0 @@
----
-slack_version: 4.28.182
-
-slack_package_url: >-
-  https://downloads.slack-edge.com/releases/linux/{{ slack_version }}/prod/x64/slack-desktop-{{ slack_version }}-amd64.deb

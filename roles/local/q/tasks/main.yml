@@ -1,0 +1,17 @@
+---
+- name: Check if q {{ q_version }} is installed
+  shell: q --version || true
+  register: q_check
+  changed_when: false
+
+- name: Install q
+  get_url:
+    url: "{{ q_dl_url }}"
+    dest: "{{ q_path }}"
+    force: true
+    owner: root
+    group: root
+    mode: "0755"
+  when: >
+    q_check.stderr_lines | length == 0
+    or q_version not in q_check.stderr_lines[0]

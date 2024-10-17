@@ -1,0 +1,33 @@
+---
+- name: Check if AWS CLI {{ awscli_version }} is installed
+  ansible.builtin.shell: aws --version || true
+  register: awscli_check
+  changed_when: false
+
+- name: Download and install
+  when: >
+    awscli_check.stdout_lines | length == 0
+    or awscli_version not in awscli_check.stdout_lines[0]
+  block:
+    - name: Create temporary folder
+      ansible.builtin.file:
+        path: "{{ awscli_tmp_dir }}"
+        state: directory
+      changed_when: false
+
+    - name: Download and extract archive to temporary folder
+      ansible.builtin.unarchive:
+        remote_src: true
+        src: "{{ awscli_dl_url }}"
+        dest: "{{ awscli_tmp_dir }}"
+      changed_when: false
+
+    - name: Run installer
+      ansible.builtin.command: >
+        {{ awscli_tmp_dir }}/aws/install --bin-dir {{ awscli_bin_dir }} --install-dir {{ awscli_install_dir }} --update
+
+    - name: Remove temporary folder
+      ansible.builtin.file:
+        path: "{{ awscli_tmp_dir }}"
+        state: absent
+      changed_when: false

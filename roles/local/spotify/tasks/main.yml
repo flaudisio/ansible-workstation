@@ -1,0 +1,21 @@
+---
+- name: Install repository key
+  ansible.builtin.apt_key:
+    url: "{{ spotify_apt_repo_key_url }}"
+    state: present
+    keyring: "{{ spotify_apt_repo_key_file }}"
+
+- name: Configure repository
+  ansible.builtin.apt_repository:
+    repo: "{{ spotify_apt_repo_line }}"
+    filename: "{{ spotify_apt_repo_file }}"
+    state: present
+    update_cache: true
+
+- name: Install packages
+  ansible.builtin.apt:
+    name:
+      - spotify-client
+      - libavcodec-extra
+    state: present
+    install_recommends: false

@@ -1,0 +1,19 @@
+---
+- name: Check if trivy {{ trivy_version }} is installed
+  shell: trivy --version || true
+  register: trivy_check
+  changed_when: false
+
+- name: Install trivy
+  unarchive:
+    remote_src: true
+    src: "{{ trivy_dl_url }}"
+    dest: "{{ trivy_path | dirname }}"
+    include:
+      - trivy  # Extract only the binary
+    owner: root
+    group: root
+    mode: "0755"
+  when: >
+    trivy_check.stdout_lines | length == 0
+    or trivy_version not in trivy_check.stdout_lines[0]

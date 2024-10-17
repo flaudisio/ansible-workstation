@@ -1,0 +1,22 @@
+---
+- name: Check if terragrunt-atlantis-config {{ terragrunt_atlantis_config_version }} is installed
+  shell: terragrunt-atlantis-config version || true
+  register: terragrunt_atlantis_config_check
+  changed_when: false
+
+- name: Install terragrunt-atlantis-config
+  unarchive:
+    remote_src: true
+    src: "{{ terragrunt_atlantis_config_dl_url }}"
+    dest: "{{ terragrunt_atlantis_config_path | dirname }}"
+    extra_opts:
+      - --wildcards
+      - '*/terragrunt-atlantis-config_*'  # Extract only the binary
+      - --transform
+      - 's|.*/\(terragrunt-atlantis-config\)_.*|\1|'  # Remove the '_<version>_linux_amd64' suffix from filename
+    owner: root
+    group: root
+    mode: "0755"
+  when: >
+    terragrunt_atlantis_config_check.stdout_lines | length == 0
+    or terragrunt_atlantis_config_version not in terragrunt_atlantis_config_check.stdout_lines[0]

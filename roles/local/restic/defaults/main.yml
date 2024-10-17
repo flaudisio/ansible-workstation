@@ -1,0 +1,11 @@
+---
+restic_version: 0.16.5
+
+restic_dl_url: >-
+  https://github.com/restic/restic/releases/download/v{{ restic_version }}/restic_{{ restic_version }}_linux_amd64.bz2
+
+restic_sha256_checksum: f1a9c39d396d1217c05584284352f4a3bef008be5d06ce1b81a6cf88f6f3a7b1
+
+restic_path: /usr/local/bin/restic
+
+restic_man_pages_dir: /usr/local/share/man/man1

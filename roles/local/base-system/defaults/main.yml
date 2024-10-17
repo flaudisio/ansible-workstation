@@ -1,0 +1,21 @@
+---
+base_ssh_port: 22
+
+# Tamanho máximo de logs do Journal (systemd)
+base_journald_system_max_use: 200M
+
+base_enable_intel_tearing_fix: false
+
+# base_hosts_config: |
+#   10.0.0.1   foo.example.com
+#   10.0.2.20  another.example.com  another
+base_hosts_config: ""
+
+# base_hosts_file_remove:
+#   - ^192\.168
+#   - host\.example\.com
+base_hosts_file_remove: []
+
+base_sudoers_config: ""
+
+base_disable_snapd: false

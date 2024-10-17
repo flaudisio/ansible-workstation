@@ -1,0 +1,3 @@
+---
+megasync_package_url: >-
+  https://mega.nz/linux/repo/xUbuntu_{{ ansible_distribution_version }}/amd64/megasync-xUbuntu_{{ ansible_distribution_version }}_amd64.deb

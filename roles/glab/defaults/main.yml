@@ -1,5 +1,0 @@
----
-glab_version: 1.22.0
-
-glab_package_url: >-
-  https://github.com/profclems/glab/releases/download/v{{ glab_version }}/glab_{{ glab_version }}_Linux_x86_64.deb

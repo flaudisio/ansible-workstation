@@ -1,0 +1,26 @@
+---
+- name: Install repository key
+  ansible.builtin.apt_key:
+    url: "{{ vscode_apt_repo_key_url }}"
+    state: present
+    keyring: "{{ vscode_apt_keyring_file }}"
+  tags:
+    - vscode:repo
+    - vscode:install
+
+- name: Configure repository
+  ansible.builtin.apt_repository:
+    repo: "{{ vscode_apt_repo_line }}"
+    filename: "{{ vscode_apt_repo_file }}"
+    state: present
+    update_cache: true
+  tags:
+    - vscode:repo
+    - vscode:install
+
+- name: Install packages
+  ansible.builtin.apt:
+    name: code
+    state: present
+    install_recommends: false
+  tags: vscode:install

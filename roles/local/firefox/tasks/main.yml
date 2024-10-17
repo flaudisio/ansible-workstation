@@ -48,7 +48,7 @@
     dest: /etc/apt/preferences.d/firefox
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   tags:
     - firefox:repo
     - firefox:install
