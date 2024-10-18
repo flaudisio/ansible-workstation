@@ -1,5 +1,4 @@
 ---
-# This play is REQUIRED in order to run any role directly by using -t/--tags.
 - name: Ansible Workstation
   hosts: all
 
