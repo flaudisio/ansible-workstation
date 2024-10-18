@@ -1,103 +1,64 @@
-# Ansible: Workstation
+# Ansible Workstation
 
-Playbook e roles do Ansible para provisionamento do meu computador.
+Ansible playbooks and roles that I use to provision my Linux-based machines.
 
-## Compatibilidade
+## Compatibility
 
-As roles são desenvolvidas e testadas no **Xubuntu 18.04 (amd64)**, mas deverão
-funcionar em qualquer "flavor" e/ou versão recente do Ubuntu.
+This repository is currently tested against **Xubuntu 24.04** (x86_64), but most roles should work with any Ubuntu flavor
+running the same version.
 
-> **Atenção:** leia as tasks e execute com cautela. Não posso me responsabilizar
-> por eventuais problemas em seu sistema! ;)
+## Prerequisites
 
-## Pré-requisitos
+- Git
+- Python [venv](https://docs.python.org/3/library/venv.html) module
 
-- Ansible 2.8+
+The installation steps below take care of bootstrapping a default (X)Ubuntu installation.
 
-## Uso
+## Installation
 
-Antes, assegure que o Ansible esteja instalado :-)
+Initial setup in a default ("untouched") Ubuntu installation:
 
-No _primeiro uso_, instale as roles externas:
+```bash
+# Basic requirements
+sudo apt-get update
+sudo apt-get install git python3-venv
 
-```console
-$ wget -nv https://github.com/flaudisio/ansible-workstation/archive/master.tar.gz -O - | tar -xzf -
-$ cd ansible-workstation-master/
-$ ./scripts/update-requirements.sh
+git clone https://github.com/flaudisio/ansible-workstation.git ~/.local/share/ansible-workstation
+
+cd ~/.local/share/ansible-workstation
+
+make install
+eval $( make venv-activate )
+
+ansible --version
 ```
 
-Feito isso, execute o playbook:
+## Usage
 
-```console
-$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml
+Run the `complete` playbook:
+
+```bash
+cd ~/.local/share/ansible-workstation
+
+./run.sh playbooks/complete.yml
 ```
 
-Observe que:
+The [run.sh](run.sh) script is a simple wrapper for the `ansible-playbook` command. By default it uses the `--become --ask-become-pass`
+arguments, so your user must be able to run commands using `sudo` (this is the default behavior in standard Ubuntu installations).
 
-- O comando provisiona a própria máquina (`-c local`) e assume que está sendo executado
-  por um usuário com permissão de `sudo` (`-b` e `-K`), como em uma instalação típica
-  do Ubuntu;
-- Tarefas como a instalação de "dotfiles" são executadas pelo usuário que executou
-  o Ansible. Por exemplo, o `.bashrc` será instalado em `/home/usuario` em vez de
-  `/root`;
-- _Nenhum_ pacote previamente instalado é atualizado (ou seja, APT sempre com `state: present`).
+## Running specific tasks
 
-**Dica:** use o script [`run.sh`](run.sh) como "alias" do comando acima. Exemplos:
+Use `ansible-playbook` arguments for advanced actions like running specific tasks, enabling check mode and showing diffs.
 
-```console
-$ ./run.sh playbooks/master.yml --list-tasks
-$ ./run.sh playbooks/master.yml --tags backup,spotify
-$ ./run.sh playbooks/chat.yml
+Example:
+
+```bash
+./run.sh playbooks/complete.yml --list-tasks
+./run.sh playbooks/complete.yml --tags backup,spotify
+./run.sh playbooks/complete.yml -t package:misc -t restic
+./run.sh playbooks/complete.yml -t spotify --diff -C
 ```
 
-## Roles externas utilizadas
-
-As (excelentes) roles externas abaixo são utilizadas:
-
-- [geerlingguy.docker](https://github.com/geerlingguy/ansible-role-docker)
-- [jdauphant.nginx](https://github.com/jdauphant/ansible-role-nginx)
-
-## Execução de tarefas específicas
-
-Use o poder dos playbooks e tags! ;-)
-
-Exemplos:
-
-```console
-$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml --list-tasks
-$ ansible-playbook -b -K -c local -i inventory.ini playbooks/master.yml -t pkg:misc,backup
-$ ansible-playbook -b -K -c local -i inventory.ini playbooks/cloud-tools.yml
-```
-
-Exemplos (equivalentes, via script):
-
-```console
-$ ./run.sh playbooks/master.yml --list-tasks
-$ ./run.sh playbooks/master.yml -t pkg:misc,backup
-$ ./run.sh playbooks/cloud-tools.yml
-```
-
-## TODO
-
-- Software
-  - [ ] pip (sistema)
-  - [ ] `virtualenv`, `virtualenvwrapper` (sistema)
-  - [ ] [ASDF](https://github.com/asdf-vm/asdf)
-  - [ ] Scripts (GitHub: `flaudisio/scripts`)
-
-- Dotfiles/configurações
-  - [ ] xfce4-terminal
-  - [ ] Synapse (`Alt+F1`)
-  - [ ] Tearing (`/etc/X11/xorg.conf.d/20-intel.conf`)
-  - [ ] `.aws/config`
-  - [ ] `.ssh/config`
-  - [ ] VPNs
-
-- Desktop
-  - [ ] Fix window button layout
-  - [ ] Window Manager keyboard shortcuts
-  - [ ] Desktop (wallpaper, icons)
-
-## Licença
+## License
 
 [WTFPL](LICENSE).
