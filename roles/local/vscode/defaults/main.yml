@@ -1,0 +1,10 @@
+---
+# Ref: https://code.visualstudio.com/docs/setup/linux
+
+vscode_apt_keyring_file: /etc/apt/keyrings/vscode.gpg
+
+vscode_apt_repo_key_url: https://packages.microsoft.com/keys/microsoft.asc
+
+vscode_apt_repo_line: deb [arch=amd64,arm64,armhf signed-by={{ vscode_apt_keyring_file }}] https://packages.microsoft.com/repos/code stable main
+
+vscode_apt_repo_file: vscode

@@ -1,33 +1,33 @@
 ---
 repos:
-  - repo: git://github.com/pre-commit/pre-commit-hooks
-    rev: v2.5.0
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
     hooks:
       - id: check-added-large-files
-      - id: check-byte-order-marker
       - id: check-executables-have-shebangs
       - id: check-merge-conflict
       - id: end-of-file-fixer
+      - id: fix-byte-order-marker
       - id: mixed-line-ending
       - id: trailing-whitespace
         args: [--markdown-linebreak-ext=md]
-  - repo: git://github.com/adrienverge/yamllint
-    rev: v1.20.0
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.35.1
     hooks:
       - id: yamllint
         entry: yamllint --strict
-  - repo: git://github.com/ansible/ansible-lint
-    rev: v4.2.0
-    hooks:
-      - id: ansible-lint
-        # NOTE: filenames are not passed to the ansible-lint hook by default[1], so we must pass
-        # the playbook files as explicit args and also tweak the 'files', 'pass_filenames' and 'always_run' options.
-        #
-        # [1] https://github.com/ansible/ansible-lint/blob/v4.2.0/.pre-commit-hooks.yaml#L11
-        args:
-          - --exclude=roles_galaxy
-          - playbooks/master.yml
-          - playbooks/unused.yml
-        files: ^(roles|playbooks)/
-        pass_filenames: false
-        always_run: false
+  # - repo: https://github.com/ansible/ansible-lint
+  #   rev: v6.8.6
+  #   hooks:
+  #     - id: ansible-lint
+  #       # NOTE: filenames are not passed to the ansible-lint hook by default[1], so we must pass
+  #       # the playbook files as explicit args and also tweak the 'files', 'pass_filenames' and 'always_run' options.
+  #       #
+  #       # [1] https://github.com/ansible/ansible-lint/blob/v4.2.0/.pre-commit-hooks.yaml#L11
+  #       args:
+  #         - --exclude=roles_galaxy
+  #         - playbooks/master.yml
+  #         - playbooks/unused.yml
+  #       files: ^(roles|playbooks)/
+  #       pass_filenames: false
+  #       always_run: false

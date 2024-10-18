@@ -1,0 +1,108 @@
+---
+- name: Configure swappiness
+  ansible.builtin.sysctl:
+    name: vm.swappiness
+    value: "10"
+    sysctl_file: /etc/sysctl.d/90-ansible-workstation.conf
+    state: present
+    reload: true
+  tags: base-system:sysctl
+
+- name: Configure SSH server port
+  ansible.builtin.copy:
+    content: |
+      Port {{ base_ssh_port }}
+    dest: /etc/ssh/sshd_config.d/90-ansible-workstation.conf
+    owner: root
+    group: root
+    mode: "0644"
+    validate: "sshd -t -f %s"
+  notify: Reinicia SSH
+  tags: base-system:ssh
+
+- name: Disable LightDM guest user
+  ansible.builtin.copy:
+    content: |
+      [Seat:*]
+      allow-guest=false
+    dest: /etc/lightdm/lightdm.conf.d/50-no-guest.conf
+    owner: root
+    group: root
+    mode: "0644"
+  tags: base-system:lightdm
+
+- name: Configure systemd Journal max log usage
+  ansible.builtin.ini_file:
+    path: /etc/systemd/journald.conf
+    section: Journal
+    option: SystemMaxUse
+    value: "{{ base_journald_system_max_use }}"
+    create: false
+    backup: true
+    state: present
+  notify: Reinicia systemd-journald
+  tags: base-system:journald
+
+- name: Create XOrg configuration directory
+  ansible.builtin.file:
+    path: /etc/X11/xorg.conf.d
+    state: directory
+    owner: root
+    group: root
+    mode: "0755"
+  when: base_enable_intel_tearing_fix | bool
+  tags: base-system:xorg
+
+- name: Configure Intel anti-tearing
+  ansible.builtin.copy:
+    src: xorg.conf.d/intel.conf
+    dest: /etc/X11/xorg.conf.d/20-intel.conf
+    owner: root
+    group: root
+    mode: "0644"
+  when: base_enable_intel_tearing_fix | bool
+  tags: base-system:xorg
+
+- name: Enable sudo insults
+  ansible.builtin.copy:
+    content: |
+      # Managed by Ansible - ansible-workstation
+      Defaults  insults
+    dest: /etc/sudoers.d/90-ansible-insults
+    owner: root
+    group: root
+    mode: "0440"
+    validate: "visudo --check --file %s"
+  tags: base-system:sudo
+
+- name: Configure sudoers
+  ansible.builtin.copy:
+    content: |
+      # Managed by Ansible - ansible-workstation
+      {{ base_sudoers_config }}
+    dest: /etc/sudoers.d/90-ansible-custom
+    owner: root
+    group: root
+    mode: "0440"
+    validate: "visudo --check --file %s"
+  tags: base-system:sudo
+
+- name: Configure Num Lock behavior
+  ansible.builtin.lineinfile:
+    path: /etc/default/numlockx
+    regexp: "^NUMLOCK=.*$"
+    line: "NUMLOCK=keep"
+    owner: root
+    group: root
+    mode: "0644"
+    create: false
+    state: present
+  tags: base-system:numlock
+
+- name: Include hosts file tasks
+  ansible.builtin.import_tasks: hosts-file.yml
+  tags: base-system:hosts
+
+- name: Include snap tasks
+  ansible.builtin.import_tasks: snap.yml
+  tags: base-system:snap

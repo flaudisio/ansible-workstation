@@ -1,0 +1,22 @@
+---
+# System user - defaults to the user running Ansible ($USER)
+virtualbox_user: "{{ lookup('ansible.builtin.env', 'USER') }}"
+
+virtualbox_version_major: "7.0"
+
+virtualbox_repo_key_url: https://www.virtualbox.org/download/oracle_vbox_2016.asc
+virtualbox_repo_key_file: /etc/apt/trusted.gpg.d/virtualbox.gpg
+
+virtualbox_repo_line: >-
+  deb [arch=amd64 signed-by={{ virtualbox_repo_key_file }}] https://download.virtualbox.org/virtualbox/debian focal contrib
+
+virtualbox_repo_file: virtualbox
+
+# Extension Pack
+
+virtualbox_extpack_version: 7.0.2
+
+virtualbox_extpack_url: >-
+  https://download.virtualbox.org/virtualbox/{{ virtualbox_extpack_version }}/Oracle_VM_VirtualBox_Extension_Pack-{{ virtualbox_extpack_version }}.vbox-extpack
+
+virtualbox_extpack_dl_file: /tmp/Oracle_VM_VirtualBox_Extension_Pack.vbox-extpack

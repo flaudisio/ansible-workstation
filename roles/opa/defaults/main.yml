@@ -1,7 +1,0 @@
----
-opa_version: 0.20.0
-
-opa_dl_url: >-
-  https://github.com/open-policy-agent/opa/releases/download/v{{ opa_version }}/opa_linux_amd64
-
-opa_path: /usr/local/bin/opa

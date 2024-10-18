@@ -1,16 +1,56 @@
-### Misc ###
+# ------------------------------------------------------------------------------
+# OPERATING SYSTEMS
+# ------------------------------------------------------------------------------
 
-*~
-*.bak
-*.swp
+### macOS/Linux/Windows ###
 
-### Ansible ###
+.DS_Store
+.AppleDouble
+.LSOverride
 
-*.retry
-.vault_password
-roles_galaxy/
+.Trash-*
 
-### Python ###
+Thumbs.db
+[Dd]esktop.ini
+*.lnk
+
+# ------------------------------------------------------------------------------
+# EDITORS
+# ------------------------------------------------------------------------------
+
+### Vim ###
+
+# Swap
+[._]*.s[a-v][a-z]
+[._]*.sw[a-p]
+[._]s[a-rt-v][a-z]
+[._]ss[a-gi-z]
+[._]sw[a-p]
+
+### JetBrains (IntelliJ, PyCharm, etc) ###
+
+.idea
+*.iml
+*.ipr
+*.iws
+/out
+
+### Sublime Text ###
+
+*.sublime-project
+*.sublime-workspace
+
+### VSCode ###
+
+.vscode/**
+!.vscode/README.md
+!.vscode/extensions.json
+!.vscode/recommended-*.json
+!.vscode/settings.json
+
+# ------------------------------------------------------------------------------
+# PYTHON
+# ------------------------------------------------------------------------------
 
 __pycache__/
 *.py[cod]
@@ -23,7 +63,28 @@ __pycache__/
 pyvenv.cfg
 pip-selfcheck.json
 
-### VSCode ###
+# ------------------------------------------------------------------------------
+# ANSIBLE
+# ------------------------------------------------------------------------------
 
-.vscode/**
-!.vscode/settings.json
+*.retry
+.vault_password
+
+collections/*
+!collections/README.md
+!collections/requirements.yml
+
+roles/public/*
+!roles/public/.gitkeep
+
+logs/*
+!logs/.gitkeep
+
+# ------------------------------------------------------------------------------
+# MISC
+# ------------------------------------------------------------------------------
+
+### Secrets ###
+
+*.key
+*.pem

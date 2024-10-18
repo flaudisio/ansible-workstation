@@ -1,5 +1,11 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-set -ex
+AnsibleOpts=()
 
-ansible-playbook --connection local --become --ask-become-pass --inventory inventory.ini "$@"
+[[ -z "$NO_SUDO" ]] && AnsibleOpts+=( --become --ask-become-pass )
+
+set -e
+set -o pipefail
+set -x
+
+ansible-playbook "${AnsibleOpts[@]}" "$@"

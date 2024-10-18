@@ -6,8 +6,6 @@
     # Backup
     - role: borg
       tags: borg
-    - role: rclone
-      tags: rclone
 
     # Chat
     - role: mattermost-desktop
@@ -20,23 +18,19 @@
     # Development
     - role: hugo
       tags: hugo
+    - role: vagrant
+      tags: vagrant
 
     # Infrastructure
     - role: virtualbox
       tags: virtualbox
-    - role: vagrant
-      tags: vagrant
     - role: packer
       tags: packer
     - role: terraform
       tags: terraform
     - role: terragrunt
       tags: terragrunt
-    - role: k9s
-      tags: k9s
 
     # Services
-    - role: nginx
-      tags: nginx
     - role: postgres-repo
       tags: postgres-repo

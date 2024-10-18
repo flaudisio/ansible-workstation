@@ -1,7 +1,0 @@
----
-q_version: 2.0.9
-
-q_dl_url: >-
-  https://github.com/harelba/packages-for-q/raw/master/single-binary/x86_64/{{ q_version }}/q
-
-q_path: /usr/local/bin/q

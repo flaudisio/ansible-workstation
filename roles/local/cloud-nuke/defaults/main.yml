@@ -1,0 +1,7 @@
+---
+cloud_nuke_version: 0.7.1
+
+cloud_nuke_dl_url: >-
+  https://github.com/gruntwork-io/cloud-nuke/releases/download/v{{ cloud_nuke_version }}/cloud-nuke_linux_amd64
+
+cloud_nuke_path: /usr/local/bin/cloud-nuke

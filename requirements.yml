@@ -1,8 +1,11 @@
 ---
-- src: geerlingguy.docker
-  version: 2.6.2
-  name: docker
+collections:
+  - name: ansible.posix
+    version: ">=1.6,<2.0"
+  - name: community.general
+    version: ">=9.5,<10.0"
 
-- src: jdauphant.nginx
-  version: v2.21.2
-  name: nginx
+roles:
+  - src: geerlingguy.docker
+    version: 7.4.1
+    name: docker

@@ -1,0 +1,11 @@
+---
+# Besides packagecloud's GPG key (https://packagecloud.io/app/slacktechnologies/slack/gpg),
+# in the future Slack will use only its own key for signing packages.
+# See the '/etc/cron.daily/slack' file (after installing Slack) for details.
+slack_repo_key_urls:
+  - https://packagecloud.io/slacktechnologies/slack/gpgkey
+  - https://slack.com/gpg/slack_pubkey_20220708.gpg
+
+slack_repo_line: deb https://packagecloud.io/slacktechnologies/slack/debian/ jessie main
+
+slack_repo_filename: slack

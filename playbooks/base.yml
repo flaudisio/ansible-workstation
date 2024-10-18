@@ -7,7 +7,9 @@
       tags: packages
     - role: base-system
       tags: base-system
-    - role: dotfiles
-      tags: dotfiles
-    - role: desktop
-      tags: desktop
+    - role: firefox
+      tags: firefox
+    # - role: dotfiles
+    #   tags: dotfiles
+    - role: xubuntu-desktop
+      tags: xubuntu-desktop

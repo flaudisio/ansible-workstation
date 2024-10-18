@@ -1,0 +1,5 @@
+---
+glab_version: 1.30.0
+
+glab_package_url: >-
+  https://gitlab.com/gitlab-org/cli/-/releases/v{{ glab_version }}/downloads/glab_{{ glab_version }}_Linux_x86_64.deb

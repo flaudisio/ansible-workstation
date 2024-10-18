@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: rclone
+      tags: rclone
     - role: restic
       tags: restic
     - role: megasync

@@ -1,9 +1,0 @@
----
-borg_version: 1.1.11
-
-borg_dl_url: >-
-  https://github.com/borgbackup/borg/releases/download/{{ borg_version }}/borg-linux64
-
-borg_sha256_checksum: 7848d1788b5d7f2ae99a599a87992cab4f01584fe5eb393819fceaecf076433b
-
-borg_path: /usr/local/bin/borg

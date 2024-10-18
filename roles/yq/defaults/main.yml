@@ -1,7 +1,0 @@
----
-yq_version: 3.3.0
-
-yq_dl_url: >-
-  https://github.com/mikefarah/yq/releases/download/{{ yq_version }}/yq_linux_amd64
-
-yq_path: /usr/local/bin/yq

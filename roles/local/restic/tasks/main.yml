@@ -1,0 +1,58 @@
+---
+- name: Check if restic {{ restic_version }} is installed
+  shell: restic version || true
+  register: restic_check
+  changed_when: false
+
+- name: Run installation tasks
+  when: >
+    restic_check.stdout_lines | length == 0
+    or restic_version not in restic_check.stdout_lines[0]
+  block:
+    - name: Download archive
+      get_url:
+        url: "{{ restic_dl_url }}"
+        dest: /tmp/restic.bz2
+        checksum: sha256:{{ restic_sha256_checksum }}
+        force: true
+        owner: root
+        group: root
+        mode: "0644"
+
+    - name: Install binary
+      shell: >
+        bzip2 --decompress --stdout /tmp/restic.bz2 > {{ restic_path }}
+
+    - name: Ensure executable has the right permissions
+      file:
+        path: "{{ restic_path }}"
+        state: file
+        owner: root
+        group: root
+        mode: "0755"
+
+    - name: Configure Bash completion
+      command: >
+        restic generate --bash-completion /etc/bash_completion.d/restic
+      tags: restic:completion
+
+    - name: Create directory for man pages
+      file:
+        path: "{{ restic_man_pages_dir }}"
+        state: directory
+        owner: root
+        group: root
+      tags: restic:man-pages
+
+    - name: Make sure old man pages are removed
+      file:
+        path: "{{ item }}"
+        state: absent
+      with_fileglob:
+        - "{{ restic_man_pages_dir }}/restic*"
+      tags: restic:man-pages
+
+    - name: Install man pages
+      command: >
+        restic generate --man {{ restic_man_pages_dir }}
+      tags: restic:man-pages

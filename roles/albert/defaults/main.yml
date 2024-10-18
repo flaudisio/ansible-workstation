@@ -1,8 +1,0 @@
----
-albert_repo_key_url: >-
-  https://build.opensuse.org/projects/home:manuelschneid3r/public_key
-
-albert_repo_line: >-
-  deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_{{ ansible_distribution_version }}/ /
-
-albert_repo_file: albert

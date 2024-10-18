@@ -1,6 +1,0 @@
----
-ctop_version: 0.7.3
-
-ctop_dl_url: https://github.com/bcicen/ctop/releases/download/v{{ ctop_version }}/ctop-{{ ctop_version }}-linux-amd64
-
-ctop_path: /usr/local/bin/ctop

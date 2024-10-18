@@ -5,6 +5,8 @@
   roles:
     - role: albert
       tags: albert
+    - role: brave
+      tags: brave
     - role: chrome
       tags: chrome
     - role: piputils

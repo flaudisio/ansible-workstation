@@ -1,0 +1,21 @@
+---
+- name: Slack test
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Send message
+      slack:
+        # URL:   https://hooks.slack.com/services/T03B5JESJ/XXXXXXXXX/YYYYYYYYY"
+        # Token: T03B5JESJ/XXXXXXXXX/YYYYYYYYY
+        token: "T03B5JESJ/XXXXXXXXX/YYYYYYYYY"
+        msg: |
+          One more Ansible test with multiple lines.
+
+          Line 3 :rocket:
+        channel: "@{{ item }}"
+        username: Ansible - YOLO
+        icon_url: "https://avatars.githubusercontent.com/u/1507452?s=200&v=4"
+      loop:
+        - flaudisio.tolentino
+        - gustavo.souza

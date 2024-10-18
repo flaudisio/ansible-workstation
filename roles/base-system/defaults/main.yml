@@ -1,5 +1,0 @@
----
-base_ssh_port: 11222
-
-# Tamanho máximo de logs do Journal (systemd)
-base_journald_system_max_use: 200M

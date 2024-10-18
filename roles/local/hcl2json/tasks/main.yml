@@ -1,0 +1,9 @@
+---
+- name: Install binary
+  get_url:
+    url: "{{ hcl2json_dl_url }}"
+    dest: "{{ hcl2json_path }}"
+    checksum: sha256:{{ hcl2json_sha256_checksum }}
+    owner: root
+    group: root
+    mode: "0755"

@@ -1,7 +1,0 @@
----
-kubespy_version: 0.5.1
-
-kubespy_dl_url: >-
-  https://github.com/pulumi/kubespy/releases/download/v{{ kubespy_version }}/kubespy-linux-amd64.tar.gz
-
-kubespy_path: /usr/local/bin/kubespy

@@ -1,9 +1,0 @@
----
-# yamllint disable rule:line-length
-
-helm_docs_version: 0.13.0
-
-helm_docs_dl_url: >-
-  https://github.com/norwoodj/helm-docs/releases/download/v{{ helm_docs_version }}/helm-docs_{{ helm_docs_version }}_Linux_x86_64.tar.gz
-
-helm_docs_path: /usr/local/bin/helm-docs

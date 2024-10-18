@@ -1,0 +1,10 @@
+---
+awsvault_version: 7.2.0
+
+awsvault_dl_url: >-
+  https://github.com/99designs/aws-vault/releases/download/v{{ awsvault_version }}/aws-vault-linux-amd64
+
+awsvault_path: /usr/local/bin/aws-vault
+
+awsvault_completion_url: >-
+  https://raw.githubusercontent.com/99designs/aws-vault/v{{ awsvault_version }}/contrib/completions/bash/aws-vault.bash

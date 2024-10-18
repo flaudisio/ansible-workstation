@@ -1,7 +1,0 @@
----
-# yamllint disable rule:line-length
-
-mattermost_desktop_version: 4.2.3
-
-mattermost_desktop_package_url: >-
-  https://releases.mattermost.com/desktop/{{ mattermost_desktop_version }}/mattermost-desktop-{{ mattermost_desktop_version }}-linux-amd64.deb

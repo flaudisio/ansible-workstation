@@ -1,0 +1,8 @@
+---
+spotify_apt_repo_key_url: https://download.spotify.com/debian/pubkey_7A3A762FAFD4A51F.gpg
+
+spotify_apt_repo_key_file: /etc/apt/trusted.gpg.d/spotify.gpg
+
+spotify_apt_repo_line: deb http://repository.spotify.com stable non-free
+
+spotify_apt_repo_file: spotify
