@@ -16,18 +16,3 @@ repos:
     hooks:
       - id: yamllint
         entry: yamllint --strict
-  # - repo: https://github.com/ansible/ansible-lint
-  #   rev: v6.8.6
-  #   hooks:
-  #     - id: ansible-lint
-  #       # NOTE: filenames are not passed to the ansible-lint hook by default[1], so we must pass
-  #       # the playbook files as explicit args and also tweak the 'files', 'pass_filenames' and 'always_run' options.
-  #       #
-  #       # [1] https://github.com/ansible/ansible-lint/blob/v4.2.0/.pre-commit-hooks.yaml#L11
-  #       args:
-  #         - --exclude=roles_galaxy
-  #         - playbooks/master.yml
-  #         - playbooks/unused.yml
-  #       files: ^(roles|playbooks)/
-  #       pass_filenames: false
-  #       always_run: false
