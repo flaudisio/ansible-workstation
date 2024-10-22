@@ -3,17 +3,5 @@
   hosts: all
 
   roles:
-    - role: ctop
-      tags: ctop
-    - role: chef-workstation
-      tags: chef-workstation
     - role: dive
       tags: dive
-    - role: goss
-      tags: goss
-    - role: k9s
-      tags: k9s
-    - role: kubespy
-      tags: kubespy
-    - role: opa
-      tags: opa

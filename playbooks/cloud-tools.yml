@@ -7,13 +7,3 @@
       tags: aws-cli
     - role: aws-vault
       tags: aws-vault
-    - role: cloud-nuke
-      tags: cloud-nuke
-    - role: ecs-cli
-      tags: ecs-cli
-    - role: infracost
-      tags: infracost
-    - role: terragrunt-atlantis-config
-      tags: terragrunt-atlantis-config
-    - role: trivy
-      tags: trivy

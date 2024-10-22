@@ -3,14 +3,10 @@
   hosts: all
 
   roles:
-    - role: albert
-      tags: albert
     - role: brave
       tags: brave
     - role: chrome
       tags: chrome
-    - role: piputils
-      tags: piputils
     - role: keybase
       tags: keybase
     - role: spotify

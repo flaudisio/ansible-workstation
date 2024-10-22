@@ -1,9 +1,0 @@
----
-packer_version: 1.4.4
-
-packer_dl_url: >-
-  https://releases.hashicorp.com/packer/{{ packer_version }}/packer_{{ packer_version }}_linux_amd64.zip
-
-packer_path: /usr/local/bin/packer
-
-packer_enable_bash_completion: false

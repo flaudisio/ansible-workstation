@@ -1,7 +1,0 @@
----
-# Ref: https://wiki.postgresql.org/wiki/Apt
-
-postgres_repo_key: ACCC4CF8
-postgres_repo_key_url: https://www.postgresql.org/media/keys/{{ postgres_repo_key }}.asc
-postgres_repo_line: deb http://apt.postgresql.org/pub/repos/apt/ {{ ansible_distribution_release }}-pgdg main
-postgres_repo_file: pgdg
