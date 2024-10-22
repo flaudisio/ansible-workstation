@@ -3,6 +3,8 @@
   hosts: all
 
   roles:
+    - role: firefox
+      tags: firefox
     - role: brave
       tags: brave
     - role: chrome

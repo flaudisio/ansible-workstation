@@ -3,9 +3,13 @@
   hosts: all
 
   roles:
+    - role: megasync
+      tags: megasync
     - role: rclone
       tags: rclone
     - role: restic
       tags: restic
-    - role: megasync
-      tags: megasync
+    - role: resticprofile
+      tags: resticprofile
+    - role: syncthing
+      tags: syncthing

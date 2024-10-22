@@ -3,5 +3,9 @@
   hosts: all
 
   roles:
+    - role: discord
+      tags: discord
     - role: slack
       tags: slack
+    - role: zoom
+      tags: zoom

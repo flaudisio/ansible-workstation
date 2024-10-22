@@ -1,7 +1,0 @@
----
-- name: Workstation - Services
-  hosts: all
-
-  roles:
-    - role: docker
-      tags: docker

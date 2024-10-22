@@ -3,5 +3,13 @@
   hosts: all
 
   roles:
+    - role: docker
+      tags: docker
+    - role: cinc-workstation
+      tags: cinc-workstation
     - role: dive
       tags: dive
+    - role: lazydocker
+      tags: lazydocker
+    - role: kvm
+      tags: kvm
