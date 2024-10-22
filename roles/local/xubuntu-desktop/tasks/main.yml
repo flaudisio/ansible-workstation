@@ -1,20 +1,24 @@
 ---
-- import_tasks: autostart.yml
+- name: Include autostart tasks
+  ansible.builtin.import_tasks: autostart.yml
   tags: xubuntu-desktop:autostart
 
-- import_tasks: user-dirs.yml
+- name: Include user dir tasks
+  ansible.builtin.import_tasks: user-dirs.yml
   tags: xubuntu-desktop:user-dirs
 
-- import_tasks: bookmarks.yml
+- name: Include bookmark tasks
+  ansible.builtin.import_tasks: bookmarks.yml
   tags: xubuntu-desktop:bookmarks
 
-- import_tasks: keyboard-shortcuts.yml
+- name: Include keyboard shortcuts tasks
+  ansible.builtin.import_tasks: keyboard-shortcuts.yml
   become: true
   become_user: "{{ desktop_user }}"
   tags: xubuntu-desktop:keyboard-shortcuts
 
-- name: Configura ambiente via Xfconf
-  xfconf:
+- name: Apply Xfconf settings
+  community.general.xfconf:
     channel: "{{ item.channel }}"
     property: "{{ item.property }}"
     value: "{{ item.value }}"
@@ -25,25 +29,23 @@
   become_user: "{{ desktop_user }}"
   tags: xubuntu-desktop:xfconf
 
-- name: Instala pacotes selecionados
-  apt:
+- name: Install defined packages
+  ansible.builtin.apt:
     name: "{{ desktop_packages }}"
     state: present
     install_recommends: false
-    update_cache: true
-    cache_valid_time: 3600
   tags: xubuntu-desktop:packages
 
-- name: Define Oxygen Zion como tema do cursor do mouse (alternatives)
-  alternatives:
+- name: Define Oxygen Zion as cursor theme (alternatives)
+  community.general.alternatives:
     name: x-cursor-theme
     path: /etc/X11/cursors/oxy-zion.theme
   when: >
     'oxygen-cursor-theme' in desktop_packages
   tags: xubuntu-desktop:cursor
 
-- name: Define Oxygen Zion como tema do cursor do mouse (xsettings)
-  xfconf:
+- name: Define Oxygen Zion as cursor theme (xsettings)
+  community.general.xfconf:
     channel: xsettings
     property: /Gtk/CursorThemeName
     value: oxy-zion

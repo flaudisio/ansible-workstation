@@ -1,6 +1,6 @@
 ---
 - name: Remove keyboard shortcuts (commands)
-  xfconf:
+  community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: /commands/custom/{{ item }}
     state: absent
@@ -8,7 +8,7 @@
   tags: xubuntu-desktop:keyboard-shortcuts:commands
 
 - name: Remove keyboard shortcuts (xfwm4)
-  xfconf:
+  community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: /xfwm4/custom/{{ item }}
     state: absent
@@ -16,7 +16,7 @@
   tags: xubuntu-desktop:keyboard-shortcuts:xfwm4
 
 - name: Configure keyboard shortcuts (commands)
-  xfconf:
+  community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: /commands/custom/{{ item.shortcut }}
     value: "{{ item.cmd }}"
@@ -29,7 +29,7 @@
   tags: xubuntu-desktop:keyboard-shortcuts:commands
 
 - name: Configure keyboard shortcuts (xfwm4)
-  xfconf:
+  community.general.xfconf:
     channel: xfce4-keyboard-shortcuts
     property: /xfwm4/custom/{{ item.shortcut }}
     value: "{{ item.cmd }}"

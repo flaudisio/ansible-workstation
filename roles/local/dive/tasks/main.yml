@@ -1,11 +1,11 @@
 ---
-- name: Check if dive {{ dive_version }} is installed
-  shell: dpkg-query --showformat='${Version}' --show dive || true
+- name: Check if version {{ dive_version }} is installed
+  ansible.builtin.shell: dpkg-query --showformat='${Version}' --show dive || true
   register: dive_check
   changed_when: false
 
 - name: Install package
-  apt:
+  ansible.builtin.apt:
     deb: "{{ dive_package_url }}"
     state: present
     install_recommends: false

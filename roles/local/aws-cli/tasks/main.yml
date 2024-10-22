@@ -1,5 +1,5 @@
 ---
-- name: Check if AWS CLI {{ awscli_version }} is installed
+- name: Check if version {{ awscli_version }} is installed
   ansible.builtin.shell: aws --version || true
   register: awscli_check
   changed_when: false

@@ -9,7 +9,7 @@
 - name: Configure APT to prevent snapd package installation
   ansible.builtin.copy:
     content: |
-      # Managed by Ansible - ansible-workstation
+      # Managed by Ansible
       Package: snapd
       Pin: release *
       Pin-Priority: -1

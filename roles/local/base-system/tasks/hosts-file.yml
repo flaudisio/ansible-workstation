@@ -2,7 +2,7 @@
 - name: Add the defined configuration to /etc/hosts
   ansible.builtin.blockinfile:
     path: /etc/hosts
-    marker: "### {mark} Managed by Ansible - ansible-workstation ###"
+    marker: "### {mark} Managed by Ansible ###"
     block: "{{ base_hosts_config }}"
     backup: false
     state: present

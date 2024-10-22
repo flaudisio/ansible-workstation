@@ -1,8 +1,10 @@
 ---
 awsvault_version: 7.2.0
 
+awsvault_dl_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+
 awsvault_dl_url: >-
-  https://github.com/99designs/aws-vault/releases/download/v{{ awsvault_version }}/aws-vault-linux-amd64
+  https://github.com/99designs/aws-vault/releases/download/v{{ awsvault_version }}/aws-vault-linux-{{ awsvault_dl_arch }}
 
 awsvault_path: /usr/local/bin/aws-vault
 

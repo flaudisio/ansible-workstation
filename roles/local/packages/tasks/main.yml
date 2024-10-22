@@ -1,73 +1,61 @@
 ---
-- name: Atualiza cache do APT
-  apt:
+- name: Update APT cache
+  ansible.builtin.apt:
     update_cache: true
     cache_valid_time: 3600
   tags: packages:apt-update
 
-- name: Instala pacotes básicos
-  apt:
+- name: Install base backages
+  ansible.builtin.apt:
     name: "{{ packages_base }}"
     state: present
     install_recommends: false
   tags: packages:base
 
-- name: Instala ferramentas de desenvolvimento
-  apt:
+- name: Install development tools
+  ansible.builtin.apt:
     name: "{{ packages_dev }}"
     state: present
     install_recommends: false
   tags: packages:dev
 
-- name: Instala ferramentas de administração de sistema
-  apt:
+- name: Install sysadmin tools
+  ansible.builtin.apt:
     name: "{{ packages_sysadmin }}"
     state: present
     install_recommends: false
   tags: packages:sysadmin
 
-- name: Instala ferramentas de gráficos e multimídia
-  apt:
+- name: Install graphics and media tools
+  ansible.builtin.apt:
     name: "{{ packages_media }}"
     state: present
     install_recommends: false
   tags: packages:media
 
-- name: Instala pacotes utilitários
-  apt:
+- name: Install utilities
+  ansible.builtin.apt:
     name: "{{ packages_utils }}"
     state: present
     install_recommends: false
   tags: packages:utils
 
-- name: Remove pacotes selecionados
-  apt:
+- name: Remove selected packages
+  ansible.builtin.apt:
     name: "{{ packages_purge }}"
     state: absent
     purge: true
   tags: packages:purge
 
-- name: Instala pacotes extras
-  apt:
+- name: Install extra packages
+  ansible.builtin.apt:
     name: "{{ packages_extra }}"
     state: present
     install_recommends: false
   tags: packages:extra
 
-# Git (instalado à parte por usar PPA)
-
-# - name: Habilita PPA do Git
-#   apt_repository:
-#     repo: ppa:git-core/ppa
-#     state: present
-#     update_cache: true
-#   tags:
-#     - packages:git
-#     - packages:git:ppa
-#     - packages:dev
-
-- name: Instala pacotes relacionados ao Git
-  apt:
+- name: Install Git-related packages
+  ansible.builtin.apt:
     name:
       - git
       - git-doc
@@ -81,8 +69,8 @@
     - packages:git
     - packages:dev
 
-- name: Instala git-open
-  get_url:
+- name: Install git-open
+  ansible.builtin.get_url:
     url: "{{ packages_git_open_dl_url }}"
     dest: "{{ packages_git_open_path }}"
     force: true
@@ -93,8 +81,8 @@
     - packages:git
     - packages:dev
 
-- name: Configura alternatives
-  alternatives:
+- name: Configure editor in alternatives
+  community.general.alternatives:
     name: editor
     path: /usr/bin/vim.basic
   tags: packages:alternatives

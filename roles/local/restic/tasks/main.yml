@@ -1,58 +1,53 @@
 ---
 - name: Check if restic {{ restic_version }} is installed
-  shell: restic version || true
+  ansible.builtin.shell: restic version || true
   register: restic_check
   changed_when: false
+  tags: restic:install
 
 - name: Run installation tasks
   when: >
     restic_check.stdout_lines | length == 0
-    or restic_version not in restic_check.stdout_lines[0]
+    or ("restic " + restic_version + " compiled") not in restic_check.stdout_lines[0]
   block:
-    - name: Download archive
-      get_url:
-        url: "{{ restic_dl_url }}"
-        dest: /tmp/restic.bz2
-        checksum: sha256:{{ restic_sha256_checksum }}
+    - name: Download files
+      ansible.builtin.get_url:
+        url: "{{ item.url }}"
+        dest: "{{ item.dest }}"
         force: true
         owner: root
         group: root
         mode: "0644"
+      loop:
+        - url: "{{ restic_archive_url }}"
+          dest: "{{ restic_archive_file }}"
+        - url: "{{ restic_sha256sums_url }}"
+          dest: "{{ restic_sha256sums_file }}"
+      tags: restic:install
 
-    - name: Install binary
-      shell: >
-        bzip2 --decompress --stdout /tmp/restic.bz2 > {{ restic_path }}
+    - name: Check integrity of the downloaded archive
+      ansible.builtin.shell: >
+        cat '{{ restic_sha256sums_file }}' | sha256sum --check --ignore-missing
+      args:
+        chdir: "{{ restic_archive_file | dirname }}"
+      tags: restic:install
 
-    - name: Ensure executable has the right permissions
-      file:
-        path: "{{ restic_path }}"
+    - name: Extract binary from the archive
+      ansible.builtin.shell: >
+        bzip2 --decompress --stdout {{ restic_archive_file }} > {{ restic_bin_path }}
+      tags: restic:install
+
+    - name: Ensure binary has the right permissions
+      ansible.builtin.file:
+        path: "{{ restic_bin_path }}"
         state: file
         owner: root
         group: root
         mode: "0755"
+      tags: restic:install
 
     - name: Configure Bash completion
-      command: >
+      ansible.builtin.command: >
         restic generate --bash-completion /etc/bash_completion.d/restic
-      tags: restic:completion
-
-    - name: Create directory for man pages
-      file:
-        path: "{{ restic_man_pages_dir }}"
-        state: directory
-        owner: root
-        group: root
-      tags: restic:man-pages
-
-    - name: Make sure old man pages are removed
-      file:
-        path: "{{ item }}"
-        state: absent
-      with_fileglob:
-        - "{{ restic_man_pages_dir }}/restic*"
-      tags: restic:man-pages
-
-    - name: Install man pages
-      command: >
-        restic generate --man {{ restic_man_pages_dir }}
-      tags: restic:man-pages
+      when: restic_configure_completion
+      tags: restic:config

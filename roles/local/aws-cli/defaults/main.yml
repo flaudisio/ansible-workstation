@@ -1,5 +1,6 @@
 ---
-awscli_version: 2.17.14
+# Ref: https://github.com/aws/aws-cli/tags
+awscli_version: 2.18.11
 
 awscli_dl_url: https://awscli.amazonaws.com/awscli-exe-linux-{{ ansible_architecture }}-{{ awscli_version }}.zip
 

@@ -1,4 +1,6 @@
 ---
+# Ref: https://brave.com/linux/
+
 brave_apt_repo_key_url: https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
 
 brave_apt_repo_key_file: /usr/share/keyrings/brave-browser-archive-keyring.gpg
