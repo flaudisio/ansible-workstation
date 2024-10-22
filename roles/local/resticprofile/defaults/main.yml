@@ -1,0 +1,94 @@
+---
+resticprofile_version: 0.28.1
+
+resticprofile_dl_arch: "{{ 'arm64' if ansible_architecture == 'aarch64' else 'amd64' }}"
+
+resticprofile_dl_url: >-
+  https://github.com/creativeprojects/resticprofile/releases/download/v{{ resticprofile_version }}/resticprofile_{{ resticprofile_version }}_linux_{{ resticprofile_dl_arch }}.tar.gz
+
+resticprofile_bin_path: /usr/local/bin/resticprofile
+
+resticprofile_create_symlink: true
+
+resticprofile_symlink_name: rp
+
+resticprofile_config_dir: /etc/resticprofile
+
+resticprofile_config_file: "{{ resticprofile_config_dir }}/temp-profiles.yaml"
+
+resticprofile_config_content: ""
+# resticprofile_config_content: !unsafe |
+#   version: "1"
+
+#   {{ $hostname := "fulgore" }}
+
+#   global:
+#     priority: low
+#     ionice: true
+#     ionice-class: 2
+#     ionice-level: 6
+#     restic-lock-retry-after: 1m
+#     restic-stale-lock-age: 12h
+#     schedule-defaults:
+#       permission: system
+#       after-network-online: true
+#       lock-wait: 10m
+#       log: /var/log/resticprofile.{{ .Profile.Name }}.log
+
+#   .base:
+#     lock: /tmp/resticprofile.{{ .Profile.Name }}.lock
+#     force-inactive-lock: true
+#     password-file: credentials/password.{{ $hostname }}.txt
+#     compression: max
+#     verbose: true
+#     host: "{{ $hostname }}"
+#     backup:
+#       exclude-caches: true
+#       exclude-file:
+#         - excludes.txt
+#       files-from-verbatim:
+#         - includes.txt
+#     forget: &forget
+#       # Behavior
+#       compact: true
+#       group-by: host
+#       path: false
+#       prune: false
+#       # Policy
+#       keep-last: 12
+#       keep-within: 5d
+#       keep-daily: 15
+#       keep-weekly: 8
+#       keep-monthly: 120
+#       keep-yearly: 10
+#       keep-tag:
+#         - final-backup
+#         - pre-format
+#     retention:
+#       # Retention-specific
+#       before-backup: false
+#       after-backup: false
+#       # Reuse 'forget' config
+#       <<: *forget
+#     prune:
+#       cleanup-cache: true
+#     check:
+#       cleanup-cache: true
+#       check-unused: true
+
+#   groups:
+#     all:
+#       - default
+#       - local-storage
+
+#   default:
+#     inherit: .base
+#     repository: s3:s3.us-west-002.backblazeb2.com/flaudisio-restic-backups-s3/{{ $hostname }}
+#     env-file:
+#       - credentials/backblaze.env
+#     backup:
+#       schedule: "*:40"
+
+#   local-storage:
+#     inherit: .base
+#     repository: local:/storage03/CSTRG01/backup/trabalho/ifood/{{ $hostname }}.restic
