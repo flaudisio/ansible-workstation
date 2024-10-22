@@ -1,7 +1,0 @@
----
-trivy_version: 0.34.0
-
-trivy_dl_url: >-
-  https://github.com/aquasecurity/trivy/releases/download/v{{ trivy_version }}/trivy_{{ trivy_version }}_Linux-64bit.tar.gz
-
-trivy_path: /usr/local/bin/trivy

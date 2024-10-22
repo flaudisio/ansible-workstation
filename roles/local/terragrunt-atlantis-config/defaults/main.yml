@@ -1,7 +1,0 @@
----
-terragrunt_atlantis_config_version: 1.15.0
-
-terragrunt_atlantis_config_dl_url: >-
-  https://github.com/transcend-io/terragrunt-atlantis-config/releases/download/v{{ terragrunt_atlantis_config_version }}/terragrunt-atlantis-config_{{ terragrunt_atlantis_config_version }}_linux_amd64.tar.gz
-
-terragrunt_atlantis_config_path: /usr/local/bin/terragrunt-atlantis-config

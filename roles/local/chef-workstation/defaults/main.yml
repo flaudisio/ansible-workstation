@@ -1,6 +1,0 @@
----
-chef_workstation_version: 23.7.1042
-chef_workstation_version_deb: "{{ chef_workstation_version }}-1"
-
-chef_workstation_package_url: >-
-  https://packages.chef.io/files/stable/chef-workstation/{{ chef_workstation_version }}/ubuntu/22.04/chef-workstation_{{ chef_workstation_version_deb }}_amd64.deb

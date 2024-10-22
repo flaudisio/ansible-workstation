@@ -1,6 +1,0 @@
----
-ecs_cli_version: 1.21.0
-
-ecs_cli_dl_url: https://amazon-ecs-cli.s3.amazonaws.com/ecs-cli-linux-amd64-v{{ ecs_cli_version }}
-
-ecs_cli_path: /usr/local/bin/ecs-cli

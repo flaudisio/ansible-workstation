@@ -5,21 +5,7 @@
   roles:
     - role: bat
       tags: bat
-    - role: jq
-      tags: jq
     - role: vscode
       tags: vscode
-    - role: jq
-      tags: jq
-    - role: yq
-      tags: yq
-    - role: hcl2json
-      tags: hcl2json
-    - role: mark
-      tags: mark
     - role: q
       tags: q
-    - role: glab
-      tags: glab
-    - role: helm-docs
-      tags: helm-docs

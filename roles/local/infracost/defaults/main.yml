@@ -1,7 +1,0 @@
----
-infracost_version: 0.10.13
-
-infracost_dl_url: >-
-  https://github.com/infracost/infracost/releases/download/v{{ infracost_version }}/infracost-linux-amd64.tar.gz
-
-infracost_path: /usr/local/bin/infracost

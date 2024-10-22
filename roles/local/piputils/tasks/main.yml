@@ -1,8 +1,0 @@
----
-- import_tasks: install.yml
-  vars:
-    piputils_uninstall_package_names: "{{ piputils_uninstall_packages | map(attribute='name') | list }}"
-  tags: piputils:install
-
-- import_tasks: uninstall.yml
-  tags: piputils:uninstall
