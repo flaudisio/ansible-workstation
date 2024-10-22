@@ -2,6 +2,10 @@
 - name: Ansible Workstation
   hosts: all
 
+  module_defaults:
+    ansible.builtin.setup:
+      gather_subset: "!ohai"
+
   roles:
     # Base
     - role: packages
