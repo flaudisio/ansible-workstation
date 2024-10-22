@@ -1,0 +1,40 @@
+---
+- name: Install repository key
+  ansible.builtin.get_url:
+    url: "{{ syncthing_apt_repo_key_url }}"
+    dest: "{{ syncthing_apt_repo_key_file }}"
+    force: true
+    owner: root
+    group: root
+    mode: "0644"
+  tags:
+    - syncthing:repo
+    - syncthing:install
+
+- name: Configure repository
+  ansible.builtin.apt_repository:
+    repo: "{{ syncthing_apt_repo_line }}"
+    filename: "{{ syncthing_apt_repo_file }}"
+    state: present
+    update_cache: true
+  tags:
+    - syncthing:repo
+    - syncthing:install
+
+- name: Install packages
+  ansible.builtin.apt:
+    name: syncthing
+    state: present
+    install_recommends: false
+  tags: syncthing:install
+
+- name: Enable and run systemd service (user level)
+  ansible.builtin.systemd_service:
+    name: syncthing
+    state: started
+    enabled: true
+    scope: user
+  become: "{{ ansible_env.SUDO_USER is defined }}"
+  become_user: "{{ ansible_env.SUDO_USER | default(omit) }}"
+  when: ansible_service_mgr == "systemd"
+  tags: syncthing:service
