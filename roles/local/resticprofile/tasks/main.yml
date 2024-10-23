@@ -1,0 +1,9 @@
+---
+- name: Include installation tasks
+  ansible.builtin.import_tasks: install.yml
+  tags: resticprofile:install
+
+- name: Include configuration tasks
+  ansible.builtin.import_tasks: configuration.yml
+  when: resticprofile_config_content != ""
+  tags: resticprofile:config

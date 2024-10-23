@@ -1,0 +1,85 @@
+---
+- name: Ansible Workstation
+  hosts: all
+
+  module_defaults:
+    ansible.builtin.setup:
+      gather_subset: "!ohai"
+
+  roles:
+    # Base
+    - role: packages
+      tags: [base, packages]
+    - role: base-system
+      tags: [base, base-system]
+    - role: xubuntu-desktop
+      tags: [base, xubuntu-desktop]
+    - role: ulauncher
+      tags: [base, ulauncher]
+
+    # Backup
+    - role: megasync
+      tags: [backup, megasync]
+    - role: rclone
+      tags: [backup, rclone]
+    - role: restic
+      tags: [backup, restic]
+    - role: resticprofile
+      tags: [backup, resticprofile]
+    - role: syncthing
+      tags: [backup, syncthing]
+
+    # Utilities
+    - role: firefox
+      tags: [utils, firefox]
+    - role: brave
+      tags: [utils, brave]
+    - role: chrome
+      tags: [utils, chrome]
+    - role: keybase
+      tags: [utils, keybase]
+    - role: spotify
+      tags: [utils, spotify]
+    - role: steam
+      tags: [utils, steam]
+
+    # Chat
+    - role: discord
+      tags: [chat, discord]
+    - role: slack
+      tags: [chat, slack]
+    - role: zoom
+      tags: [chat, zoom]
+
+    # Infrastructure
+    - role: docker
+      tags: [infra, docker]
+    - role: cinc-workstation
+      tags: [infra, cinc-workstation]
+    - role: dive
+      tags: [infra, dive]
+    - role: lazydocker
+      tags: [infra, lazydocker]
+    - role: kvm
+      tags: [infra, kvm]
+
+    # Cloud tools
+    - role: aws-cli
+      tags: [cloud-tools, aws-cli]
+    # NOTE: replace with granted? - https://github.com/common-fate/granted
+    - role: aws-vault
+      tags: [cloud-tools, aws-vault]
+    - role: cloudflare-client
+      tags: [cloud-tools, cloudflare-client]
+    - role: session-manager-plugin
+      tags: [cloud-tools, session-manager-plugin]
+    - role: doppler
+      tags: [infra, doppler]
+
+    # Development
+    - role: bat
+      tags: [dev, bat]
+    - role: vscode
+      tags: [dev, vscode]
+    - role: q
+      tags: [dev, q]

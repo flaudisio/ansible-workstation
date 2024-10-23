@@ -1,28 +1,28 @@
 ---
-- name: Verifica se Keybase está instalado
-  shell: dpkg-query --showformat='${Version}' --show keybase || true
+- name: Check if Keybase is installed
+  ansible.builtin.shell: dpkg-query --showformat='${Version}' --show keybase || true
   register: keybase_check
   changed_when: false
 
-- name: Instala Keybase
-  apt:
+- name: Install package
+  ansible.builtin.apt:
     deb: "{{ keybase_package_url }}"
     state: present
     install_recommends: false
   when: "'no packages found matching' in keybase_check.stderr"
 
-- name: Desativa inicialização automática
-  command: keybase ctl autostart --disable
+- name: Disable autostart
+  ansible.builtin.command: keybase ctl autostart --disable
   become: true
   become_user: "{{ keybase_user }}"
   changed_when: false
-  when: keybase_disable_autostart
+  when: keybase_disable_autostart | bool
 
-- name: Assegura que inicialização automática permaneça desativada
-  copy:
+- name: Ensure autostart keeps disabled
+  ansible.builtin.copy:
     content: ""
     dest: "{{ keybase_home }}/.config/keybase/autostart_created"
     force: false
   become: true
   become_user: "{{ keybase_user }}"
-  when: keybase_disable_autostart
+  when: keybase_disable_autostart | bool

@@ -1,7 +1,5 @@
 ---
-q_version: 2.0.19
+q_version: 3.1.6
 
-q_dl_url: >-
-  https://github.com/harelba/q/releases/download/{{ q_version }}/q-x86_64-Linux
-
-q_path: /usr/local/bin/q
+q_package_url: >-
+  https://github.com/harelba/q/releases/download/v{{ q_version }}/q-text-as-data-{{ q_version }}-1.{{ ansible_architecture }}.deb

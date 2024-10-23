@@ -33,9 +33,9 @@ desktop_command_shortcuts:
 
   # Spotify
   - shortcut: XF86Music
-    cmd: spotify-ctl.sh Start
+    cmd: spotify
   - shortcut: <Super>r
-    cmd: spotify-ctl.sh Start
+    cmd: spotify
   - shortcut: <Primary><Super>Insert
     cmd: spotify-ctl.sh PlayPause
   - shortcut: <Primary><Super>Left

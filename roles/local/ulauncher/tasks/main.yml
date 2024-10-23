@@ -1,0 +1,13 @@
+---
+- name: Check if version {{ ulauncher_version }} is installed
+  ansible.builtin.shell: >
+    dpkg-query --showformat='${Version}' --show ulauncher || true
+  register: ulauncher_check
+  changed_when: false
+
+- name: Install package
+  ansible.builtin.apt:
+    deb: "{{ ulauncher_package_url }}"
+    state: present
+    install_recommends: false
+  when: ulauncher_check.stdout != ulauncher_version

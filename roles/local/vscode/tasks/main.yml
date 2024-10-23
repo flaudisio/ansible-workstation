@@ -1,9 +1,12 @@
 ---
 - name: Install repository key
-  ansible.builtin.apt_key:
+  ansible.builtin.get_url:
     url: "{{ vscode_apt_repo_key_url }}"
-    state: present
-    keyring: "{{ vscode_apt_keyring_file }}"
+    dest: "{{ vscode_apt_repo_key_file }}"
+    force: true
+    owner: root
+    group: root
+    mode: "0644"
   tags:
     - vscode:repo
     - vscode:install
@@ -14,6 +17,16 @@
     filename: "{{ vscode_apt_repo_file }}"
     state: present
     update_cache: true
+  tags:
+    - vscode:repo
+    - vscode:install
+
+- name: Setup debconf to avoid repository changes by the package itself
+  ansible.builtin.debconf:
+    name: code
+    question: code/add-microsoft-repo
+    vtype: boolean
+    value: "false"
   tags:
     - vscode:repo
     - vscode:install

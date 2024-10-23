@@ -37,7 +37,7 @@
 - name: Configure package priority to Mozilla repository
   ansible.builtin.copy:
     content: |
-      # Managed by Ansible - ansible-workstation
+      # Managed by Ansible
       Package: *
       Pin: origin packages.mozilla.org
       Pin-Priority: 1000

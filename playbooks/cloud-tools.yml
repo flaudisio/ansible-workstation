@@ -1,9 +1,0 @@
----
-- name: Workstation - Cloud Tools
-  hosts: all
-
-  roles:
-    - role: aws-cli
-      tags: aws-cli
-    - role: aws-vault
-      tags: aws-vault

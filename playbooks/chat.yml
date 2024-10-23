@@ -1,7 +1,0 @@
----
-- name: Workstation - Chat
-  hosts: all
-
-  roles:
-    - role: slack
-      tags: slack

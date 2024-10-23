@@ -1,0 +1,12 @@
+---
+- name: Check if version {{ discord_version }} is installed
+  ansible.builtin.shell: dpkg-query --showformat='${Version}' --show discord || true
+  register: discord_check
+  changed_when: false
+
+- name: Install package
+  ansible.builtin.apt:
+    deb: "{{ discord_package_url }}"
+    state: present
+    install_recommends: false
+  when: discord_check.stdout != discord_version

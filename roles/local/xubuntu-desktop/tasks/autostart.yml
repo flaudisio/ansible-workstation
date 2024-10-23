@@ -1,13 +1,13 @@
 ---
-- name: Cria diretório de autostart
-  file:
+- name: Create autostart directory
+  ansible.builtin.file:
     path: "{{ desktop_autostart_dir }}"
     state: directory
     owner: "{{ desktop_user }}"
     group: "{{ desktop_user }}"
 
-- name: Desativa inicialização automática dos aplicativos definidos
-  copy:
+- name: Disable autostart of selected applications
+  ansible.builtin.copy:
     content: |
       [Desktop Entry]
       Hidden=true

@@ -1,18 +1,20 @@
 ---
-- name: Install repository keys
-  ansible.builtin.apt_key:
-    url: "{{ item }}"
-    state: present
-    keyring: /etc/apt/trusted.gpg.d/{{ slack_repo_filename }}.gpg
-  loop: "{{ slack_repo_key_urls }}"
+- name: Install repository key
+  ansible.builtin.get_url:
+    url: "{{ slack_apt_repo_key_url }}"
+    dest: "{{ slack_apt_repo_key_file }}"
+    force: true
+    owner: root
+    group: root
+    mode: "0644"
   tags:
     - slack:repo
     - slack:install
 
 - name: Configure repository
   ansible.builtin.apt_repository:
-    repo: "{{ slack_repo_line }}"
-    filename: "{{ slack_repo_filename }}"
+    repo: "{{ slack_apt_repo_line }}"
+    filename: "{{ slack_apt_repo_file }}"
     state: present
     update_cache: true
   tags:

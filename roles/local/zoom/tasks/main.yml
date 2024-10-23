@@ -1,0 +1,12 @@
+---
+- name: Check if version {{ zoom_version }} is installed
+  ansible.builtin.shell: dpkg-query --showformat='${Version}' --show zoom || true
+  register: zoom_check
+  changed_when: false
+
+- name: Install package
+  ansible.builtin.apt:
+    deb: "{{ zoom_package_url }}"
+    state: present
+    install_recommends: false
+  when: zoom_check.stdout != zoom_version

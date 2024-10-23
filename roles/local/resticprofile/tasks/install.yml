@@ -1,0 +1,28 @@
+---
+- name: Check if version {{ resticprofile_version }} is installed
+  ansible.builtin.shell: resticprofile version || true
+  register: resticprofile_check
+  changed_when: false
+
+- name: Install binary
+  ansible.builtin.unarchive:
+    remote_src: true
+    src: "{{ resticprofile_dl_url }}"
+    dest: "{{ resticprofile_bin_path | dirname }}"
+    include:
+      - resticprofile  # Extract only the binary
+    owner: root
+    group: root
+    mode: "0755"
+  when: >
+    resticprofile_check.stdout_lines | length == 0
+    or ("version " + resticprofile_version + " commit") not in resticprofile_check.stdout_lines[0]
+
+- name: Configure command symlink
+  ansible.builtin.file:
+    src: "{{ resticprofile_bin_path }}"
+    dest: "{{ resticprofile_bin_path | dirname }}/{{ resticprofile_symlink_name }}"
+    owner: root
+    group: root
+    state: link
+  when: resticprofile_create_symlink | bool

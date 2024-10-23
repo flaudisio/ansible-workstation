@@ -1,7 +1,0 @@
----
-- name: Workstation - Infrastructure
-  hosts: all
-
-  roles:
-    - role: dive
-      tags: dive

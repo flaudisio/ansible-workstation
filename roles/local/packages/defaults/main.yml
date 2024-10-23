@@ -1,10 +1,4 @@
 ---
-# Variáveis "packages_*": listas de pacotes independentes e/ou que são dependências de
-# várias aplicações simultaneamente. Vários provavelmente já estarão instalados,
-# mas não custa documentá-los.
-
-# Nota: os pacotes são instalados com *no-install-recommends*!
-
 packages_base:
   - apt-transport-https
   - bash-completion
@@ -47,8 +41,6 @@ packages_sysadmin:
   - cracklib-runtime
   - exfat-fuse
   - exfatprogs
-  # - gparted
-  # - gpustat
   - htop
   - iotop
   - iptraf-ng
@@ -63,8 +55,6 @@ packages_sysadmin:
   - openssh-client
   - openssh-server
   - rsync
-  # - system-config-printer
-  # - system-config-printer-udev
   - traceroute
   - whois
 
@@ -90,22 +80,12 @@ packages_utils:
   - ack
   - atool
   - atril
-  # - chromium-browser
   - colordiff
   - dconf-editor
   - dos2unix
   - engrampa
-  # - evince
-  # - firefox
   - gvfs-backends
   - ipcalc-ng
-  # - libreoffice-calc
-  # - libreoffice-writer
-  # - libreoffice-gtk3
-  # - libreoffice-style-tango
-  # - tango-icon-theme
-  # - lxappearance
-  # - gtk2-engines
   - makepasswd
   - moreutils
   - multitail
@@ -115,24 +95,18 @@ packages_utils:
   - pigz
   - printer-driver-cups-pdf
   - pwgen
-  # - remmina
-  # - remmina-plugin-rdp
-  # - remmina-plugin-vnc
-  # - libfreerdp-plugins-standard
   - rename
   - sqlite3
   - transmission-gtk
   - unar
   - unrar
   - unzip
-  # - v4l2ucp
   - wmctrl
   - xclip
   - xdotool
   - xz-utils
   - zenity
 
-# Pacotes que serão removidos via 'purge'
 packages_purge:
   # Xubuntu-desktop
   - gmusicbrowser
@@ -144,7 +118,7 @@ packages_purge:
   # "Command not found"
   - command-not-found
   - python3-commandnotfound
-  # Outros
+  # Misc
   - gnome-software
   - gnome-software-common
   - gnome-software-plugin-snap
@@ -156,13 +130,12 @@ packages_purge:
   - unattended-upgrades
   - xul-ext-ubufox
 
-# Pacotes extras, para flexibilidade
 # packages_extra:
 #   - foo
 #   - bar
 packages_extra: []
 
-packages_git_open_version: 3.0.0
+packages_git_open_version: 3.1.0
 
 packages_git_open_dl_url: https://raw.githubusercontent.com/paulirish/git-open/v{{ packages_git_open_version }}/git-open
 

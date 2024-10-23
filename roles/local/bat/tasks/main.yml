@@ -1,11 +1,11 @@
 ---
-- name: Check if bat {{ bat_version }} is installed
-  shell: dpkg-query --showformat='${Version}' --show bat || true
+- name: Check if version {{ bat_version }} is installed
+  ansible.builtin.shell: dpkg-query --showformat='${Version}' --show bat || true
   register: bat_check
   changed_when: false
 
-- name: Install bat
-  apt:
+- name: Install package
+  ansible.builtin.apt:
     deb: "{{ bat_package_url }}"
     state: present
     install_recommends: false
