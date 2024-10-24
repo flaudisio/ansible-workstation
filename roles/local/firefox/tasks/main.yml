@@ -37,10 +37,6 @@
   ansible.builtin.copy:
     content: |
       # Managed by Ansible
-      Package: *
-      Pin: origin packages.mozilla.org
-      Pin-Priority: 1000
-
       Package: firefox
       Pin: version /.*snap.*/
       Pin-Priority: -1
