@@ -8,18 +8,6 @@
     reload: true
   tags: base-system:sysctl
 
-- name: Configure SSH server port
-  ansible.builtin.copy:
-    content: |
-      Port {{ base_ssh_port }}
-    dest: /etc/ssh/sshd_config.d/90-ansible-workstation.conf
-    owner: root
-    group: root
-    mode: "0644"
-    validate: sshd -t -f %s
-  notify: Restart SSH
-  tags: base-system:ssh
-
 - name: Disable LightDM guest user
   ansible.builtin.copy:
     content: |
