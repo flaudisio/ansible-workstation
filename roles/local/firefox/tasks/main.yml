@@ -60,7 +60,7 @@
     name: "{{ item }}"
     link: /usr/bin/{{ item }}
     path: /usr/bin/firefox
-    priority: 200
+    priority: 100
     state: selected
   loop:
     - gnome-www-browser
